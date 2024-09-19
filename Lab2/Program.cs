@@ -53,7 +53,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (Math.Abs(x*x+y*y-4)<=0.001) answer = true;
         // end
 
         return answer;
@@ -175,12 +175,12 @@ public class Program
 
         return answer;
     }
-    public int Task_2_2(int n, double r, double a, double b)
+    public int Task_2_3(int n, double r, double a, double b)
     {
-        double answer = 0;
+        double answer = 0; 
 
         // code here
-
+        
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5

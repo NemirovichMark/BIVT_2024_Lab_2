@@ -115,3 +115,13 @@ C:\Users\Markosias\Documents\BIVT-24\Lab2Tests\obj\Debug\net8.0\refint\Lab2Tests
 C:\Users\Markosias\Documents\BIVT-24\Lab2Tests\obj\Debug\net8.0\Lab2Tests.pdb
 C:\Users\Markosias\Documents\BIVT-24\Lab2Tests\obj\Debug\net8.0\Lab2Tests.genruntimeconfig.cache
 C:\Users\Markosias\Documents\BIVT-24\Lab2Tests\obj\Debug\net8.0\ref\Lab2Tests.dll
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_Lab2Tests
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.csproj.AssemblyReference.cache
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.AssemblyInfoInputs.cache
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.AssemblyInfo.cs
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.csproj.CoreCompileInputs.cache
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.sourcelink.json
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.dll
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\refint\Lab2Tests.dll
+C:\Users\Katrin\Desktop\Developing\C#\Lab 2\Lab2Tests\obj\Debug\net8.0\Lab2Tests.pdb
