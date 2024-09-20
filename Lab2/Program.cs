@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
 
@@ -23,7 +24,7 @@ public class Program
         //program.Task_2_1(10);
         //program.Task_2_2(5, 2);
         //program.Task_2_3(10, 1, 2);
-        //program.Task_2_4(5, 1, 3);
+        program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
@@ -63,7 +64,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (y>=0 && y+Math.Abs(x)<=1) answer = true;
         // end
 
         return answer;
@@ -73,7 +74,12 @@ public class Program
         double answer = 0;
 
         // code here
+        double min, max;
+        if (a > b) { min = b; max = a; }
+        else { min = a; max = b; }
 
+        if (a > 0) answer = max;
+        else answer = min;
         // end
 
         return answer;
@@ -83,7 +89,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double min;
+        if (a > b) min = b; else min = a;
+        if (min > c) answer = min; else answer = c;
         // end
 
         return answer;
@@ -93,7 +101,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (2 * s <= 4 * r / Math.PI) answer = true;
         // end
 
         return answer;
@@ -103,7 +111,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (s >= 4 * r / Math.PI) answer = true;
         // end
 
         return answer;
@@ -113,7 +121,8 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) > 1) answer = 1;
+        else answer = Math.Abs(x);
         // end
 
         return answer;
@@ -123,7 +132,8 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) < 1) answer = x*x-1;
+        else answer = 0;
         // end
 
         return answer;
@@ -133,7 +143,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 0;
+        else if (x > 0) answer = 1;
+        else answer = 1+x;
         // end
 
         return answer;
@@ -143,7 +155,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 1;
+        else if (x > 1) answer = -1;
+        else answer = -x;
         // end
 
         return answer;
@@ -156,7 +170,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (int i=n; i>0; i--) answer += Convert.ToDouble(Console.ReadLine());
+        answer /= n;
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
@@ -175,7 +191,7 @@ public class Program
 
         return answer;
     }
-    public int Task_2_3(int n, double r, double a, double b)
+    public double Task_2_3(int n, double r, double a, double b) // change return type back to int later
     {
         double answer = 0; 
 
@@ -192,7 +208,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i=n; i>0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            double c = Math.Sqrt(x * x + y * y);
+            if (c >= r1 && c <= r2) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
