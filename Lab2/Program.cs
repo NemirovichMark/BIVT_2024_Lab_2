@@ -22,7 +22,7 @@ public class Program
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
         //program.Task_2_2(5, 2);
-        //program.Task_2_3(10);
+        //program.Task_2_3(10, 1, 2);
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
@@ -33,17 +33,17 @@ public class Program
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
-        //program.Task_3_1(10);
-        //program.Task_3_2(5, 2);
-        //program.Task_3_3(10);
-        //program.Task_3_4(5, 1, 3);
-        //program.Task_3_5(10, 30);
-        //program.Task_3_6(5);
-        //program.Task_3_7(5);
-        //program.Task_3_8(10);
-        //program.Task_3_9(10);
-        //program.Task_3_10(10);
-        //program.Task_3_11(10);
+        //program.Task_3_1();
+        //program.Task_3_2(2);
+        //program.Task_3_3();
+        //program.Task_3_4(1, 3);
+        //program.Task_3_5(30);
+        //program.Task_3_6();
+        //program.Task_3_7();
+        //program.Task_3_8();
+        //program.Task_3_9();
+        //program.Task_3_10();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -309,7 +309,7 @@ public class Program
     #endregion
 
     #region Level 3
-    public double Task_3_1(int n)
+    public double Task_3_1()
     {
         double answer = 0;
 
@@ -322,7 +322,7 @@ public class Program
 
         return answer;
     }
-    public int Task_3_2(int n, double r)
+    public int Task_3_2(double r)
     {
         int answer = 0;
 
@@ -335,7 +335,7 @@ public class Program
 
         return answer;
     }
-    public double Task_3_3(int n)
+    public double Task_3_3()
     {
         double answer = 0;
 
@@ -348,7 +348,7 @@ public class Program
 
         return answer;
     }
-    public int Task_3_4(int n, double r1, double r2)
+    public int Task_3_4(double r1, double r2)
     {
         int answer = 0;
 
@@ -361,7 +361,7 @@ public class Program
 
         return answer;
     }
-    public int Task_3_5(int n, double norm)
+    public int Task_3_5(double norm)
     {
         int answer = 0;
 
@@ -374,7 +374,7 @@ public class Program
 
         return answer;
     }
-    public int Task_3_6(int n)
+    public int Task_3_6()
     {
         int answer = 0;
 
@@ -387,7 +387,7 @@ public class Program
 
         return answer;
     }
-    public (int, int) Task_3_7(int n)
+    public (int, int) Task_3_7()
     {
         int answer1 = 0;
         int answer3 = 0;
@@ -401,7 +401,7 @@ public class Program
 
         return (answer1, answer3);
     }
-    public (int, double) Task_3_8(int n)
+    public (int, double) Task_3_8()
     {
         int answer = 0;
         double answerLength = double.MaxValue;
@@ -415,7 +415,7 @@ public class Program
 
         return (answer, answerLength);
     }
-    public double Task_3_9(int n)
+    public double Task_3_9()
     {
         double answer = double.MaxValue;
 
@@ -428,7 +428,7 @@ public class Program
 
         return answer;
     }
-    public int Task_3_10(int n)
+    public int Task_3_10()
     {
         int answer = 0;
 
@@ -441,7 +441,7 @@ public class Program
 
         return answer;
     }
-    public (int, double) Task_3_11(int n)
+    public (int, double) Task_3_11()
     {
         int answer = 0;
         double avg = 0.0;
