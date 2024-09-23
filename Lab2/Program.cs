@@ -24,7 +24,7 @@ public class Program
         //program.Task_2_1(10);
         //program.Task_2_2(5, 2);
         //program.Task_2_3(10, 1, 2);
-        program.Task_2_4(5, 1, 3);
+        //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
@@ -191,7 +191,7 @@ public class Program
 
         return answer;
     }
-    public double Task_2_3(int n, double r, double a, double b) // change return type back to int later
+    public int Task_2_3(int n, double r, double a, double b) 
     {
         double answer = 0; 
 
