@@ -35,7 +35,7 @@ public class Program
         //program.Task_2_10(10);
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
-        //program.Task_2_13(10, 5, 0);
+        program.Task_2_13(3, 2.5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -52,14 +52,14 @@ public class Program
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
-    }
+
     #region Level 1
     public bool Task_1_1(double x, double y)
     {
         bool answer = false;
 
         // code here
-        if (Math.Abs(x*x+y*y-4)<=0.001) answer = true;
+        if (Math.Abs(x * x + y * y - 4) <= 0.001) answer = true;
         // end
 
         return answer;
@@ -69,7 +69,7 @@ public class Program
         bool answer = false;
 
         // code here
-        if (y>=0 && y+Math.Abs(x)<=1) answer = true;
+        if (y >= 0 && y + Math.Abs(x) <= 1) answer = true;
         // end
 
         return answer;
@@ -137,7 +137,7 @@ public class Program
         double answer = 0;
 
         // code here
-        if (Math.Abs(x) < 1) answer = x*x-1;
+        if (Math.Abs(x) < 1) answer = x * x - 1;
         else answer = 0;
         // end
 
@@ -150,7 +150,7 @@ public class Program
         // code here
         if (x <= -1) answer = 0;
         else if (x > 0) answer = 1;
-        else answer = 1+x;
+        else answer = 1 + x;
         // end
 
         return answer;
@@ -175,7 +175,7 @@ public class Program
         double answer = 0;
 
         // code here
-        for (int i=n; i>0; i--) answer += Convert.ToDouble(Console.ReadLine());
+        for (int i = n; i > 0; i--) answer += Convert.ToDouble(Console.ReadLine());
         answer /= n;
         Console.WriteLine(answer);
         // end
@@ -201,7 +201,7 @@ public class Program
         double answer = 0; 
 
         // code here
-        
+
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -213,7 +213,7 @@ public class Program
         int answer = 0;
 
         // code here
-        for (int i=n; i>0; i--)
+        for (int i = n; i > 0; i--)
         {
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
@@ -319,7 +319,12 @@ public class Program
         double answer = 0;
 
         // code here;
+        if (type < 0 || type > 2 || r <= 0) answer = 0;
+        else if (type==0) answer = r * r;
+        else if (type==1) answer = Math.PI * r * r;
+        else if (type==2) answer = r * r * Math.Sqrt(3) / 4;
 
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -329,7 +334,13 @@ public class Program
         double answer = 0;
 
         // code here;
+        if (type < 0 || type > 2 || A <= 0 || B<=0) answer = 0;
+        else if (type == 0) answer = A*B;
+        else if (type == 1) answer = Math.Abs(Math.PI*A*A-Math.PI*B*B);
+        else if (type == 2) answer = Math.Sqrt(B*B-A*A/4)*A/2;
 
+        answer = Math.Round(answer, 2);
+        Console.WriteLine($"A:{A} B:{B} type:{type} answer - {answer}");
         // end
 
         return answer;
