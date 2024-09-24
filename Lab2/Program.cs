@@ -196,7 +196,7 @@ public class Program
 
         return answer;
     }
-    public int Task_2_3(int n)
+    public double Task_2_3(int n)
     {
         double answer = 0; 
 
@@ -247,7 +247,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
 
         return answer;
     }
@@ -423,7 +423,7 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
         // answer should be equal to the task_2_6 answer
 
         return answer;
