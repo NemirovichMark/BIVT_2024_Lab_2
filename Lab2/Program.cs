@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +27,7 @@ public class Program
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30);
+        program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(10);
@@ -35,7 +35,7 @@ public class Program
         //program.Task_2_10(10);
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
-        program.Task_2_13(3, 2.5, 0);
+        //program.Task_2_13(3, 2.5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -179,7 +179,7 @@ public class Program
         answer /= n;
         Console.WriteLine(answer);
         // end
-
+        
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
 
         return answer;
@@ -189,7 +189,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            double c = Math.Sqrt(Math.Pow(x - a, 2) + Math.Pow(y - b, 2));
+            if (c <= r) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
@@ -198,10 +205,15 @@ public class Program
     }
     public double Task_2_3(int n)
     {
-        double answer = 0; 
+        double answer = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double weight = Convert.ToDouble(Console.ReadLine());
+            if (weight < 30) answer += 0.2;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -232,7 +244,12 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double result = Convert.ToDouble(Console.ReadLine());
+            if (result >= norm) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -244,7 +261,14 @@ public class Program
         int answer = 0;
 
         // code here
+        for (int i = n; i > 0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            if (0<=x && x<=Math.PI && 0<=y && y<=Math.Sin(x)) answer++;
 
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
