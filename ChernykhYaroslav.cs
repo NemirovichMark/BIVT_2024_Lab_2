@@ -194,6 +194,8 @@ public class Program
 
         // code here
         double sum = 0;
+        int.TryParse(Console.ReadLine(), out n);
+
         for (int i = 0; i < n; i++)
             sum += int.Parse( Console.ReadLine() );
         answer = sum / n*1.0;
@@ -211,6 +213,11 @@ public class Program
 
         // code here
         double x = 0, y = 0;
+        int.TryParse(Console.ReadLine(), out n);
+        double.TryParse(Console.ReadLine(), out r);
+        double.TryParse(Console.ReadLine(), out a);
+        double.TryParse(Console.ReadLine(), out b);
+
         for (int i = 0; i < n; i++) {
             x = Convert.ToDouble(Console.ReadLine());
             y = Convert.ToDouble(Console.ReadLine());
@@ -229,6 +236,8 @@ public class Program
         double answer = 0;
 
         // code here
+        int.TryParse(Console.ReadLine(), out n);
+
         for (int i = 0; i < n; i++)
             if (Convert.ToDouble(Console.ReadLine()) < 30.0)
                 answer += 0.2;
@@ -243,6 +252,10 @@ public class Program
         int answer = 0;
 
         // code here
+        int.TryParse(Console.ReadLine(), out n);
+        double.TryParse(Console.ReadLine(), out r1);
+        double.TryParse(Console.ReadLine(), out r2);
+
         double x = 0, y = 0;
         for (int i = 0; i < n; i++) {
             x = Convert.ToDouble(Console.ReadLine());
@@ -262,6 +275,9 @@ public class Program
         int answer = 0;
 
         // code here
+        int.TryParse(Console.ReadLine(), out n);
+        double.TryParse(Console.ReadLine(), out norm);
+
         for (int i = 0; i < n; i++)
             if (Convert.ToDouble(Console.ReadLine()) < norm)
                 answer++;
@@ -276,6 +292,8 @@ public class Program
         int answer = 0;
 
         // code here
+        int.TryParse(Console.ReadLine(), out n);
+
         double x = 0, y = 0;
         for (int i = 0; i < n; i++) {
             x = Convert.ToDouble(Console.ReadLine());
@@ -297,6 +315,8 @@ public class Program
         int answer3 = 0;
 
         // code here
+        int.TryParse(Console.ReadLine(), out n);
+
         double x = 0, y = 0;
         for (int i = 0; i < n; i++)
         {
@@ -320,6 +340,8 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
+        int.TryParse(Console.ReadLine(), out n);
+
         double x = 0, y = 0;
         if (n == 0) return (0, 0);
         for (int i = 0; i < n; i++)
@@ -343,6 +365,8 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
+        int.TryParse(Console.ReadLine(), out n);
+
         if (n == 0) return 0;
         for (int i = 0; i < n; i++) {
             double x = Convert.ToDouble(Console.ReadLine());
@@ -360,7 +384,9 @@ public class Program
         int answer = 0;
 
         // code here;
-        for(int i = 0; i < n; i++){
+        int.TryParse(Console.ReadLine(), out n);
+
+        for (int i = 0; i < n; i++){
             int x = int.Parse(Console.ReadLine());
             int y = int.Parse(Console.ReadLine());
             int z = int.Parse(Console.ReadLine());
@@ -382,6 +408,8 @@ public class Program
         double avg = 0.0;
 
         // code here;
+        int.TryParse(Console.ReadLine(), out n);
+
         for (int i = 0; i < n; i++)
         {
             int x = int.Parse(Console.ReadLine());
@@ -405,7 +433,7 @@ public class Program
     public double Task_2_12(double r, int type)
     {
         double answer = 0;
-
+        if (r <= 0) return 0;
         // code here;
         switch (type)
         {
@@ -430,6 +458,7 @@ public class Program
         double answer = 0;
 
         // code here;
+        if (A <= 0 || B <= 0) return 0;
         switch (type)
         {
             case 0:
@@ -437,10 +466,12 @@ public class Program
                 break;
             case 1:
                 answer = Math.PI*(B*B - A*A);
+                if (answer <= 0) return 0;
                 break;
             case 2:
                 double pp = (A + B * 2) / 2;
                 answer = Math.Sqrt(pp*(pp - A)*(pp - B)*(pp-B));
+                if (answer <= 0) return 0;
                 break;
         }
         answer = Math.Round(answer, 2);
@@ -487,10 +518,15 @@ public class Program
         // code here
 
         // code here
-        n = int.Parse(Console.ReadLine());
-        for (int i = 0; i < n; i++)
-            if (Convert.ToDouble(Console.ReadLine()) < 30.0)
+
+        //Exit code: -1
+        double input;
+        double.TryParse(Console.ReadLine(), out input);
+        while (input >= 0){
+            if ( input < 30.0)
                 answer += 0.2;
+            double.TryParse(Console.ReadLine(), out input);
+        }
         // end
         Console.WriteLine(answer);
         // end
@@ -531,15 +567,18 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
+        //Exit code: -1
         double x = 0, y = 0;
+        double input;
+        double.TryParse(Console.ReadLine(), out input);
+
         n = int.Parse(Console.ReadLine());
-        for (int i = 0; i < n; i++)
-        {
+        while (input >= 0){
             x = Convert.ToDouble(Console.ReadLine());
             y = Convert.ToDouble(Console.ReadLine());
             if ((x >= 0 && x <= Math.PI) && (y <= Math.Sin(x)))
                 answer++;
-            Console.WriteLine((x >= 0 && x <= Math.PI) && (y <= Math.Sin(x)));
+            double.TryParse(Console.ReadLine(), out input);
         }
 
         Console.WriteLine(answer);
@@ -583,10 +622,11 @@ public class Program
         int n = 0;
 
         // code here
-        n = int.Parse(Console.ReadLine());
+        double input;
+        double.TryParse(Console.ReadLine(), out input);
+
         if (n == 0) return 0;
-        for (int i = 0; i < n; i++)
-        {
+        while (input >= 0){
             double x = Convert.ToDouble(Console.ReadLine());
             if (x < answer)
                 answer = x;
