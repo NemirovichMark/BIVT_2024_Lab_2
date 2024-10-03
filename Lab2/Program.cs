@@ -10,7 +10,7 @@ public class Program
     public static void Main()
     {
         Program program = new Program();
-        Console.WriteLine("I am working)!!!11!11!11");
+        Console.WriteLine("I am working)!!!11!1");
         //program.Task_1_1(0.9, 1.23);
         //program.Task_1_2(0.9, 1.23);
         //program.Task_1_3(0.9, 1.23);
