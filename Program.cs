@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ public class Program
 {
     public static void Main()
     {
-        //Program program = new Program();
+        Program program = new Program();
         //program.Task_1_1(0.9, 1.23);
         //program.Task_1_2(0.9, 1.23);
         //program.Task_1_3(0.9, 1.23);
@@ -22,7 +22,7 @@ public class Program
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        //program.Task_2_1(10);
+        program.Task_2_1(10);
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
@@ -73,25 +73,29 @@ public class Program
         bool answer = false;
 
         // code here
-        
-        // end
+        if ((y >= 0) && (y + Math.Abs(x) <= 1))
+        {
+            answer = true;
+        }
+        else answer = false;
+      
+
+            // end
 
         return answer;
     }
     public double Task_1_3(double a, double b)
     {
         double answer = 0;
-
         // code here
-        if ( a > 0)
+        if (a > 0)
         {
             if (a > b) answer = a;
             else answer = b;
         }
         else
             if (a > b) answer = b;
-            else answer = a;
-        Console.WriteLine(answer);
+        else answer = a;
         // end
 
         return answer;
@@ -113,10 +117,10 @@ public class Program
         bool answer = false;
 
         // code here
-        if (2 * r > Math.Sqrt(s * s + s * s)) answer = true;
+        if (r * r * 4 < 4 *  s ) answer = true;
         else answer = false;
         // end
-        Console.WriteLine(Math.Sqrt(s * s + s * s));
+        
         return answer;
     }
     public bool Task_1_6(double r, double s)
@@ -124,7 +128,7 @@ public class Program
         bool answer = false;
 
         // code here
-        if (2 * r <= Math.Sqrt(s * s + s * s)) answer = true;
+        if (4 * r * r < s * 4) answer = true;
         else answer = false;
         // end
         Console.WriteLine(answer);
@@ -158,7 +162,7 @@ public class Program
         if (x <= -1) answer = 0;
         else if ((0 >= x) && (x > -1)) answer = x + 1;
         else answer = 1;
-        
+
         // end
 
         return answer;
@@ -181,13 +185,18 @@ public class Program
     public double Task_2_1(int n)
     {
         double answer = 0;
-
+        double sum = 0;
         // code here
-
+        for (double i = 1; i < n; i ++)
+        {
+            double.TryParse(Console.ReadLine(), out double R);
+ 
+            sum += R;
+            answer = sum / i;
+        }
         // end
 
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
-
         return answer;
     }
     public int Task_2_2(int n, double r, double a, double b)
@@ -340,7 +349,7 @@ public class Program
     {
         double answer = 0;
         int n = 0;
-        
+
         // code here
 
         // end
