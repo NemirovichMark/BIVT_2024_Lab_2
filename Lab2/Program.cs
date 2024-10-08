@@ -10,6 +10,8 @@ public class Program
 {
     public static void Main()
     {
+        System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
         Program program = new Program();
         //program.Task_1_1(0.9, 1.23);
         //program.Task_1_2(0.9, 1.23);
@@ -25,15 +27,15 @@ public class Program
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
-        program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(5);
-        //program.Task_2_9(10);
-        //program.Task_2_10(10);
-        //program.Task_2_11(10);
+        //program.Task_2_3(6);
+        //program.Task_2_4(3,1,3);
+        //program.Task_2_5(6,25.2);
+        //program.Task_2_6(3);
+        //program.Task_2_7(3);
+        //program.Task_2_8(3);
+        //program.Task_2_9(6);
+        //program.Task_2_10(6);
+        //program.Task_2_11(6);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(3, 2.5, 0);
         //program.Task_3_1();
@@ -239,7 +241,7 @@ public class Program
         for (int i = n; i > 0; i--)
         {
             double result = Convert.ToDouble(Console.ReadLine());
-            if (result >= norm) answer++;
+            if (result <= norm) answer++;
         }
         Console.WriteLine(answer);
         // end
@@ -256,7 +258,6 @@ public class Program
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
             if (0<=x && x<=Math.PI && 0<=y && y<=Math.Sin(x)) answer++;
-
         }
         Console.WriteLine(answer);
         // end
@@ -269,7 +270,32 @@ public class Program
         int answer3 = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            if (x > 0 && y > 0)
+            {
+                answer1++;
+                Console.WriteLine("1 quadrant\n");
+            }
+            else if (x < 0 && y < 0)
+            {
+                answer3++;
+                Console.WriteLine("3 quadrant\n");
+            }
+            else if (x > 0 && y < 0)
+            {
+                answer3++;
+                Console.WriteLine("4 quadrant\n");
+            }
+            else if (x < 0 && y > 0)
+            {
+                answer3++;
+                Console.WriteLine("2 quadrant\n");
+            }
+        }
+        Console.WriteLine($"\nin quadrant 1: {answer1} \nin quadrant 3: {answer3}");
         // end
 
         return (answer1, answer3);
@@ -280,7 +306,19 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
+        for (int i = 1; i <= n; i++)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
 
+            double l = Math.Sqrt(x * x + y * y);
+            if (l < answerLength)
+            {
+                answer = i;
+                answerLength = l;
+            }
+        }
+        Console.WriteLine($"number: {answer}\nlength: {Math.Round(answerLength,2)}");
         // end
 
         return (answer, answerLength);
@@ -290,17 +328,32 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-
+        for (int i = n; i >0; i--)
+        {
+            double res = Convert.ToDouble(Console.ReadLine());
+            if (res < answer) answer = res;
+        }
+        Console.WriteLine(answer);
         // end
 
-        return answer;
+        return answer; 
     }
     public int Task_2_10(int n)
     {
         int answer = 0;
 
         // code here;
-
+        for (int i = n; i > 0; i--)
+        {
+            bool suitable = true;
+            for (int k = 4; k > 0; k--)
+            {
+                double r = Convert.ToDouble(Console.ReadLine());
+                if (r < 4) suitable=false;
+            }
+            if (suitable) answer++;
+        }
+        Console.WriteLine($"answer: {answer}");
         // end
 
         return answer;
@@ -311,7 +364,18 @@ public class Program
         double avg = 0.0;
 
         // code here;
-
+        for (int i = n; i > 0; i--)
+        {
+            bool check = false;
+            for (int k = 4; k > 0; k--)
+            {
+                double r = Convert.ToDouble(Console.ReadLine());
+                avg += r;
+                if (r == 2) check = true;
+            }
+            if (check) answer++;
+        }
+        Console.WriteLine($"answer: {answer}\naverage: {avg/(4*n)}");
         // end
 
         return (answer, avg);
@@ -378,7 +442,17 @@ public class Program
         int n = 0;
 
         // code here
-
+        for (;;)
+        {
+            string input = Console.ReadLine();
+            if (input!="stop")
+            { 
+                double weight = Convert.ToDouble(input);
+                if (weight < 30) answer += 0.2;
+            }
+            else break; 
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -408,7 +482,20 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
+        for (; ; )
+        {
+            string input1 = Console.ReadLine();
+            string input2 = Console.ReadLine();
 
+            if (input1 != "stop" && input2 != "stop")
+            {
+                double x = Convert.ToDouble(input1);
+                double y = Convert.ToDouble(input2);
+                if (0 <= x && x <= Math.PI && 0 <= y && y <= Math.Sin(x)) answer++;
+            }
+            else break;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -440,7 +527,18 @@ public class Program
         int n = 0;
 
         // code here
+        for (; ; )
+        {
+            string input = Console.ReadLine();
 
+            if (input != "stop")
+            {
+                double res = Convert.ToDouble(input);
+                if (res < answer) answer = res;
+            }
+            else break;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
