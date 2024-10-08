@@ -12,15 +12,15 @@ public class Program
         Program program = new Program();
         //program.Task_1_1(1, 1);
         //program.Task_1_2(0, 2);
-        //program.Task_1_3(0.9, 1.23);
+        //program.Task_1_3(0.5, 0.25);
         //program.Task_1_4(0, 2, -2);
-        program.Task_1_5(0.86, 0.74);
-        //program.Task_1_6(0.9, 1.23);
+        //program.Task_1_5(0.86, 0.74);
+        //program.Task_1_6(3.2, 3.5);
         //program.Task_1_7(0.9);
-        //program.Task_1_8(0.9);
+        //program.Task_1_8(3);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        //program.Task_2_1(10);
+        program.Task_2_1(10);
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
@@ -81,20 +81,37 @@ public class Program
         double answer = 0;
 
         // code here
-        if ( a>0 )
-            answer = Math.Max(a, b);
+        if (a > 0)
+        {
+            if (a < b) 
+                answer = b;
+            else
+                answer = a;
+        }
         else
-            answer = Math.Min(a, b);
+        {
+            if (a < b)
+                answer = a;
+            else
+                answer = b;
+        }
         // end
         Console.WriteLine(answer);
         return answer;
     }
     public double Task_1_4(double a, double b, double c)
     {
-        double answer = 0;
+        double answer = 0, m = 0;
 
         // code here
-
+        if (a > b)
+            m = b;
+        else
+            m = a;
+        if (m>c)
+            answer = m;
+        else
+            answer = c;
         // end
 
         return answer;
@@ -115,11 +132,14 @@ public class Program
     public bool Task_1_6(double r, double s)
     {
         bool answer = false;
-
-        // code here
-
+        double rKryg = 1, rKvad = 1;
+        // code here r = pi * rKrug*rKrug ; s = a*a = (2r)*(2r) = 4*r*r
+        rKryg = Math.Sqrt(r / Math.PI);
+        rKvad = Math.Sqrt(s / 4);
+        if (rKryg <= rKvad)
+            answer = true;
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public double Task_1_7(double x)
@@ -127,7 +147,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if ( Math.Abs(x)>1 )
+            answer = 1;
+        else 
+            answer = Math.Abs(x);
         // end
 
         return answer;
@@ -137,7 +160,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) < 1)
+            answer = x*x - 1;
+        else
+            answer = 0;
         // end
 
         return answer;
@@ -147,7 +173,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+            answer = 0;
+        else if (x <= 0 && x > -1)
+            answer = 1 + x;
+        else if (x > 0)
+            answer = 1;
         // end
 
         return answer;
@@ -157,7 +188,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+            answer = 1;
+        else if (x <= 1 && x > -1)
+            answer = -x;
+        else if (x > 1)
+            answer = -1;
         // end
 
         return answer;
