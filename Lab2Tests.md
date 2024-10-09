@@ -1,11 +1,13 @@
 # Тесты и ответы для самостоятельной проверки заданий 2 уровня
 
 Если у вас возникает исключение после вставки значений или ответ не сходится, это может быть связано с конфликтом локализации ввода-вывода.
-Используйте английский формат ввода (через точку). Для этого в методах распознавания значений добавьте форматер **new CultureInfo("en-US")**:\
-string input = Console.ReadLine();\
-double.TryParse(input, new CultureInfo("en-US"), out age);\
-age = double.Parse(input, new CultureInfo("en-US"));\
-age = Convert.ToDouble(input, new CultureInfo("en-US"));\
+Используйте английский формат ввода (через точку). Для этого в методах распознавания значений добавьте форматер **new CultureInfo("en-US")**:
+```
+string input = Console.ReadLine();
+double.TryParse(input, new CultureInfo("en-US"), out age);
+age = double.Parse(input, new CultureInfo("en-US"));
+age = Convert.ToDouble(input, new CultureInfo("en-US"));
+```
 Или же вводите значения через запятую: 
 ```
 1,2
