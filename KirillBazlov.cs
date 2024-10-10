@@ -24,9 +24,9 @@ public class Program
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30);
+        //program.Task_2_3(6);
+        //program.Task_2_4(3, 1, 3);
+        //program.Task_2_5(6, 25.2);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(10);
@@ -59,7 +59,7 @@ public class Program
         // code here
         double r = 2;
 
-        if (Math.Abs(x*x + y*y - r*r) <= 1/ 1000) {
+        if (Math.Abs(x*x + y*y - r*r) <= 0.001) {
             answer = true;
         }
         // end
@@ -231,6 +231,16 @@ public class Program
 
         // code here
 
+        double x, y;
+
+        for (int i = 0; i < n; i++)
+        {
+            x = double.Parse(Console.ReadLine());
+            y = double.Parse(Console.ReadLine());
+
+            if (Math.Abs(x - a) < r && Math.Abs(y - b) < r) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
@@ -243,6 +253,17 @@ public class Program
 
         // code here
 
+        double weight;
+
+        for (int i = 0; i < n; i++)
+        {
+            weight = double.Parse(Console.ReadLine());
+
+            if (weight < 30) answer += 0.2;
+
+        }
+        answer = Math.Round(answer, 3);
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -255,6 +276,17 @@ public class Program
 
         // code here
 
+        double x, y;
+
+        for (int i = 0; i < n; i++)
+        {
+            x = double.Parse(Console.ReadLine());
+            y = double.Parse(Console.ReadLine());
+
+            if (x*x + y*y > r1*r1 && x*x + y*y < r2*r2) answer++;
+        }
+
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
@@ -267,6 +299,16 @@ public class Program
 
         // code here
 
+        double result;
+
+        for (int i = 0; i < n; i++)
+        {
+            result = double.Parse(Console.ReadLine());
+
+            if (result <= norm) answer++;
+        }
+
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
