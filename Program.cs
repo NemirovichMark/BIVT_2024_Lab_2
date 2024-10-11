@@ -20,8 +20,8 @@ public class Program
         //program.Task_1_8(3);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
+        //program.Task_2_1(10);
+        program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
@@ -203,9 +203,17 @@ public class Program
     #region Level 2
     public double Task_2_1(int n)
     {
-        double answer = 0;
+        double answer = 0, k = n;
 
         // code here
+
+        while (n>0)
+        {
+            answer += double.Parse(Console.ReadLine());
+            n--;
+        }        
+        answer = answer / k;
+        Console.WriteLine(answer);
 
         // end
 
@@ -218,6 +226,12 @@ public class Program
         int answer = 0;
 
         // code here
+        while (n > 0)
+        {
+            Console.WriteLine($"Координаты {answer+=1}:");
+            Console.Read();
+            n--;
+        }
 
         // end
 
