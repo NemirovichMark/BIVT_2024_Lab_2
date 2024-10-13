@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,6 @@ public class Program
     public static void Main()
     {
         Program program = new Program();
-        Console.WriteLine("I am working)!!!11!1");
         //program.Task_1_1(0.9, 1.23);
         //program.Task_1_2(0.9, 1.23);
         //program.Task_1_3(0.9, 1.23);
@@ -22,12 +21,12 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
+        //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30);
+        //program.Task_2_4(4, 1, 2);
+        //program.Task_2_5(10,25.2);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(10);
@@ -57,8 +56,11 @@ public class Program
     {
         bool answer = false;
 
-        // code here
+        int r = 2;
 
+        // code here
+        if (Math.Abs(x * x + y * y - r * r) <= 0.001) 
+            answer = true;
         // end
 
         return answer;
@@ -68,7 +70,8 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (y >= 0 && (y + Math.Abs(x) <= 1))
+            answer = true;
         // end
 
         return answer;
@@ -76,9 +79,11 @@ public class Program
     public double Task_1_3(double a, double b)
     {
         double answer = 0;
-
         // code here
-
+        if (a > 0)
+            answer = Math.Max(a, b);
+        else
+            answer = Math.Min(a, b);
         // end
 
         return answer;
@@ -88,7 +93,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = Math.Max(Math.Min(a, b), c);
         // end
 
         return answer;
@@ -96,9 +101,11 @@ public class Program
     public bool Task_1_5(double r, double s)
     {
         bool answer = false;
-
+        double Rr = (r * 4 / Math.PI) * (r * 4 / Math.PI);
+        double Rs = 2 * s * s / 2;
         // code here
-
+        if (Rr >= Rs)
+            answer = true;
         // end
 
         return answer;
@@ -118,7 +125,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) > 1)
+            answer = 1;
+        else answer = Math.Abs(x);
         // end
 
         return answer;
@@ -128,7 +137,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) >= 1)
+            answer = 0;
+        else answer = x * x - 1;
         // end
 
         return answer;
@@ -138,7 +149,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 0;
+        else if (x <= 0) answer = 1 + x;
+        else answer = 1;
         // end
 
         return answer;
@@ -148,7 +161,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 1;
+        else if (x <= 1) answer = -x;
+        else answer = -1;
         // end
 
         return answer;
@@ -156,14 +171,19 @@ public class Program
     #endregion
 
     #region Level 2
-    public double Task_2_1(int n)
+    public double Task_2_1(int n)    // Нужно ли выводить сообщение о неккоректности ввода?
     {
         double answer = 0;
-
+        int c;
         // code here
-
+        for (int i = 0; i<n; i++)
+        {
+            int.TryParse(Console.ReadLine(), out c);
+            answer += c;
+        }
+        answer/= n;
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
 
         return answer;
@@ -173,9 +193,25 @@ public class Program
         int answer = 0;
 
         // code here
+        double x, y;
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
 
+            x -= a;
+            y -= b;
+            if ((x * x + y * y) <= r * r)
+            {
+                //Console.WriteLine($"{x} {y} {r}");
+                answer++;
+                //Console.WriteLine("Ok");
+            }
+            //else { Console.WriteLine("No"); }
+            //Console.WriteLine();
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
 
         return answer;
@@ -185,9 +221,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (int i = 0; i < n; i++)
+        {
+            double weight;
+            double.TryParse(Console.ReadLine(), out weight);
+            if (weight < 30) answer += 0.2;
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
@@ -197,9 +238,19 @@ public class Program
         int answer = 0;
 
         // code here
+        double x, y;
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
 
+            if (((x * x + y * y) <= r2 * r2)&& ((x * x + y * y) >= r1 * r1))
+            {
+                answer++;
+            }
+        }
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
 
         return answer;
@@ -207,11 +258,16 @@ public class Program
     public int Task_2_5(int n, double norm)
     {
         int answer = 0;
-
+       
         // code here
-
+        for (int i = 0; i < n; i++)
+        {
+            double x;
+            Double.TryParse(Console.ReadLine(), out x);
+            if (x <= norm) answer += 1;
+        }
         // end
-
+        Console.WriteLine (answer);
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
