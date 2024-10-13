@@ -33,7 +33,7 @@ public class Program
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        //program.Task_2_11(10);
+        //program.Task_2_11(6);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -214,6 +214,7 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i ++)
         {
+            Console.WriteLine($"Input {i + 1} point:");
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
             if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r) answer += 1;
@@ -229,11 +230,10 @@ public class Program
 
         // code here
 
-        int weight;
+        double weight;
         for (int i = 0; i < n; i++)
         {
-            int.TryParse(Console.ReadLine(), out weight);
-            answer += 0.2;
+            double.TryParse(Console.ReadLine(), out weight);
             if (weight < 30) answer += 0.2;
         }
         answer = Math.Round(answer, 1);
@@ -251,6 +251,7 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i ++)
         {
+            Console.WriteLine($"Input {i + 1} point:");
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
             if (x * x + y * y > r1 * r1 && x * x + y * y < r2 * r2) answer += 1;
@@ -286,6 +287,7 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i ++)
         {
+            Console.WriteLine($"Input {i + 1} point:");
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
             if (y >= 0 && x >= 0 && x <= Math.PI && y <= Math.Sin(x)) answer += 1;
@@ -305,6 +307,7 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i++)
         {
+            Console.WriteLine($"Input {i + 1} point:");
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
             if (x >= 0 && y >= 0)
@@ -332,6 +335,25 @@ public class Program
 
         // code here
 
+        double minimalLegth = -1, minimal = -1, x, y, r;
+        for (int i = 0; i < n; i ++)
+        {
+            Console.WriteLine($"Input {i + 1} point:");
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            r = Math.Round(Math.Sqrt(x * x + y * y), 2);
+            if (minimalLegth == -1)
+            {
+                minimal = i + 1;
+                minimalLegth = r;
+            }
+            else if (r < minimalLegth)
+            {
+                minimal = i + 1;
+                minimalLegth = r;
+            }
+        }
+        Console.WriteLine($"Point number {minimal} on distance {minimalLegth}");
         // end
 
         return (answer, answerLength);
@@ -342,6 +364,14 @@ public class Program
 
         // code here
 
+        double best = -1, current;
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out current);
+            if (best == -1) best = current;
+            else if (current < best) best = current;
+        }
+        Console.WriteLine(best);
         // end
 
         return answer;
@@ -352,6 +382,19 @@ public class Program
 
         // code here;
 
+        for (int i = 0; i < n; i ++)
+        {
+            bool fl = true;
+            Console.WriteLine($"Input {i + 1} student marks:");
+            for (int j = 0; j < 4; j ++)
+            {
+                int mark;
+                int.TryParse(Console.ReadLine(), out mark);
+                if (mark == 2 || mark == 3) fl = false;
+            }
+            if (fl) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -363,6 +406,22 @@ public class Program
 
         // code here;
 
+        double sm = 0;
+        for (int i = 0; i < n; i++)
+        {
+            bool fl = false;
+            Console.WriteLine($"Input {i + 1} student marks:");
+            for (int j = 0; j < 4; j++)
+            {
+                int mark;
+                int.TryParse(Console.ReadLine(), out mark);
+                sm += mark;
+                if (mark == 2) fl = true;
+            }
+            if (fl) answer++;
+        }
+        avg = Math.Round(sm / n / 4, 9);
+        Console.WriteLine($"{answer} unsuccessfull students, avg = {avg}");
         // end
 
         return (answer, avg);
@@ -373,6 +432,10 @@ public class Program
 
         // code here;
 
+        if (r <= 0 || !(type >= 0 && type <= 2)) return 0;
+        if (type == 0) answer = Math.Round(r * r, 2);
+        else if (type == 1) answer = Math.Round(r * r * Math.PI, 2);
+        else answer = Math.Round(r * r * Math.Sqrt(3) / 4, 2);
         // end
 
         return answer;
@@ -383,6 +446,18 @@ public class Program
 
         // code here;
 
+        if (A <= 0 || B <= 0 || !(type >= 0 && type <= 2)) return 0;
+        if (type == 0) answer = Math.Round(A * B, 2);
+        else if (type == 1)
+        {
+            if (A > B) answer = Math.Round(A * A * Math.PI - B * B * Math.PI, 2);
+            else answer = Math.Round(B * B * Math.PI - A * A * Math.PI, 2);
+        }
+        else
+        {
+            double p = (A + B + B) / 2;
+            answer = Math.Round(Math.Sqrt(p * (p - A) * (p - B) * (p - B)), 2);
+        }
         // end
 
         return answer;
@@ -419,6 +494,17 @@ public class Program
 
         // code here
 
+        Console.WriteLine("Input n:");
+        int.TryParse(Console.ReadLine(), out n);
+        Console.WriteLine($"Good.");
+        double weight;
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out weight);
+            if (weight < 30) answer += 0.2;
+        }
+        answer = Math.Round(answer, 1);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -449,6 +535,18 @@ public class Program
 
         // code here
 
+        Console.WriteLine("Input n:");
+        int.TryParse(Console.ReadLine(), out n);
+        Console.WriteLine($"Good.");
+        double x, y;
+        for (int i = 0; i < n; i++)
+        {
+            Console.WriteLine($"Input {i + 1} point:");
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if (y >= 0 && x >= 0 && x <= Math.PI && y <= Math.Sin(x)) answer += 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -481,6 +579,17 @@ public class Program
 
         // code here
 
+        Console.WriteLine("Input n:");
+        int.TryParse(Console.ReadLine(), out n);
+        Console.WriteLine($"Good.");
+        double best = -1, current;
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out current);
+            if (best == -1) best = current;
+            else if (current < best) best = current;
+        }
+        Console.WriteLine(best);
         // end
 
         return answer;
