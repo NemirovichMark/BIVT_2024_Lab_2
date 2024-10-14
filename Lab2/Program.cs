@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -263,8 +263,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
-
         return answer;
     }
     public int Task_2_2(int n, double r) 
@@ -294,8 +292,6 @@ public class Program
         }
         Console.Write(answer);
         // end
-
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
 
         return answer;
     }
@@ -351,8 +347,6 @@ public class Program
         Console.Write(answer);
         // end
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
-
         return answer;
     }
     public int Task_2_5(int n, double norm)
@@ -374,8 +368,6 @@ public class Program
         }
         Console.WriteLine(answer);
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
     }
@@ -401,8 +393,6 @@ public class Program
         }
         Console.WriteLine(answer);
         // end
-
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
 
         return answer;
     }
@@ -462,8 +452,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
-
         return (answer, answerLength);
     }
     public double Task_2_9(int n)
@@ -487,8 +475,6 @@ public class Program
         answer = min;
         Console.WriteLine("    " +  answer);
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
     }
@@ -524,8 +510,6 @@ public class Program
         Console.WriteLine("    " + answer);
         // end
 
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
-
         return answer;
     }
     public (int, double) Task_2_11(int n)
@@ -558,8 +542,6 @@ public class Program
         Console.WriteLine("   " + answer + "   " + avg);
 
         // end
-
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
 
         return (answer, avg);
     }
@@ -623,17 +605,16 @@ public class Program
     #endregion
 
     #region Level 3
-    public double Task_3_1(int n)
+    public double Task_3_1()
     {
         double answer = 0;
+        int n = 0;
 
         // code here
 
         // end
 
-        // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
         // answer should be equal to the task_2_1 answer
-
         return answer;
     }
 
@@ -679,38 +660,30 @@ public class Program
         Console.Write(answer);
         // end
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
-        // answer should be equal to the task_2_2 answer
-
         return answer;
     }
-    public double Task_3_3(int n)
+    public double Task_3_3()
     {
         double answer = 0;
+        int n = 0;
 
         // code here
 
         // end
 
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_3 answer
-
         return answer;
     }
-    public int Task_3_4(int n, double r1, double r2)
+    public int Task_3_4(double r1, double r2)
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
         // end
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
-        // answer should be equal to the task_2_4 answer
-
         return answer;
     }
-    public int Task_3_5(int n, double norm)
+    public int Task_3_5(double norm)
     {
         int answer = 0;
         Console.WriteLine("Введите норму");
@@ -733,35 +706,25 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_5 answer
-
         return answer;
     }
-    public int Task_3_6(int n)
+    public int Task_3_6()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 2, 0.5 0.9, -1 1.5, 0.5 1.5
-        // answer should be equal to the task_2_6 answer
-
         return answer;
     }
-    public (int, int) Task_3_7(int n)
+    public (int, int) Task_3_7()
     {
-        int answer1 = 0;
-        int answer3 = 0;
+        int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
 
         // end
-
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
-        // answer should be equal to the task_2_7 answer
 
         return (answer1, answer3);
     }
@@ -791,34 +754,26 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
-        // answer should be equal to the task_2_8 answer
-
         return (answer, answerLength);
     }
-    public double Task_3_9(int n)
+    public double Task_3_9()
     {
         double answer = double.MaxValue;
+        int n = 0;
 
         // code here
 
         // end
 
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_9 answer
-
         return answer;
     }
-    public int Task_3_10(int n)
+    public int Task_3_10()
     {
-        int answer = 0;
+        int answer = 0, n = 0;
 
         // code here;
 
         // end
-
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
-        // answer should be equal to the task_2_10 answer
 
         return answer;
     }
