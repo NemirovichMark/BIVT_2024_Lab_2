@@ -21,10 +21,10 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        program.Task_2_2(5, 3, 2, 1);
+        //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(10);
+        program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
@@ -223,15 +223,30 @@ public class Program
     }
     public int Task_2_2(int n, double r, double a, double b)
     {
-        int answer = 0;
+        int answer = 0, k = 0;
+        double x = 0, y = 0;
 
         // code here
+        Console.Write("Введите длину радиуса: ");
+        r = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите координаты центра: ");
+        a = int.Parse(Console.ReadLine());
+        b = int.Parse(Console.ReadLine());
+        Console.Write("Введите количество точек: ");
+        n = int.Parse(Console.ReadLine());
         while (n > 0)
         {
-            Console.WriteLine($"Координаты {answer+=1}:");
-            Console.Read();
+            Console.WriteLine($"Координаты {k+=1}: ");
+            x = int.Parse(Console.ReadLine());
+            y = int.Parse(Console.ReadLine());
             n--;
+            if ( (a-x)*(a-x) + (b-y)*(b-y) <= r*r )
+            {
+                answer += 1;
+            }
         }
+        Console.Write($"Ответ: ");
+        Console.WriteLine(answer);
 
         // end
 
@@ -241,9 +256,21 @@ public class Program
     }
     public double Task_2_3(int n)
     {
-        double answer = 0;
+        double answer = 0, k = 0, ves;
 
         // code here
+
+        Console.Write("Количество учеников: ");
+        n = int.Parse(Console.ReadLine());
+        while (n > 0) 
+        {
+            Console.Write($"Ученик {k+=1}: ");
+            ves = int.Parse(Console.ReadLine());
+            n--;
+            if (ves < 30)
+                answer += 0.2;
+        }
+        Console.Write($"Понадобится {answer} литр(-ов/-а) молока ");
 
         // end
 
