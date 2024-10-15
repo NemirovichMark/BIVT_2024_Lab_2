@@ -182,62 +182,108 @@ public class Program
     #endregion
 
     #region Level 2
-    public double Task_2_1(int n)
-    {
-        double answer = 0;
-        double sum = 0;
-        // code here
-        for (double i = 1; i < n; i ++)
-        {
-            double.TryParse(Console.ReadLine(), out double R);
- 
-            sum += R;
-            answer = sum / i;
-        }
-        // end
+     public double Task_2_1(int n)
+ {
+     double answer = 0;
+     double sum = 0;
+     // code here
+     for (double i = 1; i < n; i++)
+     {
+         double.TryParse(Console.ReadLine(), out double R);
 
-        // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
-        return answer;
-    }
-    public int Task_2_2(int n, double r, double a, double b)
-    {
-        int answer = 0;
+         sum += R;
+         answer = sum / i;
+     }
+     // end
 
-        // code here
+     // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
+     return answer;
+ }
+ public int Task_2_2(int n, double r, double a, double b)
+ {
+     int answer = 0;
 
-        // end
+     // code here
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
+     // end
 
-        return answer;
-    }
-    public double Task_2_3(int n)
-    {
-        double answer = 0;
+     // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
 
-        // code here
+     return answer;
+ }
+ public double Task_2_3(int n)
+ {
+     double answer = 0;
+     double R = 0;
+     // code here
+     for (double i = 0; i < n; i++)
+     {
+         R = double.Parse(Console.ReadLine());
+         if (R < 30)
+         {
+             answer += 0.2;
+         }
+     }
+     Console.WriteLine(answer);
+     // end
 
-        // end
+     // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
+     return answer;
+ }
+ public int Task_2_4(int n, double r1, double r2)
+ {
+     int answer = 0;
+     // code here
+     for (double i = 0; i < n; i++)
+     {
+         double.TryParse(Console.ReadLine(), out double t1);
+         double.TryParse(Console.ReadLine(), out double t2);
+         if ((t1 + t2 > r1) && (t1 + t2 < r2)) answer += 1;
+     }
+     // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
+     Console.WriteLine(answer);
 
-        return answer;
-    }
-    public int Task_2_4(int n, double r1, double r2)
-    {
-        int answer = 0;
+     return answer;
+ }
+ public int Task_2_5(int n, double norm)
+ {
+     int answer = 0;
+     n = 10;
+     norm = 30;
+     // code here
+     for (double i = 0; i < n; i++)
+     {
+         double.TryParse(Console.ReadLine(), out double result);
+         if (norm > result) answer += 1;
+     }
+     // end
 
-        // code here
+     // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
-        // end
+     return answer;
+ }
+ public int Task_2_6(int n)
+ {
+     int answer = 0;
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
+     // code here
 
-        return answer;
-    }
-    public int Task_2_5(int n, double norm)
-    {
-        int answer = 0;
+     // end
+
+     // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
+
+     return answer;
+ }
+ public (int, int) Task_2_7(int n)
+ {
+     int answer1 = 0;
+     int answer3 = 0;
+
+     // code here
+
+     // end
+swer = 0;
 
         // code here
 
