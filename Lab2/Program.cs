@@ -14,8 +14,8 @@ public class Program
         //program.Task_1_2(0.9, 1.23);
         //program.Task_1_3(0.9, 1.23);
         //program.Task_1_4(0.9, 1.23, -0.1);
-        //program.Task_1_5(0.9, 1.23);
-        //program.Task_1_6(0.9, 1.23);
+        program.Task_1_5(0.9, 1.23);
+        program.Task_1_6(3.2, 4.5);
         //program.Task_1_7(0.9);
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
@@ -33,7 +33,7 @@ public class Program
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        program.Task_2_12(0.2, 3);
+        //program.Task_2_12(0.2, 3);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -101,10 +101,10 @@ public class Program
     public bool Task_1_5(double r, double s)
     {
         bool answer = false;
-        double Rr = Math.Sqrt(r/Math.PI);
-        double Rs = Math.Sqrt(r/2);
+        double Dc = Math.Sqrt(r / Math.PI);
+        double Ds = Math.Sqrt(2)*s;
         // code here
-        if (Rr >= Rs)
+        if (Dc >= Ds)
             answer = true;
         // end
 
@@ -113,11 +113,13 @@ public class Program
     public bool Task_1_6(double r, double s)
     {
         bool answer = false;
-
+        double Dc = Math.Sqrt(r / Math.PI)*2;
+        double a = Math.Sqrt(r);
         // code here
-
+        if (Dc <= a)
+            answer = true;
         // end
-
+        Console.WriteLine($"{r}  {s}  {answer}");
         return answer;
     }
     public double Task_1_7(double x)
@@ -481,11 +483,19 @@ public class Program
     {
         double answer = 0;
         int n = 0;
-        
+
+        int c;
         // code here
-
+        do
+        {
+        int.TryParse(Console.ReadLine(), out c);
+        answer += c;
+        n++;
+        }
+        while (c > 0);
+        answer /= n;
         // end
-
+        Console.WriteLine(answer);
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
         // answer should be equal to the task_2_1 answer
 
