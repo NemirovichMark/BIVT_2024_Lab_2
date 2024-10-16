@@ -547,11 +547,10 @@ public class Program
                 }
 
         }
-        Console.WriteLine(Math.Round(answer, 2));
-
+        
         // end
 
-        return answer;
+        return Math.Round(answer, 2);
     }
     public double Task_2_13(double A, double B, int type)
     {
@@ -578,11 +577,10 @@ public class Program
                     break;
                 }
         }
-        Console.WriteLine(Math.Round(answer, 2));
-
+        
         // end
 
-        return answer;
+        return Math.Round(answer, 2);
     }
     #endregion
 
