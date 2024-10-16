@@ -21,7 +21,7 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
+        program.Task_2_2(1, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
@@ -57,7 +57,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        answer = Math.Abs(Math.Pow(x, 2) + Math.Pow(y, 2) - 4) <= 0.001;
         // end
 
         return answer;
@@ -67,7 +67,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        answer = y >= 0 && y + Math.Abs(x) <= 1;
         // end
 
         return answer;
@@ -77,7 +77,26 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (a <= 0){
+            if (a < b)
+            {
+                answer = a;
+            }
+            else {
+                answer = b;
+            }
+        }
+        else
+        {
+            if (a > b)
+            {
+                answer = a;
+            }
+            else
+            {
+                answer = b;
+            }
+        }
         // end
 
         return answer;
@@ -87,7 +106,28 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (a < b)
+        {
+            if (c > a)
+            {
+                answer = c;
+            }
+            else
+            {
+                answer = a;
+            }
+        }
+        else
+        {
+            if (c > b)
+            {
+                answer = c;
+            }
+            else
+            {
+                answer = b;
+            }
+        }
         // end
 
         return answer;
@@ -97,7 +137,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        answer = (Math.Sqrt(s * 2) <= Math.Sqrt(r / double.Pi)*2);
         // end
 
         return answer;
@@ -107,7 +147,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        answer = (Math.Sqrt(s) >= Math.Sqrt(r / double.Pi) * 2);
         // end
 
         return answer;
@@ -117,7 +157,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) > 1)
+        {
+            answer = 1;
+        }
+        else
+        {
+            answer = Math.Abs(x);
+        }
         // end
 
         return answer;
@@ -127,7 +174,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if(Math.Abs(x) >= 1)
+        {
+            answer = 0;
+        }
+        else
+        {
+            answer = x*x-1;
+        }
         // end
 
         return answer;
@@ -137,7 +191,17 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+        {
+            answer = 0;
+        }
+        else if (x<=0)
+        {
+            answer = 1+x;
+        }else
+        {
+            answer = 1;
+        }
         // end
 
         return answer;
@@ -147,7 +211,18 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+        {
+            answer = 1;
+        }
+        else if (x <= 1)
+        {
+            answer = -x;
+        }
+        else
+        {
+            answer = -1;
+        }
         // end
 
         return answer;
@@ -160,7 +235,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (int i = 0; i<n; i++)
+        {
+            answer += Convert.ToInt32(Console.ReadLine());  
+        }
+        answer = answer / n;
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
@@ -172,7 +252,17 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = 0; i < n; i++)
+        {
+            string[] p = Console.ReadLine().Replace(".", ",").Split();
+            double x = Convert.ToDouble(p[0]);
+            double y = Convert.ToDouble(p[1]);
+            if (Math.Pow(a - x, 2)+ Math.Pow(b - y, 2) <= r * r)
+            {
+                answer += 1;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
