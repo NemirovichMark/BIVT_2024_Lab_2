@@ -487,7 +487,7 @@ public class Program
             }
             if (correct) answer++;
         }
-        Console.WriteLine($"Ответ:{answer}");
+        Console.WriteLine($"пїЅпїЅпїЅпїЅпїЅ:{answer}");
 
         // end
 
