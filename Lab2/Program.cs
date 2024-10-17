@@ -501,12 +501,37 @@ public class Program
 
         return answer;
     }
-    public int Task_3_2(double r, double a, double b)
+    public int Task_3_2(double r, double a, double b)     //          CHECK!!!
     {
-        int answer = 0, n = 0;
-
+        int answer = 0;
+        flag = true;
         // code here
-
+        double x,y;
+        string sx, sy;
+        
+        sx = Console.ReadLine();
+        sy = Console.ReadLine();
+        
+        flag = double.TryParse(sx, out x) && double.TryParse(sy, out y);
+        
+        
+        while(flag){
+            x -= a;
+            y -= b;
+            if ((x * x + y * y) <= r * r)
+                {
+                //Console.WriteLine($"{x} {y} {r}");
+                answer++;
+                //Console.WriteLine("Ok");
+                
+            }
+            
+        sx = Console.ReadLine();
+        sy = Console.ReadLine();
+        
+        flag = double.TryParse(sx, out x) && double.TryParse(sy, out y);
+            
+        }
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
@@ -514,13 +539,17 @@ public class Program
 
         return answer;
     }
-    public double Task_3_3()
+    public double Task_3_3()        //          CHECK!!!
     {
         double answer = 0;
-        int n = 0;
-
+        //int n = 0;
+        double.TryParse(Console.ReadLine(), out int weight);
         // code here
-
+        while (weight > 0){
+            if (weight < 30) answer += 0.2;
+            
+            double.TryParse(Console.ReadLine(), out weight);
+        }
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -528,12 +557,19 @@ public class Program
 
         return answer;
     }
-    public int Task_3_4(double r1, double r2)
+    public int Task_3_4(double r1, double r2)       //          CHECK!!!
     {
         int answer = 0, n = 0;
 
         // code here
-
+        double x, y;
+        while (double.TryParse(Console.ReadLine(), out x) && double.TryParse(Console.ReadLine(), out y)){
+            if (((x * x + y * y) <= r2 * r2)&& ((x * x + y * y) >= r1 * r1))
+            {
+                answer++;
+            }
+        }
+        
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
