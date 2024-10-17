@@ -433,10 +433,12 @@ public class Program
         // code here;
 
         if (r <= 0 || !(type >= 0 && type <= 2)) return 0;
-        if (type == 0) answer = Math.Round(r * r, 2);
-        else if (type == 1) answer = Math.Round(r * r * Math.PI, 2);
-        else answer = Math.Round(r * r * Math.Sqrt(3) / 4, 2);
-        // end
+        switch (type)
+        {
+            case 0: answer = Math.Round(r * r, 2); break;
+            case 1: answer = Math.Round(r * r * Math.PI, 2); break;
+            case 2: answer = Math.Round(r * r * Math.Sqrt(3) / 4, 2); break;
+        }    
 
         return answer;
     }
@@ -447,16 +449,17 @@ public class Program
         // code here;
 
         if (A <= 0 || B <= 0 || !(type >= 0 && type <= 2)) return 0;
-        if (type == 0) answer = Math.Round(A * B, 2);
-        else if (type == 1)
+        switch (type)
         {
-            if (A > B) answer = Math.Round(A * A * Math.PI - B * B * Math.PI, 2);
-            else answer = Math.Round(B * B * Math.PI - A * A * Math.PI, 2);
-        }
-        else
-        {
-            double p = (A + B + B) / 2;
-            answer = Math.Round(Math.Sqrt(p * (p - A) * (p - B) * (p - B)), 2);
+            case 0: answer = Math.Round(A * B, 2); break;
+            case 1:
+                if (A > B) answer = Math.Round(A * A * Math.PI - B * B * Math.PI, 2);
+                else answer = Math.Round(B * B * Math.PI - A * A * Math.PI, 2);
+                break;
+            case 2:
+                double p = (A + B + B) / 2;
+                answer = Math.Round(Math.Sqrt(p * (p - A) * (p - B) * (p - B)), 2);
+                break;
         }
         // end
 
@@ -494,13 +497,12 @@ public class Program
 
         // code here
 
-        Console.WriteLine("Input n:");
-        int.TryParse(Console.ReadLine(), out n);
-        Console.WriteLine($"Good.");
         double weight;
-        for (int i = 0; i < n; i++)
+        bool stop = false;
+        for (int i = 0;; i++)
         {
-            double.TryParse(Console.ReadLine(), out weight);
+            stop = !double.TryParse(Console.ReadLine(), out weight);
+            if (stop) break;
             if (weight < 30) answer += 0.2;
         }
         answer = Math.Round(answer, 1);
@@ -535,15 +537,15 @@ public class Program
 
         // code here
 
-        Console.WriteLine("Input n:");
-        int.TryParse(Console.ReadLine(), out n);
-        Console.WriteLine($"Good.");
+        bool stop = false;
         double x, y;
-        for (int i = 0; i < n; i++)
+        for (int i = 0; ; i++)
         {
             Console.WriteLine($"Input {i + 1} point:");
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
+            stop = !double.TryParse(Console.ReadLine(), out x);
+            if (stop) break;
+            stop = !double.TryParse(Console.ReadLine(), out y);
+            if (stop) break;
             if (y >= 0 && x >= 0 && x <= Math.PI && y <= Math.Sin(x)) answer += 1;
         }
         Console.WriteLine(answer);
@@ -579,13 +581,12 @@ public class Program
 
         // code here
 
-        Console.WriteLine("Input n:");
-        int.TryParse(Console.ReadLine(), out n);
-        Console.WriteLine($"Good.");
+        bool stop = false;
         double best = -1, current;
         for (int i = 0; i < n; i++)
         {
-            double.TryParse(Console.ReadLine(), out current);
+            stop = !double.TryParse(Console.ReadLine(), out current);
+            if (stop) break;
             if (best == -1) best = current;
             else if (current < best) best = current;
         }
