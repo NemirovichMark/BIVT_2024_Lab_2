@@ -667,7 +667,7 @@ public class Program
 
         return answer;
     }
-    /*
+
     public int Task_3_4(double r1, double r2)
     {
         int answer = 0, n = 0;
@@ -694,7 +694,6 @@ public class Program
 
         return answer;
     }
-    */
     public int Task_3_6()
     {
         int answer = 0;
@@ -728,7 +727,6 @@ public class Program
 
         return answer;
     }
-    /*
     public (int, int) Task_3_7()
     {
         int answer1 = 0, answer3 = 0, n = 0;
@@ -756,7 +754,6 @@ public class Program
 
         return (answer, answerLength);
     }
-    */
     public double Task_3_9()
     {
         double answer = double.MaxValue;
@@ -787,7 +784,6 @@ public class Program
 
         return answer;
     }
-    /*
     public int Task_3_10()
     {
         int answer = 0, n = 0;
@@ -837,6 +833,6 @@ public class Program
 
         return answer;
     }
-    */
     #endregion 
 }
+
