@@ -101,10 +101,10 @@ public class Program
     public bool Task_1_5(double r, double s)
     {
         bool answer = false;
-        double Dc = Math.Sqrt(r / Math.PI);
-        double Ds = Math.Sqrt(2)*s;
+        double diametr = Math.Sqrt(r / Math.PI) * 2;
+        double diagonal = Math.Sqrt(2*s);
         // code here
-        if (Dc >= Ds)
+        if (diagonal <= diametr)
             answer = true;
         // end
 
@@ -113,10 +113,10 @@ public class Program
     public bool Task_1_6(double r, double s)
     {
         bool answer = false;
-        double Dc = Math.Sqrt(r / Math.PI)*2;
-        double a = Math.Sqrt(r);
+        double diametr = Math.Sqrt(r / Math.PI) * 2;
+        double a = Math.Sqrt(s);
         // code here
-        if (Dc <= a)
+        if (diametr <= a)
             answer = true;
         // end
         Console.WriteLine($"{r}  {s}  {answer}");
