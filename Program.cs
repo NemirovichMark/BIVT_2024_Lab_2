@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 
 public class Program
 {
@@ -21,7 +23,7 @@ public class Program
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
         //program.Task_2_1(10);
-        program.Task_2_2(5, 3, 2, 1);
+        //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
@@ -33,7 +35,7 @@ public class Program
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        //program.Task_2_12(10, 0);
+        program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -106,10 +108,20 @@ public class Program
     public double Task_1_4(double a, double b, double c)
     {
         double answer = 0;
+        double p;
+        double z;
 
         // code here
-       
-
+        if (a < b)
+            p = a;
+        else
+            p = b;
+        if (p > c)
+            z = p;
+        else
+            z = c;
+       answer = z;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -266,9 +278,18 @@ public class Program
     public int Task_2_4(int n, double r1, double r2)
     {
         int answer = 0;
-
+        double x, y = 0;
         // code here
-
+        for (int i = 0;i < n;i++)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse (Console.ReadLine(), out y);
+            if (Math.Sqrt((x * x) + (y * y)) >= r1 && Math.Sqrt((x * x) + (y * y)) <= r2)
+            {
+                answer++;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
@@ -283,7 +304,7 @@ public class Program
         for(int i =0;i < n ;i++)
         {
             double.TryParse(Console.ReadLine(), out res);
-            if (res <= norm)
+            if (res < norm)
             {
                 answer++;
             }
@@ -351,9 +372,23 @@ public class Program
     {
         int answer = 0;
         double answerLength = double.MaxValue;
-
+        double x = 0;
+        double y = 0;
         // code here
-
+        for (int i = 1; i <=n;i++)
+        {
+            
+            double.TryParse(Console.ReadLine(),out x);
+            double.TryParse(Console.ReadLine(),out y);
+            if (Math.Sqrt((x * x) + (y * y)) <= answerLength)
+            {
+                answerLength = Math.Sqrt((x * x) + (y * y));
+                answer = i;
+            }
+                        
+        }
+        Console.WriteLine(answer);
+        Console.WriteLine(Math.Round(answerLength, 2));
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
@@ -365,16 +400,16 @@ public class Program
         double answer = double.MaxValue;
         double res = 0;
         // code here
-        for(int i = 0; i <n;i++)
+        for (int i = 0; i < n; i++)
         {
-            double.TryParse(Console.ReadLine(), out res);
-            if(res > 0)
-            {
+            res = double.Parse(Console.ReadLine());
+            if(res < answer)
                 answer = res;
-                if(answer>)
-            }
+            else
+                continue;
         }
-
+        Console.WriteLine(answer);
+      
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -384,24 +419,20 @@ public class Program
     public int Task_2_10(int n)
     {
         int answer = 0;
-        int res = 0;
+        int x1,x2,x3,x4 = 0;
         // code here;
-        for(int i = 0;i<=n;i++)
+        for(int i = 0;i < n;i++)
         {
-            int.TryParse(Console.ReadLine(), out res);
-            for(int a=0;a<4;a++)
-            {
-                if ((res != 3) || (res != 2))
-                {
-                    answer++;
-                }
-                else
-                    break;
-                
-            }
+            int.TryParse(Console.ReadLine(), out x1);
+            int.TryParse(Console.ReadLine(), out x2);
+            int.TryParse(Console.ReadLine(), out x3);
+            int.TryParse(Console.ReadLine(), out x4);
+            if(x1>3 && x2 > 3 && x3 > 3 && x4 > 3)
+                answer++;
 
         }
         Console.WriteLine(answer);
+        
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -412,8 +443,23 @@ public class Program
     {
         int answer = 0;
         double avg = 0.0;
-
+        double sum = 0.0;
+        double x1,x2,x3,x4;
         // code here;
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out x1);
+            double.TryParse(Console.ReadLine(), out x2);
+            double.TryParse(Console.ReadLine(), out x3);
+            double.TryParse(Console.ReadLine(), out x4);
+            if (x1 < 3 || x2 < 3 || x3 < 3 || x4 < 3)
+                answer++;
+            if (x1 > 1 || x2 > 1 || x3 > 1 || x4 > 1)
+                sum += (x1 + x2 + x3 + x4)/4;
+        }
+        avg = sum / n;
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
 
         // end
 
@@ -426,7 +472,31 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if(r <= 0)
+        {
+            return 0;
+        }
+        switch (type)
+        {
+            case 0:
+                answer = r * r;
+                Console.WriteLine("Площадь квадрата", answer);
+                break;
+            case 1:
+                answer = Math.PI * r * r;
+                Console.WriteLine("Площадь круга", answer);
+                break;
+            case 2:
+                answer = (r*r * Math.Sqrt(3)) / 4;
+                Console.WriteLine("Площадь одностороннего треугольника", answer);
+                break;
+            default:
+                answer = 0;
+                break;
+            
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -434,9 +504,36 @@ public class Program
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
+        double k, p;
 
         // code here;
+        if (A <= 0 || B <= 0)
+        {
+            return 0;
+        }
+        switch (type)
+        {
+            case 0:
+                answer = A * B;
+                Console.WriteLine("площадб прямоугольника", answer);
+                break;
+            case 1:
+                p = Math.PI * A * A;
+                k = Math.PI * B * B;
+                answer = Math.Abs(p - k);
+                Console.WriteLine("Площадь кольца", answer);
+                break;
+            case 2:
+                answer = 0.5 * A * Math.Sqrt(B * B - (A / 2) * (A / 2));
+                Console.WriteLine("Площадь равнобедренного треугольника", answer);
+                break;
+            default:
+                answer = 0;
+                break; 
 
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
