@@ -1,3 +1,4 @@
+
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        program.Task_3_11();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -59,7 +60,7 @@ public class Program
 
         // code here
         double r = 2;
-        if (Math.Abs(x * x + y * y - r * r) <= Math.Pow(10, -3)) 
+        if (Math.Abs(x * x + y * y - r * r) <= Math.Pow(10, -3))
             answer = true;
         // end
 
@@ -70,7 +71,7 @@ public class Program
         bool answer = false;
 
         // code here
-        if (y >= 0 && y+Math.Abs(x)<=1)
+        if (y >= 0 && y + Math.Abs(x) <= 1)
             answer = true;
         // end
 
@@ -84,14 +85,15 @@ public class Program
         if (a > 0)
         {
             if (a > b)
-                 answer = a;
+                answer = a;
             else answer = b;
         }
-        else 
-        {if (a <= 0)
-            if (a > b)
-                 answer = b;
-            else answer = a;
+        else
+        {
+            if (a <= 0)
+                if (a > b)
+                    answer = b;
+                else answer = a;
         }
         // end
 
@@ -103,11 +105,11 @@ public class Program
 
         // code here
         if (a >= b) answer = b;
-           
-           else answer = a;
 
-            if (c >= answer) answer = c;
-            
+        else answer = a;
+
+        if (c >= answer) answer = c;
+
 
         // end
 
@@ -120,13 +122,13 @@ public class Program
         // code here
         double dround = 0;
         double dsquare = 0;
-        
-        dsquare = Math.Sqrt(s*2);
-        dround = 2*Math.Sqrt(r/Math.PI);
+
+        dsquare = Math.Sqrt(s * 2);
+        dround = 2 * Math.Sqrt(r / Math.PI);
         if (dsquare <= dround)
             answer = true;
-        
-        
+
+
         // end
 
         return answer;
@@ -138,11 +140,11 @@ public class Program
         // code here
         double dround = 0;
         double a = 0;
-        
+
         a = Math.Sqrt(s);
-        dround = 2*Math.Sqrt(r/Math.PI);
+        dround = 2 * Math.Sqrt(r / Math.PI);
         if (a >= dround)
-            answer = true ;
+            answer = true;
         // end
 
         return answer;
@@ -153,9 +155,9 @@ public class Program
 
         // code here
 
-        if (Math.Abs(x)>1) answer = 1;
+        if (Math.Abs(x) > 1) answer = 1;
         else
-        answer = Math.Abs(x);
+            answer = Math.Abs(x);
 
         // end
 
@@ -167,8 +169,8 @@ public class Program
 
         // code here
         if ((Math.Abs(x) >= 1)) answer = 0;
-        else answer = x*x-1;
-        
+        else answer = x * x - 1;
+
         // end
 
         return answer;
@@ -190,8 +192,8 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x <= -1) answer = 1; //можно убрать эту строку 
-        if (-1 < x && x <= 1) answer = -1*x;
+        if (x <= -1) answer = 1; //Г¬Г®Г¦Г­Г® ГіГЎГ°Г ГІГј ГЅГІГі Г±ГІГ°Г®ГЄГі // РЅР°РІРµСЂРЅРѕРµ С‚СѓС‚ Р±С‹Р»Рѕ С‡С‚Рѕ С‚Рѕ РІР°Р¶РЅРѕРµ
+        if (-1 < x && x <= 1) answer = -1 * x;
         if (x > 1) answer = -1;
         // end
 
@@ -212,8 +214,8 @@ public class Program
         {
             N = double.Parse(Console.ReadLine());
             if (N == 0) break;
-            else 
-            { 
+            else
+            {
                 sum = sum + N;
                 i++;
             }
@@ -231,8 +233,8 @@ public class Program
 
         // code here
         double x, y;
-        
-        for (int i = 0; i < n ; i++)
+
+        for (int i = 0; i < n; i++)
         {
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
@@ -254,12 +256,12 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             double x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            
-            if (x<30)
-                answer+=0.2;
+
+            if (x < 30)
+                answer += 0.2;
             else continue;
         }
-        
+
         Console.WriteLine(answer);
         Console.ReadLine();
         // end
@@ -277,7 +279,7 @@ public class Program
         {
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            if ((x*x+y*y>=r1*r1) && (x * x + y * y <= r2 * r2))
+            if ((x * x + y * y >= r1 * r1) && (x * x + y * y <= r2 * r2))
                 answer++;
             else continue;
         }
@@ -296,8 +298,8 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            
-            if (x<=norm)
+
+            if (x <= norm)
                 answer++;
             else continue;
         }
@@ -312,12 +314,14 @@ public class Program
         int answer = 0;
 
         // code here
+        
         double x, y;
         for (int i = 0; i < n; i++)
         {
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            if (x>= 0 && x<=Math.PI && Math.Sin(x)>=y)
+           
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y>=0)
                 answer++;
             else continue;
         }
@@ -334,14 +338,24 @@ public class Program
 
         // code here
         double x, y;
-        for (int i = 0; i < n ; i++)
+        for (int i = 0; i < n; i++)
         {
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            if (x>0 && y>0)
-                answer1++;
+            if (x > 0 && y > 0)
+                {
+                 answer1++;
+                 Console.WriteLine("С‚РѕС‡РєР° Р»РµР¶РёС‚ РІ РїРµСЂРІРѕРј РєРІР°РґСЂР°РЅС‚Рµ");
+                }
+            if (x <0 && y > 0)
+                Console.WriteLine("С‚РѕС‡РєР° Р»РµР¶РёС‚ РІРѕ РІС‚РѕСЂРѕРј РєРІР°РґСЂР°РЅС‚Рµ");
             if (x < 0 && y < 0)
-                answer3++;
+               { 
+                 answer3++;
+                 Console.WriteLine("С‚РѕС‡РєР° Р»РµР¶РёС‚ РІ С‚СЂРµС‚СЊРµРј РєРІР°РґСЂР°РЅС‚Рµ");
+               }
+            if (x > 0 && y < 0)
+                Console.WriteLine("С‚РѕС‡РєР° Р»РµР¶РёС‚ РІ С‡РµС‚РІРµСЂС‚РѕРј РєРІР°РґСЂР°РЅС‚Рµ");
         }
         Console.WriteLine($"{answer1}, {answer3}");
         Console.ReadLine();
@@ -356,23 +370,23 @@ public class Program
 
         // code here
         double x, y;
-        
+
         double min = double.MaxValue;
         for (int i = 1; i <= n; i++)
         {
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             if (x * x + y * y < min)
-            
-            {  
+
+            {
                 answer = i;
                 min = x * x + y * y;
             }
 
-            
+
         }
         answerLength = Math.Round(Math.Sqrt(min), 2);
-        
+
         Console.WriteLine(answer);
         Console.WriteLine(answerLength);
         Console.ReadLine();
@@ -385,9 +399,9 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-        
-       
-        for (int i=0  ; i < n; i++)
+
+
+        for (int i = 0; i < n; i++)
         {
             double x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             if (x < answer)
@@ -404,14 +418,14 @@ public class Program
         int answer = 0;
 
         // code here;
-        for (int i=1 ; i <= n; i++)
+        for (int i = 1; i <= n; i++)
         {
             int m1 = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             int m2 = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             int m3 = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             int m4 = int.Parse(Console.ReadLine(), new CultureInfo("en-US"));
 
-            if ( m1>3 && m2 > 3 && m3 > 3 && m4 > 3)
+            if (m1 > 3 && m2 > 3 && m3 > 3 && m4 > 3)
                 answer++;
         }
         Console.WriteLine(answer);
@@ -454,25 +468,28 @@ public class Program
         // code here;
         Console.WriteLine("1 for square");
         Console.WriteLine("2 for round");
-        Console.WriteLine("1 for triangle");
-        
+        Console.WriteLine("3 for triangle");
+        string input = Console.ReadLine();
+        bool result = int.TryParse(input, new CultureInfo("en-US"), out type);
+         
         switch (type)
         {
-          case 1:
+            case 1:
                 answer = Math.Round(r * r, 2);
-                    break;
-          case 2:
+                break;
+            case 2:
                 answer = Math.Round(r * r * Math.PI, 2);
                 break;
-          case 3:
-                answer = Math.Round(r * r * Math.Sqrt(3)/4, 2);
+            case 3:
+                answer = Math.Round(r * r * Math.Sqrt(3) / 4, 2);
                 break;
-         default: answer = 0;
+            default:
+                answer = 0;
                 break;
         }
 
         Console.WriteLine(answer);
-        
+
         // end
 
         return answer;
@@ -482,6 +499,12 @@ public class Program
         double answer = 0;
 
         // code here;
+        Console.WriteLine("1 for square");
+        Console.WriteLine("2 for ring");
+        Console.WriteLine("3 for triangle");
+        string input = Console.ReadLine();
+        bool result = int.TryParse(input, new CultureInfo("en-US"), out type);
+        
 
         switch (type)
         {
@@ -498,7 +521,7 @@ public class Program
                 answer = 0;
                 break;
         }
-
+         Console.WriteLine(answer);
         // end
 
         return answer;
@@ -518,11 +541,12 @@ public class Program
 
         do
 
-        {   Console.WriteLine("введите рост в сантиметрах или 0 чтобы завершить");
+        {
+            Console.WriteLine("Enter heights. Ener 0 to finish.");
             string input = Console.ReadLine();
             bool result = double.TryParse(input, out H);
-            if (result == true && H!=0)
-            {  
+            if (result == true && H != 0)
+            {
                 sum += H;
                 n++;
             }
@@ -563,15 +587,15 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-        double x,y = 0;
-        
+        double x, y = 0;
+
         while (true)
 
         {
-            Console.WriteLine(" введите X, Y или stop чтобы завершить");
+            Console.WriteLine("Enter X, Y . Enter stop to finish ");
             string input = Console.ReadLine();
             if (input == "stop") break;
-           
+
             bool result_x = double.TryParse(input, out x);
             bool result_y = double.TryParse(input, out y);
             if (result_x == false || result_y == false)
@@ -579,10 +603,10 @@ public class Program
             else if ((x * x + y * y >= r1 * r1) && (x * x + y * y <= r2 * r2))
                 answer++;
             else continue;
-            
+
         }
-        
-        
+
+
         Console.WriteLine(answer);
         Console.ReadLine();
         // end
@@ -619,19 +643,19 @@ public class Program
         while (true)
 
         {
-            
-            double x,y;
-            Console.WriteLine(" введите X, Y или stop чтобы завершить");
+
+            double x, y;
+            Console.WriteLine("Enter X, Y . Enter stop to finish");
             string input_x = Console.ReadLine();
             if (input_x == "stop") break;
             string input_y = Console.ReadLine();
-           
+
 
             bool result_x = double.TryParse(input_x, new CultureInfo("en-US"), out x);
             bool result_y = double.TryParse(input_y, new CultureInfo("en-US"), out y);
-            if (result_x == false || result_y == false || x==0 || y==0 )
+            if (result_x == false || result_y == false || x == 0 || y == 0)
                 continue;
-            else  
+            else
             {
                 if (x > 0 && y > 0)
                     answer1++;
@@ -691,7 +715,7 @@ public class Program
         while (true)
 
         {
-            Console.WriteLine(" введите X, Y или stop чтобы завершить");
+            Console.WriteLine(" enter marks. enter stop to finish "); 
             string input_m1 = Console.ReadLine();
             if (input_m1 == "stop") break;
             string input_m2 = Console.ReadLine();
@@ -706,19 +730,20 @@ public class Program
                 continue;
             else
 
-            {    if (m1 < 3 || m2 < 3 || m3 < 3 || m4 < 3)
-                 answer++;
-                 avg = avg + m1 + m2 + m3 + m4;
+            {
+                if (m1 < 3 || m2 < 3 || m3 < 3 || m4 < 3)
+                    answer++;
+                avg = avg + m1 + m2 + m3 + m4;
             }
 
             n++;
         }
-             Convert.ToDouble(avg);
-             avg = avg / 4 / n;
+        Convert.ToDouble(avg);
+        avg = avg / 4 / n;
 
-             Console.WriteLine(answer);
-             Console.WriteLine(avg);
-             Console.ReadLine();
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
+        Console.ReadLine();
         // end
 
         return (answer, avg);
