@@ -24,7 +24,7 @@ public class Program
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
-        program.Task_2_3(10);
+        //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
@@ -33,7 +33,7 @@ public class Program
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        //program.Task_2_12(10, 0);
+        program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -203,16 +203,18 @@ public class Program
     #region Level 2
     public double Task_2_1(int n)
     {
-        double answer = 0, k = n;
+        double answer = 0, k = 1, a = 0;
 
         // code here
 
-        while (n>0)
+        while (k<=n)
         {
-            answer += double.Parse(Console.ReadLine());
-            n--;
+            Console.Write($"{k}. Рост ученика: ");
+            double.TryParse(Console.ReadLine(), out a);
+            answer += a; 
+            k++;
         }        
-        answer = answer / k;
+        answer = answer / n;
         Console.WriteLine(answer);
 
         // end
@@ -228,17 +230,17 @@ public class Program
 
         // code here
         Console.Write("Введите длину радиуса: ");
-        r = int.Parse(Console.ReadLine());
+        double.TryParse(Console.ReadLine(), out r);
         Console.WriteLine("Введите координаты центра: ");
-        a = int.Parse(Console.ReadLine());
-        b = int.Parse(Console.ReadLine());
+        double.TryParse(Console.ReadLine(), out a);
+        double.TryParse(Console.ReadLine(), out b);
         Console.Write("Введите количество точек: ");
-        n = int.Parse(Console.ReadLine());
+        int.TryParse(Console.ReadLine(), out n);
         while (n > 0)
         {
             Console.WriteLine($"Координаты {k+=1}: ");
-            x = int.Parse(Console.ReadLine());
-            y = int.Parse(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
             n--;
             if ( (a-x)*(a-x) + (b-y)*(b-y) <= r*r )
             {
@@ -261,11 +263,11 @@ public class Program
         // code here
 
         Console.Write("Количество учеников: ");
-        n = int.Parse(Console.ReadLine());
+        int.TryParse(Console.ReadLine(), out n);
         while (n > 0) 
         {
             Console.Write($"Ученик {k+=1}: ");
-            ves = int.Parse(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out ves);
             n--;
             if (ves < 30)
                 answer += 0.2;
@@ -280,9 +282,27 @@ public class Program
     }
     public int Task_2_4(int n, double r1, double r2)
     {
-        int answer = 0;
+        int answer = 0, k = 0;
+        double x = 0, y = 0;
 
         // code here
+
+        Console.Write("Количество точек: ");
+        int.TryParse(Console.ReadLine(), out n);
+        Console.Write("Радиус 1: ");
+        double.TryParse(Console.ReadLine(), out r1);
+        Console.Write("Радиус 2: ");
+        double.TryParse(Console.ReadLine(), out r2);
+        while (n > 0)
+        {
+            Console.WriteLine($"Координаты точки {k += 1}: ");
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            n--;
+            if ((Math.Sqrt(x * x + y * y) >= r1) && (Math.Sqrt(x * x + y * y) <= r2))
+                answer += 1;
+        }
+        Console.Write($"В кольцо попало {answer} точек(-ка/-ки)");
 
         // end
 
@@ -292,9 +312,23 @@ public class Program
     }
     public int Task_2_5(int n, double norm)
     {
-        int answer = 0;
-
+        int answer = 0, k = 0;
+        double result = 0;
         // code here
+
+        Console.Write("Количество участников: ");
+        int.TryParse(Console.ReadLine(), out n);
+        Console.Write("Норматив составляет: ");
+        double.TryParse(Console.ReadLine(), out norm);
+        while (n > 0)
+        {
+            Console.WriteLine($"Результат участника {k += 1}: ");
+            double.TryParse(Console.ReadLine(), out result);
+            n--;
+            if ( result >= norm )
+                answer += 1;
+        }
+        Console.Write($"Норматив выполнили {answer} участник(-а/-ов)");
 
         // end
 
@@ -304,9 +338,23 @@ public class Program
     }
     public int Task_2_6(int n)
     {
-        int answer = 0;
+        int answer = 0, k = 0;
+        double x = 0, y = 0;
 
         // code here
+
+        Console.Write("Количество точек: ");
+        int.TryParse(Console.ReadLine(), out n);
+        while (n > 0)
+        {
+            Console.WriteLine($"Координаты точки {k += 1}: ");
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            n--;
+            if ( x < 3.14 && x >= 0 && y <= Math.Sin(x) && y >= 0 )
+                answer += 1;
+        }
+        Console.Write($"В фигуру попало {answer} точек(-ка/-ки)");
 
         // end
 
@@ -318,8 +366,46 @@ public class Program
     {
         int answer1 = 0;
         int answer3 = 0;
+        int k = 0;
+        double x = 0, y = 0;
 
         // code here
+
+        Console.Write("Количество точек: ");
+        int.TryParse(Console.ReadLine(), out n);
+        while (n > 0)
+        {
+            Console.WriteLine($"Координаты точки {k += 1}: ");
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            n--;
+            if (x > 0 && y > 0)
+            {
+                Console.WriteLine($"Точка {k} в 1-м квадранте");
+                answer1 += 1;
+            }
+            if (x > 0 && y < 0)
+                Console.WriteLine($"Точка {k} во 2-м квадранте");
+            if (x < 0 && y < 0)
+            {
+                Console.WriteLine($"Точка {k} в 3-м квадранте");
+                answer3 += 1;
+            }
+            if (x < 0 && y > 0)
+                Console.WriteLine($"Точка {k} в 4-м квадранте");
+            if (x == 0 && y > 0)
+                Console.WriteLine($"Точка {k} в 1-м и во 2-м квадрантах");
+            if (x == 0 && y < 0)
+                Console.WriteLine($"Точка {k} в 3-м и в 4-м квадрантах");
+            if (y == 0 && x > 0)
+                Console.WriteLine($"Точка {k} в 1-м и в 4-м квадрантах");
+            if (y == 0 && x < 0)
+                Console.WriteLine($"Точка {k} во 2-м и в 3-м квадрантах");
+            if (y == 0 && x == 0)
+                Console.WriteLine($"Точка {k} лежит в начале координат");
+        }
+        Console.WriteLine($"Точек в 1-м квадранте: {answer1}");
+        Console.WriteLine($"Точек в 3-м квадранте: {answer3}");
 
         // end
 
@@ -331,8 +417,27 @@ public class Program
     {
         int answer = 0;
         double answerLength = double.MaxValue;
+        int k = 0;
+        double x = 0, y = 0;
 
         // code here
+
+        Console.Write("Количество точек: ");
+        int.TryParse(Console.ReadLine(), out n);
+        while (n > 0)
+        {
+            Console.WriteLine($"Координаты точки {k += 1}: ");
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            n--;
+            if (Math.Sqrt(x * x + y * y) < answerLength)
+            {
+                answerLength = Math.Sqrt(x * x + y * y);
+                answer = k;
+            }
+        }
+        answerLength = Math.Round(answerLength, 2);
+        Console.WriteLine($"Точка {answer} на мин. расстоянии {answerLength}");
 
         // end
 
@@ -342,34 +447,82 @@ public class Program
     }
     public double Task_2_9(int n)
     {
-        double answer = double.MaxValue;
+        double answer = double.MaxValue, a = 0;
+        int k = 0;
 
         // code here
+
+        Console.Write("Количество участников: ");
+        int.TryParse(Console.ReadLine(), out n);
+        while (n > 0)
+        {
+            Console.Write($"Результат участника {k += 1}: ");
+            double.TryParse(Console.ReadLine(), out a);
+            n--;
+            if ( a < answer )
+            {
+                answer = a;
+            }
+        }
+        Console.WriteLine($"Лучший результат {answer}");
 
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
-        return answer;
+            return answer;
     }
     public int Task_2_10(int n)
     {
-        int answer = 0;
+        int answer = 0, k = 0, o1 = 0, o2 = 0, o3 = 0, o4 = 0;
 
         // code here;
+
+        Console.Write("Количество студентов: ");
+        int.TryParse(Console.ReadLine(), out n);
+        while (n > 0)
+        {
+            Console.WriteLine($"Оценки студента {k += 1}: ");
+            int.TryParse(Console.ReadLine(), out o1);
+            int.TryParse(Console.ReadLine(), out o2);
+            int.TryParse(Console.ReadLine(), out o3);
+            int.TryParse(Console.ReadLine(), out o4);
+            n--;
+            if (o1 > 3 && o2 > 3 && o3 > 3 && o4 > 3)
+                answer++;
+        }
+        Console.WriteLine(answer);
 
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
 
-        return answer;
+            return answer;
     }
     public (int, double) Task_2_11(int n)
     {
-        int answer = 0;
+        int answer = 0, k = 0, o1 = 0, o2 = 0, o3 = 0, o4 = 0;
         double avg = 0.0;
 
         // code here;
+
+        Console.Write("Количество студентов: ");
+        int.TryParse(Console.ReadLine(), out n);
+        while (n > 0)
+        {
+            Console.WriteLine($"Оценки студента {k += 1}: ");
+            int.TryParse(Console.ReadLine(), out o1);
+            int.TryParse(Console.ReadLine(), out o2);
+            int.TryParse(Console.ReadLine(), out o3);
+            int.TryParse(Console.ReadLine(), out o4);
+            n--;
+            avg += (o1 + o2 + o3 + o4)/4;
+            if (o1 == 2 | o2 == 2 | o3 == 2 | o4 == 2)
+                answer++;
+        }
+        avg = Math.Round(avg / k, 2);
+        Console.WriteLine($"Неуспевающих студентов: {answer}");
+        Console.WriteLine($"Средний балл группы: {avg}");
 
         // end
 
@@ -379,10 +532,35 @@ public class Program
     }
     public double Task_2_12(double r, int type)
     {
+        int n = 0, k = 0;
         double answer = 0;
-
+        string str;
         // code here;
 
+        Console.WriteLine("Введите фигуру, площадь которой нужно посчитать");
+        Console.Write("Выберите квадрат, круг или треугольник (равносторонний): ");
+        str = Console.ReadLine();
+        Console.Write("Введите количество чисел, для которых нужно посчитать: ");
+        int.TryParse(Console.ReadLine(), out n);
+        Console.WriteLine("Введите числа, для которых нужно посчитать: ");
+        while (n > 0)
+        {
+            n--;
+            Console.Write($"r{k += 1} = ");
+            double.TryParse(Console.ReadLine(), out r);
+            switch (str)
+            {
+                case "квадрат":
+                    answer = r * r; break;
+                case "круг":
+                    answer = Math.PI * r * r; break;
+                case "треугольник":
+                    answer = (r * r * Math.Sqrt(3)) / 4; break;
+            }
+            answer = Math.Round(answer);
+            Console.WriteLine(answer);
+        }
+        
         // end
 
         return answer;
