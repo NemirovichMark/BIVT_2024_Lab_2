@@ -29,7 +29,7 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
+        program.Task_2_6(4);
         //program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
@@ -48,7 +48,7 @@ public class Program
         //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
-        program.Task_3_10();
+        //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
@@ -309,8 +309,8 @@ public class Program
         {
             temp1 = double.Parse(Console.ReadLine());
             temp2 = double.Parse(Console.ReadLine());
-            if (temp2 > 0 && temp2 < Math.Sin(temp1))
-                answer++;
+            if ((temp1 >= 0) && (temp1 <= Math.PI) && (Math.Sin(temp1) >= temp2))
+                    answer++;
         } 
         // end
         Console.WriteLine(answer);
@@ -455,15 +455,25 @@ public class Program
     {
         double answer = 0; double polu = 0;
 
-        if (A < 0 || B < 0) return answer = 0;
+        if (A <= 0 || B <= 0) return answer = 0;
         switch (type)
         {
             case 0:
                 answer = Math.Round((A * B),2);
                 break;
             case 1:
-                answer = Math.Round(((Math.Pow(B, 2) * Math.PI - Math.Pow(A, 2) * Math.PI)), 2);
-                if ((A < 0 || B < 0) || (A > B)) return answer = 0;
+                if (A > B)
+                {
+                    answer = Math.Round((Math.PI * (A * A - B * B)), 2);
+                }
+                else if (B>A)
+                {
+                    answer = Math.Round((Math.PI * (B * B - A * A)), 2);
+                }
+                if (answer < 0)
+                {
+                    return answer = 0;
+                } 
                 break;
             case 2:
                 polu = (A + B + B) / 2;
