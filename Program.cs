@@ -31,11 +31,11 @@ public class Program
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
-        //program.Task_2_8(10);
+        program.Task_2_8(10);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        program.Task_2_12(10, 0);
+        //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -372,23 +372,24 @@ public class Program
     {
         int answer = 0;
         double answerLength = double.MaxValue;
-        double x = 0;
-        double y = 0;
+        double x;
+        double y;
         // code here
-        for (int i = 1; i <=n;i++)
+        for (int i = 1; i <= n; i++)
         {
-            
-            double.TryParse(Console.ReadLine(),out x);
-            double.TryParse(Console.ReadLine(),out y);
-            if (Math.Sqrt((x * x) + (y * y)) <= answerLength)
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if ((Math.Sqrt((x * x) + (y * y)) <= answerLength))
             {
                 answerLength = Math.Sqrt((x * x) + (y * y));
                 answer = i;
             }
-                        
+            else
+                continue;
         }
-        Console.WriteLine(answer);
-        Console.WriteLine(Math.Round(answerLength, 2));
+         Console.WriteLine(answer);
+         Console.WriteLine(Math.Round(answerLength));
+        
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
@@ -504,7 +505,6 @@ public class Program
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
-        double k, p;
 
         // code here;
         if (A <= 0 || B <= 0)
@@ -518,9 +518,8 @@ public class Program
                 Console.WriteLine("площадб прямоугольника", answer);
                 break;
             case 1:
-                p = Math.PI * A * A;
-                k = Math.PI * B * B;
-                answer = Math.Abs(p - k);
+                if(A >= B) answer = 0;
+                if(A < B) answer = Math.PI*((B*B) - (A *A));
                 Console.WriteLine("Площадь кольца", answer);
                 break;
             case 2:
@@ -572,9 +571,23 @@ public class Program
     {
         double answer = 0;
         int n = 0;
+        double ves = 0;
 
         // code here
-
+        while(true)
+        {
+            bool succes = double.TryParse(Console.ReadLine(), out ves);
+            if (succes)
+            {
+                if (ves < 30)
+                {
+                    answer += 0.2;
+                }
+            }
+            else
+                break;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -611,9 +624,22 @@ public class Program
     public int Task_3_6()
     {
         int answer = 0, n = 0;
-
+        double x, y = 0;
         // code here
-
+        while(true)
+        {
+            bool succes1 = double.TryParse(Console.ReadLine(), out x);
+            bool succes2 = double.TryParse(Console.ReadLine(),out y);
+            if(succes1&&succes2)
+            {
+                if (x >= 0&& x<=Math.PI && y>=0 && y <= Math.Sin(x))
+                {
+                    answer++;
+                }
+            }
+            else break;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
@@ -652,9 +678,22 @@ public class Program
     {
         double answer = double.MaxValue;
         int n = 0;
+        double res = 0;
 
         // code here
-
+        while(true)
+        {
+            bool succes = double.TryParse(Console.ReadLine(), out res);
+            if(succes)
+            {
+                if(res < answer)
+                {
+                    answer = res;
+                }
+            }
+            else break;
+        }
+        Console.WriteLine(answer);
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
