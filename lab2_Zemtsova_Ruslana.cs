@@ -58,20 +58,20 @@ public class Program
 
         // code here
         double r = 2;
-        //Console.WriteLine("Введите x");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
         //x = Convert.ToDouble(Console.ReadLine());
-        //Console.WriteLine("Введите y");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
         //y = Convert.ToDouble(Console.ReadLine());
         if (Math.Abs((x * x) + (y * y) - (r * r)) <= 0.001)
         {
          
             answer = true;
-            Console.WriteLine("точка лежит на окружности");
+            Console.WriteLine("ГІГ®Г·ГЄГ  Г«ГҐГ¦ГЁГІ Г­Г  Г®ГЄГ°ГіГ¦Г­Г®Г±ГІГЁ");
         }
         else
         {
             answer = false;
-             Console.WriteLine("точка не лежит на окружности");
+             Console.WriteLine("ГІГ®Г·ГЄГ  Г­ГҐ Г«ГҐГ¦ГЁГІ Г­Г  Г®ГЄГ°ГіГ¦Г­Г®Г±ГІГЁ");
         }
         // end
 
@@ -82,19 +82,19 @@ public class Program
         bool answer = false;
 
         // code here
-        //Console.WriteLine("Введите x");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
         //x = Convert.ToDouble(Console.ReadLine());
-        //Console.WriteLine("Введите y");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
         //y = Convert.ToDouble(Console.ReadLine());
         if ((y >= 0) && (y + Math.Abs(x) <= 1))
         {
             answer = true;
-            Console.WriteLine("точка принадлежит фигуре");
+            Console.WriteLine("ГІГ®Г·ГЄГ  ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ ГґГЁГЈГіГ°ГҐ");
         }
         else
         {
             answer = false;
-            Console.WriteLine("точка не принадлежит фигуре");   
+            Console.WriteLine("ГІГ®Г·ГЄГ  Г­ГҐ ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦ГЁГІ ГґГЁГЈГіГ°ГҐ");   
         }
 
         // end
@@ -106,9 +106,9 @@ public class Program
         double answer = 0;
 
         // code here
-        //Console.WriteLine("Введите a");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ a");
         //x = Convert.ToDouble(Console.ReadLine());
-        //Console.WriteLine("Введите b");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ b");
         //y = Convert.ToDouble(Console.ReadLine());
         double c;
         if (a > 0)
@@ -144,11 +144,11 @@ public class Program
         double answer = 0;
 
         // code here
-        //Console.WriteLine("Введите a");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ a");
         //a = Convert.ToDouble(Console.ReadLine());
-        //Console.WriteLine("Введите b");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ b");
         //b = Convert.ToDouble(Console.ReadLine());
-        //Console.WriteLine("Введите c");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ c");
         //c = Convert.ToDouble(Console.ReadLine());
         double z, min_ab;
         if (a < b)
@@ -178,21 +178,21 @@ public class Program
         bool answer = false;
 
         // code here
-        //Console.WriteLine("Введите r");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ r");
         //r = Convert.ToDouble(Console.ReadLine());
-        //Console.WriteLine("Введите s");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ s");
         //s = Convert.ToDouble(Console.ReadLine());
         double diagonal = Math.Sqrt(2 * s);
         double diametr = 2 * (Math.Sqrt(r / Math.PI));
         if (diagonal <= diametr)
         {
             answer = true;
-            Console.WriteLine("квадрат поместится в круг");
+            Console.WriteLine("ГЄГўГ Г¤Г°Г ГІ ГЇГ®Г¬ГҐГ±ГІГЁГІГ±Гї Гў ГЄГ°ГіГЈ");
         }
         else
         {
             answer = false;
-            Console.WriteLine("квадрат не поместится в круг");
+            Console.WriteLine("ГЄГўГ Г¤Г°Г ГІ Г­ГҐ ГЇГ®Г¬ГҐГ±ГІГЁГІГ±Гї Гў ГЄГ°ГіГЈ");
         }
         // end
 
@@ -203,21 +203,21 @@ public class Program
         bool answer = false;
 
         // code here
-        //Console.WriteLine("Введите r");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ r");
         //r = Convert.ToDouble(Console.ReadLine());
-        //Console.WriteLine("Введите s");
+        //Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ s");
         //s = Convert.ToDouble(Console.ReadLine());
         double diagonal = Math.Sqrt(s);
         double diametr = 2 * (Math.Sqrt(r / Math.PI));
         if (diametr <= diagonal)
         {
             answer = true;
-            Console.WriteLine("круг поместится в квадрате");
+            Console.WriteLine("ГЄГ°ГіГЈ ГЇГ®Г¬ГҐГ±ГІГЁГІГ±Гї Гў ГЄГўГ Г¤Г°Г ГІГҐ");
         }
         else
         {
             answer = false;
-            Console.WriteLine("круг не поместится в квадрате");
+            Console.WriteLine("ГЄГ°ГіГЈ Г­ГҐ ГЇГ®Г¬ГҐГ±ГІГЁГІГ±Гї Гў ГЄГўГ Г¤Г°Г ГІГҐ");
         }
         // end
 
@@ -318,7 +318,7 @@ public class Program
         double sr, r, s = 0;
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите рост ученика");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ Г°Г®Г±ГІ ГіГ·ГҐГ­ГЁГЄГ ");
             r = double.Parse(Console.ReadLine());
             s += r;
         }
@@ -337,16 +337,16 @@ public class Program
         double k = 0, x, y;
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите x");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
             x = double.Parse(Console.ReadLine());
-            Console.WriteLine("Введите y");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
             y = double.Parse(Console.ReadLine());
             if (((x - a) * (x - a) + (y - b) * (y - b)) <= r * r)
             {
                 k++;
             }
         }
-        Console.WriteLine($"В круг попало {k} точек из {n}");
+        Console.WriteLine($"Г‚ ГЄГ°ГіГЈ ГЇГ®ГЇГ Г«Г® {k} ГІГ®Г·ГҐГЄ ГЁГ§ {n}");
         // end
 
         return answer;
@@ -359,14 +359,14 @@ public class Program
         double k = 0, weight;
         for (double i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите вес");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ ГўГҐГ±");
             weight = double.Parse(Console.ReadLine());
             if (weight < 30)
             {
                 k += 200;
             }
         }
-        Console.WriteLine($"потребуется {k} литров молока для класса из {n} учеников");
+        Console.WriteLine($"ГЇГ®ГІГ°ГҐГЎГіГҐГІГ±Гї {k} Г«ГЁГІГ°Г®Гў Г¬Г®Г«Г®ГЄГ  Г¤Г«Гї ГЄГ«Г Г±Г±Г  ГЁГ§ {n} ГіГ·ГҐГ­ГЁГЄГ®Гў");
 
         // end
 
@@ -380,16 +380,16 @@ public class Program
         double k = 0, x, y;
         for (double i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите x");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
             x = double.Parse(Console.ReadLine());
-            Console.WriteLine("Введите y");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
             y = double.Parse(Console.ReadLine());
             if (Math.Abs(x * x + y * y) >= r1 * r1 && (Math.Abs(x * x + y * y) <= r2 * r2))
             {
                 k++;
             }
         }
-        Console.WriteLine($"в кольцо попадает {k} точек из {n}");
+        Console.WriteLine($"Гў ГЄГ®Г«ГјГ¶Г® ГЇГ®ГЇГ Г¤Г ГҐГІ {k} ГІГ®Г·ГҐГЄ ГЁГ§ {n}");
         // end
 
         return answer;
@@ -402,7 +402,7 @@ public class Program
         // code here
         for (int i = 0; i < n; i++)
         {
-            Console.WriteLine("Введите результат участника");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ Г°ГҐГ§ГіГ«ГјГІГ ГІ ГіГ·Г Г±ГІГ­ГЁГЄГ ");
             res = double.Parse(Console.ReadLine());
             if (res <= norm)
             {
@@ -423,9 +423,9 @@ public class Program
         double x, y;
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите x");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
             x = double.Parse(Console.ReadLine());
-            Console.WriteLine("Введите y");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
             y = double.Parse(Console.ReadLine());
             if ((x >= 0) && (x <= Math.PI) && (y <= Math.Sin(x)))
             {
@@ -446,30 +446,30 @@ public class Program
         double x, y;
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите x");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
             x = double.Parse(Console.ReadLine());
-            Console.WriteLine("Введите y");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
             y = double.Parse(Console.ReadLine());
             if (x > 0 && y > 0)
             {
-                Console.WriteLine("точка лежит в 1-м квадранте");
+                Console.WriteLine("ГІГ®Г·ГЄГ  Г«ГҐГ¦ГЁГІ Гў 1-Г¬ ГЄГўГ Г¤Г°Г Г­ГІГҐ");
                 answer1++;
             }
             if (x < 0 && y > 0)
             {
-                Console.WriteLine("точка лежит вo 2-м квадранте");
+                Console.WriteLine("ГІГ®Г·ГЄГ  Г«ГҐГ¦ГЁГІ Гўo 2-Г¬ ГЄГўГ Г¤Г°Г Г­ГІГҐ");
             }
             if (x < 0 && y < 0)
             {
-                Console.WriteLine("точка лежит в 3-м квадранте");
+                Console.WriteLine("ГІГ®Г·ГЄГ  Г«ГҐГ¦ГЁГІ Гў 3-Г¬ ГЄГўГ Г¤Г°Г Г­ГІГҐ");
                 answer3++;
             }
             if (x > 0 && y < 0)
             {
-                Console.WriteLine("точка лежит в 4-м квадранте");
+                Console.WriteLine("ГІГ®Г·ГЄГ  Г«ГҐГ¦ГЁГІ Гў 4-Г¬ ГЄГўГ Г¤Г°Г Г­ГІГҐ");
             }
         }
-        Console.WriteLine($"количество точек в 1-м квадранте = {answer1}, количество точек в 3-м квадранте = {answer3}");
+        Console.WriteLine($"ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®Г·ГҐГЄ Гў 1-Г¬ ГЄГўГ Г¤Г°Г Г­ГІГҐ = {answer1}, ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГІГ®Г·ГҐГЄ Гў 3-Г¬ ГЄГўГ Г¤Г°Г Г­ГІГҐ = {answer3}");
         // end
 
         return (answer1, answer3);
@@ -483,9 +483,9 @@ public class Program
         // code here
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите x");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
             x = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Введите y");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
             y = Convert.ToDouble(Console.ReadLine());
 
             double l = Math.Sqrt(x * x + y * y);
@@ -495,7 +495,7 @@ public class Program
                 answerLength = l;
             }
         }
-        Console.WriteLine($"номер точки = {answer}, величина расстояния = {answerLength:F2}");
+        Console.WriteLine($"Г­Г®Г¬ГҐГ° ГІГ®Г·ГЄГЁ = {answer}, ГўГҐГ«ГЁГ·ГЁГ­Г  Г°Г Г±Г±ГІГ®ГїГ­ГЁГї = {answerLength:F2}");
         // end
 
         return (answer, answerLength);
@@ -508,14 +508,14 @@ public class Program
         double res;
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите результат");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ Г°ГҐГ§ГіГ«ГјГІГ ГІ");
             res = Convert.ToDouble(Console.ReadLine());
             if (res < answer)
             {
                 answer = res;
             }
         }
-        Console.WriteLine($"лучшый результат = {answer}");
+        Console.WriteLine($"Г«ГіГ·ГёГ»Г© Г°ГҐГ§ГіГ«ГјГІГ ГІ = {answer}");
         // end
 
         return answer;
@@ -528,7 +528,7 @@ public class Program
         double mark1 = 0, mark2 = 0, mark3 = 0, mark4 = 0;
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите оценки");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ Г®Г¶ГҐГ­ГЄГЁ");
             mark1 = double.Parse(Console.ReadLine());
             mark2 = double.Parse(Console.ReadLine());
             mark3 = double.Parse(Console.ReadLine());
@@ -539,7 +539,7 @@ public class Program
             }
 
         }
-        Console.WriteLine($"число студентов, не имеющих «2» и «3» = {answer}");
+        Console.WriteLine($"Г·ГЁГ±Г«Г® Г±ГІГіГ¤ГҐГ­ГІГ®Гў, Г­ГҐ ГЁГ¬ГҐГѕГ№ГЁГµ В«2В» ГЁ В«3В» = {answer}");
         // end
 
         return answer;
@@ -554,7 +554,7 @@ public class Program
         double summa = 0, k = 0;
         for (int i = 1; i <= n; i++)
         {
-            Console.WriteLine("Введите оценки");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ Г®Г¶ГҐГ­ГЄГЁ");
             mark1 = double.Parse(Console.ReadLine());
             mark2 = double.Parse(Console.ReadLine());
             mark3 = double.Parse(Console.ReadLine());
@@ -567,7 +567,7 @@ public class Program
             k += 4;
         }
         avg = summa / k;
-        Console.WriteLine($"количество неуспевающих студентов = {answer},  средний балл группы = {avg}");
+        Console.WriteLine($"ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г­ГҐГіГ±ГЇГҐГўГ ГѕГ№ГЁГµ Г±ГІГіГ¤ГҐГ­ГІГ®Гў = {answer},  Г±Г°ГҐГ¤Г­ГЁГ© ГЎГ Г«Г« ГЈГ°ГіГЇГЇГ» = {avg}");
         // end
 
         return (answer, avg);
@@ -584,15 +584,15 @@ public class Program
             {
                 case 0:
                     answer = Math.Round(r * r, 2);
-                    Console.WriteLine("площадь квадрата");
+                    Console.WriteLine("ГЇГ«Г®Г№Г Г¤Гј ГЄГўГ Г¤Г°Г ГІГ ");
                     break;
                 case 1:
                     answer = Math.Round(Math.PI * r * r, 2);
-                    Console.WriteLine("площадь круга");
+                    Console.WriteLine("ГЇГ«Г®Г№Г Г¤Гј ГЄГ°ГіГЈГ ");
                     break;
                 case 2:
                     answer = Math.Round((Math.Sqrt(3) * r * r) / 4, 2);
-                    Console.WriteLine("площадь равностороннего треугольника");
+                    Console.WriteLine("ГЇГ«Г®Г№Г Г¤Гј Г°Г ГўГ­Г®Г±ГІГ®Г°Г®Г­Г­ГҐГЈГ® ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ ");
                     break;
             }
         }
@@ -616,15 +616,15 @@ public class Program
             {
                 case 0:
                     answer = A * B;
-                    Console.WriteLine("площадь прямоугольника");
+                    Console.WriteLine("ГЇГ«Г®Г№Г Г¤Гј ГЇГ°ГїГ¬Г®ГіГЈГ®Г«ГјГ­ГЁГЄГ ");
                     break;
                 case 1:
                     answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
-                    Console.WriteLine("площадь кольца");
+                    Console.WriteLine("ГЇГ«Г®Г№Г Г¤Гј ГЄГ®Г«ГјГ¶Г ");
                     break;
                 case 2:
                     answer = Math.Sqrt(B * B - A * A / 4) * A / 2;
-                    Console.WriteLine("площадь равнобедренного треугольника");
+                    Console.WriteLine("ГЇГ«Г®Г№Г Г¤Гј Г°Г ГўГ­Г®ГЎГҐГ¤Г°ГҐГ­Г­Г®ГЈГ® ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ ");
                     break;
             }
         }
@@ -658,13 +658,13 @@ public class Program
         double k = 0, x, y;
         for (int i = 1; ; i++)
         {
-            Console.WriteLine("Введите x");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
             stop = !double.TryParse(Console.ReadLine(), out x);
             if (stop)
             {
                 break;
             }
-            Console.WriteLine("Введите y");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
             stop = !double.TryParse(Console.ReadLine(), out y);
             if (stop)
             {
@@ -675,7 +675,7 @@ public class Program
                 k++;
             }
         }
-        Console.WriteLine($"В круг попало {k} точек");
+        Console.WriteLine($"Г‚ ГЄГ°ГіГЈ ГЇГ®ГЇГ Г«Г® {k} ГІГ®Г·ГҐГЄ");
         // end
 
         return answer;
@@ -708,9 +708,9 @@ public class Program
         double res = 0, k = 0;
         
         // code here
-        for (int i = 0; ; i++)
+        for (int i = 1; ; i++)
         {
-            Console.WriteLine("Введите результат участника");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ Г°ГҐГ§ГіГ«ГјГІГ ГІ ГіГ·Г Г±ГІГ­ГЁГЄГ ");
             stop = !double.TryParse(Console.ReadLine(), out res);
             if (stop)
             {
@@ -756,13 +756,13 @@ public class Program
         // code here
         for (int i = 1; ; i++)
         {
-            Console.WriteLine("Введите x");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ x");
             stop = !double.TryParse(Console.ReadLine(), out x);
             if (stop)
             {
                 break;
             }
-            Console.WriteLine("Введите y");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ y");
             stop = !double.TryParse(Console.ReadLine(), out y);
             if (stop)
             {
@@ -776,7 +776,7 @@ public class Program
                 answerLength = l;
             }
         }
-        Console.WriteLine($"номер точки = {answer}, величина расстояния = {answerLength:F2}");
+        Console.WriteLine($"Г­Г®Г¬ГҐГ° ГІГ®Г·ГЄГЁ = {answer}, ГўГҐГ«ГЁГ·ГЁГ­Г  Г°Г Г±Г±ГІГ®ГїГ­ГЁГї = {answerLength:F2}");
         // end
 
         return (answer, answerLength);
@@ -813,7 +813,7 @@ public class Program
         double summa = 0, k = 0;
         for (int i = 1; ; i++)
         {
-            Console.WriteLine("Введите оценки");
+            Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ Г®Г¶ГҐГ­ГЄГЁ");
             stop = !double.TryParse(Console.ReadLine(), out mark1);
             stop = !double.TryParse(Console.ReadLine(), out mark2);
             stop = !double.TryParse(Console.ReadLine(), out mark3);
@@ -830,7 +830,7 @@ public class Program
             k += 4;
         }
         avg = summa / k;
-        Console.WriteLine($"количество неуспевающих студентов = {answer},  средний балл группы = {avg}");
+        Console.WriteLine($"ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г­ГҐГіГ±ГЇГҐГўГ ГѕГ№ГЁГµ Г±ГІГіГ¤ГҐГ­ГІГ®Гў = {answer},  Г±Г°ГҐГ¤Г­ГЁГ© ГЎГ Г«Г« ГЈГ°ГіГЇГЇГ» = {avg}");
         // end
 
         return (answer, avg);
