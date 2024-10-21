@@ -310,7 +310,7 @@ public class Program
         // code here
         double moloko = 0;
         double ves = 0.0;
-        for (int i = 0; i<n; i++)
+        for (int i = 0; i<=n; i++)
         {
             ves = double.Parse(Console.ReadLine());
             if (ves < 30)
@@ -399,22 +399,22 @@ public class Program
             y = double.Parse(Console.ReadLine());
             if ((x>0) && (y>0))
             {
-                //Console.WriteLine("1й квадрант");
+                //Console.WriteLine("1Г© ГЄГўГ Г¤Г°Г Г­ГІ");
                 answer1++;
             }
             else if ((x>0) && (y<0))
             {
-                //Console.WriteLine("4й квадрант");
+                //Console.WriteLine("4Г© ГЄГўГ Г¤Г°Г Г­ГІ");
                 continue;
             }
             else if ((x<0) && (y<0))
             {
-                //Console.WriteLine("3й квадрант");
+                //Console.WriteLine("3Г© ГЄГўГ Г¤Г°Г Г­ГІ");
                 answer3++;
             }
             else if ((x<0) && (y>0))
             {
-                //onsole.WriteLine("2й квадрант");
+                //onsole.WriteLine("2Г© ГЄГўГ Г¤Г°Г Г­ГІ");
                 continue;
             }
         }
@@ -520,7 +520,7 @@ public class Program
         answer = dvoichnik;
         Console.WriteLine(answer);
         Console.WriteLine(avg);
-        // хотябы 1 двойку получил - неуспевающий
+        // ГµГ®ГІГїГЎГ» 1 Г¤ГўГ®Г©ГЄГі ГЇГ®Г«ГіГ·ГЁГ« - Г­ГҐГіГ±ГЇГҐГўГ ГѕГ№ГЁГ©
         // end
 
         return (answer, avg);
@@ -547,7 +547,7 @@ public class Program
                 //Console.WriteLine(answer);
                 break;
             default:
-                //Console.WriteLine("Неверный выбор");
+                //Console.WriteLine("ГЌГҐГўГҐГ°Г­Г»Г© ГўГ»ГЎГ®Г°");
                 break;
         }
 
@@ -627,7 +627,7 @@ public class Program
         int answer = 0;
         double x = 0, y = 0;
         // code here
-        Console.WriteLine("Введите stop чтобы остановить прграмму");
+        Console.WriteLine("Г‚ГўГҐГ¤ГЁГІГҐ stop Г·ГІГ®ГЎГ» Г®Г±ГІГ Г­Г®ГўГЁГІГј ГЇГ°ГЈГ°Г Г¬Г¬Гі");
         while (true)
         {
             string s = Console.ReadLine();
