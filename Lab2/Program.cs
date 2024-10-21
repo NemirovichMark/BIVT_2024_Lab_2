@@ -57,7 +57,12 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double r=2;
+        if (Math.Abs(x*x + y*y - r*r) <= 0.1*0.1*0.1)
+        {
+            answer = true;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -67,7 +72,11 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (y>=0 && y+Math.Abs(x)<=1)
+        {
+            answer = true;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -77,7 +86,19 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double c=0;
+        if (a > 0)
+        {
+            if (a > b) { c = a; }
+            else { c = b; }
+        }
+        else
+        {
+            if (a < b) { c = a; }
+            else { c = b; }
+        }
+        answer = c;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -87,7 +108,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double min = 0;
+        if (a < b) { min = a; }
+        else { min = b; }
+        if (c > min) { answer = c; }
+        else { answer = min; }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -97,7 +123,11 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double R = 0, D = 0;
+        R = Math.Sqrt(r / Math.PI);
+        D = Math.Sqrt(s * 2)/2;
+        if (D <= R) { answet = true; }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -107,7 +137,11 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double R = 0, D = 0;
+        R = Math.Sqrt(r / Math.PI);
+        D = Math.Sqrt(s * 2)/2;
+        if (R <= D) { answet = true; }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -117,7 +151,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) > 1) { answer = 1; }
+        else { answer = Math.Abs(x); }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -127,7 +163,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) >= 1) { answer = 0; }
+        else { answer = x * x - 1; }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -137,7 +175,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) { answer = 0; }
+        if (x > 0) { answer = 1; }
+        else { answer = 1 + x; }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -147,7 +188,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) { answer = 1; }
+        if (x > 1) { answer = -1; }
+        else { answer = -x; }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -160,7 +204,16 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double l;
+        int i = n;
+        while (i > 0)
+        {
+            double.TryParse(Console.ReadLine(), out l);
+            answer += l;
+            i -= 1;
+        }
+        answer /= n;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -170,7 +223,15 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double x = 0, y = 0;
+        while (n>0)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if (((x - a) * (x - a)) + ((y - b) * (y - b)) <= r * r) { answer++; }
+            n -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -180,7 +241,15 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double s = 0, m=0;
+        while (n>0)
+        {
+            double.TryParse(Console.ReadLine(), out m);
+            if (m < 30)
+                answer += 0.3;
+            n -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -190,7 +259,15 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double x = 0, y = 0;
+        while (n > 0)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if (((x * x + y *y) >= r1 * r1)&&((x*x+y*y) <= r2 * r2)) { answer++; }
+            n -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -200,7 +277,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double s = 0;
+        while (n>0)
+        {
+            double.TryParse(Console.ReadLine(), out s);
+            if (s < norm) { answer++; }
+            n -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -210,7 +294,15 @@ public class Program
         int answer = 0;
 
         // code here
-
+        double x = 0, y = 0;
+        while (n>0)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y) { answer++; }
+            n -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -221,7 +313,17 @@ public class Program
         int answer3 = 0;
 
         // code here
-
+        double x = 0, y = 0;
+        while ( (n>0))
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if ((x > 0) && (y > 0)) { answer1++; }
+            if((x < 0) && (y < 0)) { answer3++; }
+            n_ = 1;
+        }
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         return (answer1, answer3);
@@ -232,7 +334,19 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-
+        double x = 0, y = 0;
+        for (int i =1; i<=n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+            if ((x*x+y*y)<(answerLength*answerLength))
+            {
+                answer = i;
+                answerLength = Math.Sqrt(x * x + y * y);
+            }
+        }
+        Console.WriteLine(answer1);
+        Console.WriteLine(Math.Round(answerLength, 2));
         // end
 
         return (answer, answerLength);
@@ -242,7 +356,14 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-
+        double t = 0;
+        while (n>0)
+        {
+            double.TryParse(Console.ReadLine(), out t);
+            if (t < answer) { answer = t; }
+            n -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -252,7 +373,17 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
+        while (n>0)
+        {
+            double.TryParse(Console.ReadLine(), out m1);
+            double.TryParse(Console.ReadLine(), out m2);
+            double.TryParse(Console.ReadLine(), out m3);
+            double.TryParse(Console.ReadLine(), out m4);
+            if ((m1 == 4 || m1 == 5) && (m2 == 4 || m2 == 5) && (m3 == 4 || m3 == 5) && (m4 == 4 || m4 == 5)) { answer++; }
+            n -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -263,7 +394,18 @@ public class Program
         double avg = 0.0;
 
         // code here;
-
+        int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
+        for (int i=1; i<=n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out m1);
+            double.TryParse(Console.ReadLine(), out m2);
+            double.TryParse(Console.ReadLine(), out m3);
+            double.TryParse(Console.ReadLine(), out m4);
+            if (m1 == 2 || m2 == 2 || m3 == 2 || m3 == 2) { answer++; }
+            avg += m1 + m2 + m3 + m4;
+        }
+        avg /= (n * 4);
+        Console.WriteLine(answer, avg);
         // end
 
         return (answer, avg);
@@ -273,7 +415,20 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (r <= 0) return 0;
+        switch (type)
+        {
+            case 0:
+                answer = r * r;
+                break;
+            case 1:
+                answer = Math.PI * r * r;
+                break;
+            case 2:
+                answer = (r * r * Math.Sqrt(3))/4;
+                break;
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -283,7 +438,20 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if ((A <= 0) || (B <= 0)) return 0;
+        switch (type)
+        {
+            case 0:
+                answer = A * B;
+                break;
+            case 1:
+                answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
+                break;
+            case 2:
+                answer = (A * Math.Sqrt(4 * B * B - A * A)) / 4;
+                break;
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -297,7 +465,21 @@ public class Program
         int n = 0;
 
         // code here
-
+        string CHl = "";
+        double l;
+        while (true)
+        {
+            CHl = Console.ReadLine();
+            if (CHl != "STOP")
+            {
+                l = Convert.ToDouble(CHl);
+                answer += l;
+                n += 1;
+            }
+            else break;
+        }
+        answer /= n;
+        Console.WriteLine(answer);
         // end
 
         // answer should be equal to the task_2_1 answer
@@ -329,7 +511,25 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        string CHx = "", CHy = "";
+        double x, y;
+        while (true)
+        {
+            CHx = ConsoleReadLine();
+            if (CHx != "STOP")
+            {
+                x = Convert.ToDouble(CHx);
+                CHy = ConsoleReadLine();
+                if (CHy != "STOP")
+                {
+                    y = Convert.ToDouble(CHy);
+                }
+                else break;
+            }
+            else break;
+            if (((x * x + y * y) >= r1 * r1) && ((x * x + y * y) <= r2 * r2)) { answer++; }
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -359,7 +559,27 @@ public class Program
         int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
-
+        string CHx = "", CHy = "";
+        double x, y;
+        while (true)
+        {
+            CHx = ConsoleReadLine();
+            if (CHx != "STOP")
+            {
+                x = Convert.ToDouble(CHx);
+                CHy = ConsoleReadLine();
+                if (CHy != "STOP")
+                {
+                    y = Convert.ToDouble(CHy);
+                }
+                else break;
+            }
+            else break;
+            if ((x > 0) && (y > 0)) { answer1++; }
+            if ((x < 0) && (y < 0)) { answer3++; }
+        }
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         return (answer1, answer3);
@@ -391,7 +611,37 @@ public class Program
         int answer = 0, n = 0;
 
         // code here;
-
+        string CH1 = "", CH2 = "", CH3 = "", CH4 = "";
+        int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
+        while (true)
+        {
+            CHx = ConsoleReadLine();
+            if (CH1 != "STOP")
+            {
+                m1 = Convert.ToDouble(CH1);
+                CH2 = ConsoleReadLine();
+                if (CH2 != "STOP")
+                {
+                    m2 = Convert.ToDouble(CH2);
+                    CH3 = ConsoleReadLine();
+                    if (CH3 != "STOP")
+                    {
+                        m3 = Convert.ToDouble(CH3);
+                        CH4 = ConsoleReadLine();
+                        if (CH4 != "STOP")
+                        {
+                            m4 = Convert.ToDouble(CH4);
+                        }
+                        else break;
+                    }
+                    else break;
+                }
+                else break;
+            }
+            else break;
+            if ((m1 == 4 || m1 == 5) && (m2 == 4 || m2 == 5) && (m3 == 4 || m3 == 5) && (m4 == 4 || m4 == 5)) { answer++; }
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
