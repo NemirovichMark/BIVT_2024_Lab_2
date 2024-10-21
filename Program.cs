@@ -31,7 +31,7 @@ public class Program
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
-        program.Task_2_8(10);
+        //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
@@ -379,16 +379,16 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if ((Math.Sqrt((x * x) + (y * y)) <= answerLength))
+            if (Math.Sqrt(x * x + y * y) < answerLength)
             {
                 answerLength = Math.Sqrt((x * x) + (y * y));
                 answer = i;
             }
-            else
-                continue;
+         
         }
+
          Console.WriteLine(answer);
-         Console.WriteLine(Math.Round(answerLength));
+         Console.WriteLine(Math.Round(answerLength,2));
         
         // end
 
@@ -576,7 +576,8 @@ public class Program
         // code here
         while(true)
         {
-            bool succes = double.TryParse(Console.ReadLine(), out ves);
+            string input = Console.ReadLine();
+            bool succes = double.TryParse(input, out ves);
             if (succes)
             {
                 if (ves < 30)
@@ -628,8 +629,10 @@ public class Program
         // code here
         while(true)
         {
-            bool succes1 = double.TryParse(Console.ReadLine(), out x);
-            bool succes2 = double.TryParse(Console.ReadLine(),out y);
+            string input1 = Console.ReadLine();
+            string input2 = Console.ReadLine();
+            bool succes1 = double.TryParse(input1, out x);
+            bool succes2 = double.TryParse(input2,out y);
             if(succes1&&succes2)
             {
                 if (x >= 0&& x<=Math.PI && y>=0 && y <= Math.Sin(x))
@@ -683,7 +686,8 @@ public class Program
         // code here
         while(true)
         {
-            bool succes = double.TryParse(Console.ReadLine(), out res);
+            string input = Console.ReadLine();
+            bool succes = double.TryParse(input, out res);
             if(succes)
             {
                 if(res < answer)
