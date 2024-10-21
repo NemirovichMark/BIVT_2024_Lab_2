@@ -489,8 +489,7 @@ public class Program
                 Console.WriteLine("площадь прямоугольника", answer);
                 break;
             case 1:
-                if (A >= B) answer = 0;
-                if (A < B) answer = Math.PI * (B * B - A * A);
+                answer = Math.Abs(Math.PI * (B * B - A * A));
                 Console.WriteLine("площаль кольца", answer);
                 break;
             case 2:
