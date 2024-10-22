@@ -33,8 +33,8 @@ public class Program
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        program.Task_2_12(10, 0);
-        //program.Task_2_13(10, 5, 0);
+        //program.Task_2_12(10, 0);
+        program.Task_2_13();
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -565,13 +565,36 @@ public class Program
 
         return answer;
     }
-    public double Task_2_13(double A, double B, int type)
+    public double Task_2_13()
     {
-        double answer = 0;
+        double answer = 0; // = вася/петя
+        double x = 5;      // = на х процентов меньше васи(500)
+        double A = 4;      // = всего лаб
+        double B = 20;     // = кол-во заданий *А/к
+        //int k = 0;       // = номер лабы
+        //int n = 0;       // = номер задания
+        double S = 0;      // = вычтенные баллы
+        double Sn = 0;     // = погрешности
+        double Spred = 1;  // = погрешность в пред. задании
 
-        // code here;
+        for (double k = 1; k <= A; k++) 
+        {
+            for (double n = 1; n <= Math.Ceiling(B*k/A); n++)
+            {
+                if (n == 1)
+                    Sn = 0; Spred = 1;
+                Sn += Spred * k / n;
+                Spred = Sn;
+                if (n == Math.Ceiling(B * k / A))
+                    S += Sn;
+                //Console.WriteLine($"k={k}   n={n}   Sn={Sn}   Spred={Spred}   S={S}");
+            }
+        }
 
-        // end
+        answer = Math.Round(500/((500 - S) - ((500 - S) * x / 100)), 2);
+        Console.WriteLine($"answer = {answer}");
+
+
 
         return answer;
     }
