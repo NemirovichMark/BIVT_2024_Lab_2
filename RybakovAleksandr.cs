@@ -32,7 +32,7 @@ public class Program
         //program.Task_2_8(3);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        program.Task_2_11(8);
+        //program.Task_2_11(8);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -47,7 +47,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        //program.Task_3_11();
+        program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -418,7 +418,14 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (r < 0) return 0;
+        switch(type)
+        {
+            case 0: answer = r * r; break;
+            case 1: answer = r * r * Math.PI; break;
+            case 2: answer = r * r * Math.Sqrt(3) / 4; break;
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -428,7 +435,14 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (A < 0 || B < 0 || (B + B) < A) return 0;
+        switch(type)
+        {
+            case 0: answer = A * B; break;
+            case 1: answer = Math.Abs(A * A * Math.PI - B * B * Math.PI); break;
+            case 2: answer = 0.5 * A * Math.Sqrt(B * B - 0.25 * A * A); break;
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -453,7 +467,19 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        double x, y;
+        string s1, s2;
+        while (true)
+        {
+            s1 = Console.ReadLine();
+            if (s1 == "") break;
+            s2 = Console.ReadLine();
+            double.TryParse(s1, out x);
+            double.TryParse(s2, out y);
+            if (r * r >= ((a - x) * (a - x) + (b - y) * (b - y)))
+                answer++;
+        }
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -484,7 +510,17 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        double s;
+        string s1;
+        while (true)
+        {
+            s1 = System.Console.ReadLine();
+            if (s1 == "") break;
+            double.TryParse(s1, out s);
+            if (s <= norm)
+                answer++;
+        }
+        System.Console.WriteLine(answer);
         // end
 
         return answer;
@@ -515,7 +551,26 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-
+        double x, y;
+        string s1, s2;
+        int c = 0;
+        while (true)
+        {
+            s1 = Console.ReadLine();
+            if (s1 == "") break;
+            s2 = Console.ReadLine();
+            c++;
+            double.TryParse(s1, out x);
+            double.TryParse(s2, out y); 
+            if (answerLength * answerLength > (x * x + y * y))
+            {
+                answerLength = Math.Sqrt(x * x + y * y);
+                answer = c;
+            }
+        }
+        answerLength = Math.Round(answerLength, 2);
+        System.Console.WriteLine(answer);
+        System.Console.WriteLine(answerLength);
         // end
 
         return (answer, answerLength);
@@ -547,7 +602,27 @@ public class Program
         double avg = 0.0;
 
         // code here;
-
+        double mark1, mark2, mark3, mark4, c = 0;
+        string s1, s2, s3, s4;
+        while (true)
+        {
+            s1 = Console.ReadLine();
+            if (s1 == "") break;
+            s2 = Console.ReadLine();
+            s3 = Console.ReadLine();
+            s4 = Console.ReadLine();
+            double.TryParse(s1, out mark1);
+            double.TryParse(s2, out mark2);
+            double.TryParse(s3, out mark3);
+            double.TryParse(s4, out mark4);
+            if (mark1 < 3 || mark2 < 3 || mark3 < 3 || mark4 < 3)
+                answer++;
+            avg += mark1 + mark2 + mark3 + mark4;
+            c += 4;
+        }
+        avg /= c;
+        System.Console.WriteLine(answer);
+        System.Console.WriteLine(avg);
         // end
 
         return (answer, avg);
