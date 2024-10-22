@@ -34,7 +34,7 @@ public class Program
         //program.Task_2_10(3);
         //program.Task_2_11(10);
         //program.Task_2_12(10, 2);
-        //program.Task_2_13(10, 5, 0);
+        program.Task_2_13(3, 2.5, 1);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -466,8 +466,8 @@ public class Program
             case 1:
                 if (A > B)
                 {
-                    //answer = Math.PI * A * A - Math.PI * B * B;
-                    answer = 0;
+                    answer = Math.PI * A * A - Math.PI * B * B;
+                    //answer = 0;
                     break;
                 }
                 else
