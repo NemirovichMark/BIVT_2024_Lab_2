@@ -580,13 +580,13 @@ public class Program
             {
                 switch (type)
                 {
-                    case 1:
+                    case 0:
                         answer = Math.Round(r * r, 2);
                         break;
-                    case 2:
+                    case 1:
                         answer = Math.Round(Math.PI * r * r, 2);
                         break;
-                    case 3:
+                    case 2:
                         answer = Math.Round((Math.Sqrt(3) / 4) * r * r, 2);
                         break;
                     default:
@@ -613,13 +613,13 @@ public class Program
             {
                 switch (type)
                 {
-                    case 1:
+                    case 0:
                         answer = Math.Round(A * B, 2);
                         break;
-                    case 2:
+                    case 1:
                         answer = Math.Round(Math.Abs(Math.PI * A * A - Math.PI * B * B), 2);
                         break;
-                    case 3:
+                    case 2:
                         answer = Math.Round((A / 4) * (Math.Sqrt(4 * B * B - A * A)), 2);
                         break;
                     default:
