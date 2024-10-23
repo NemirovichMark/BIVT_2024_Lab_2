@@ -445,81 +445,52 @@ public class Program
         double answer = 0;
 
         // code here;
-        Console.WriteLine("Введите n");
-        int n = int.Parse(Console.ReadLine());
-        for (int i = 1; i <= n; i++)
+        if (r < 0) return 0;
+        switch (type)
         {
-            Console.WriteLine("Выберите фигуру для расчета площади:");
-            Console.WriteLine("1 - Квадрат");
-            Console.WriteLine("2 - Круг");
-            Console.WriteLine("3 - Равносторонний треугольник");
-            type = int.Parse(Console.ReadLine());
-            switch (type)
-            {
-                case 1: 
-                    answer = Math.Pow(r, 2);
-                    break;
+            case 0:
+                answer = r * r;
+                break;
 
-                case 2: 
-                    answer = Math.PI * Math.Pow(r, 2);
-                    answer = Math.Round(answer, 2);
-                    break;
+            case 1:
+                answer = Math.PI * r * r;
+                break;
 
-                case 3:
-                    answer = (Math.Sqrt(3) / 4) * Math.Pow(r, 2);
-                    answer = Math.Round(answer, 2);
-                    break;
-                default:
-                    Console.WriteLine("Неверный выбор. Выберите 1, 2 или 3");
-                    break;
-
-            }
-            // end
+            case 2:
+                answer = (r * r * Math.Sqrt(3)) / 4;
+                break;
+            default: return 0;
         }
-            return answer;
+        answer = Math.Round(answer, 2);
+        // end
+
+        return answer;
     }
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
 
         // code here;
-        Console.WriteLine("Введите n");
-        int n = int.Parse(Console.ReadLine());
-        for (int i = 1; i <= n; i++)
+        if ((A <= 0) || (B <= 0)) return 0;
+        switch (type)
         {
-            Console.WriteLine("Выберите фигуру для расчета площади:");
-            Console.WriteLine("1 - Прямоугольник");
-            Console.WriteLine("2 - Кольцо");
-            Console.WriteLine("3 - Равнобедренный треугольник");
-            type = int.Parse(Console.ReadLine());
-            switch (type)
-            {
-                case 1:
-                    answer = A * B;
-                    break;
+            case 0:
+                answer = A * B;
+                break;
 
-                case 2:
-                    if (A > B)
-                    {
-                        answer = Math.PI * (Math.Pow(A, 2) - Math.Pow(B, 2));
-                    }
-                    else
-                    {
-                        answer = Math.PI * (Math.Pow(B, 2) - Math.Pow(A, 2));
-                    }
-                    break;
+            case 1:
+                answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
+                break;
 
-                case 3:
-                    answer = (B * (Math.Sqrt(Math.Pow(A, 2) - Math.Pow(B / 2, 2)))) / 2;
-                    break;
+            case 2:
+                answer = (A * Math.Sqrt(4 * B * B - A * A))/4;
+                break;
+            default: return 0;
+        }
+        answer = Math.Round(answer, 2);
+        // end
 
-                default:
-                    Console.WriteLine("Неверный выбор, выберите 1, 2 или 3");
-                    break;
-            }
-            // end
-
-        }   return answer;
+        return answer;
     }
     #endregion
 
