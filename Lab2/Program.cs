@@ -139,7 +139,7 @@ public class Program
         // code here
         double R = 0, D = 0;
         R = Math.Sqrt(r / Math.PI);
-        D = Math.Sqrt(s * 2)/2;
+        D = Math.Sqrt(s)/2;
         if (R <= D) { answer = true; }
         Console.WriteLine(answer);
         // end
@@ -174,9 +174,9 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x <= -1) { answer = 0; }
-        if (x > 0) { answer = 1; }
-        else { answer = 1 + x; }
+        if (x <= -1) return 0;
+        else if (x > 0) return 1;
+        else return 1 + x;
         Console.WriteLine(answer);
         // end
 
@@ -187,9 +187,9 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x <= -1) { answer = 1; }
-        if (x > 1) { answer = -1; }
-        else { answer = -x; }
+        if (x <= -1) return 1;
+        else if (x > 1) return -1;
+        else return -x;
         Console.WriteLine(answer);
         // end
 
@@ -298,7 +298,7 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y) { answer++; }
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y>=0) { answer++; }
             n -= 1;
         }
         Console.WriteLine(answer);
@@ -317,9 +317,25 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if ((x > 0) && (y > 0)) { answer1++; }
-            if((x < 0) && (y < 0)) { answer3++; }
-            n = 1;
+            if ((x > 0) && (y > 0))
+            {
+                Console.WriteLine("1");
+                answer1++;
+            }
+            if ((x<0) && (y>0))
+            {
+                Console.WriteLine("2");
+            }
+            if((x < 0) && (y < 0))
+            {
+                Console.WriteLine("3");
+                answer3++;
+            }
+            if ((x>0) && (y<0))
+            {
+                Console.WriteLine("4");
+            }
+            n-= 1;
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
