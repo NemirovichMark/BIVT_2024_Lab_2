@@ -126,7 +126,7 @@ public class Program
         double R = 0, D = 0;
         R = Math.Sqrt(r / Math.PI);
         D = Math.Sqrt(s * 2)/2;
-        if (D <= R) { answer = true; }
+        if (D <= R) { answet = true; }
         Console.WriteLine(answer);
         // end
 
@@ -139,11 +139,12 @@ public class Program
         // code here
         double R = 0, D = 0;
         R = Math.Sqrt(r / Math.PI);
-        D = Math.Sqrt(s)/2;
-        if (R <= D) { answer = true; }
+        D = Math.Sqrt(s * 2)/2;
+        if (R <= D) { answet = true; }
         Console.WriteLine(answer);
         // end
-                return answer;
+
+        return answer;
     }
     public double Task_1_7(double x)
     {
@@ -174,9 +175,9 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x <= -1) return 0;
-        else if (x > 0) return 1;
-        else return 1 + x;
+        if (x <= -1) { answer = 0; }
+        if (x > 0) { answer = 1; }
+        else { answer = 1 + x; }
         Console.WriteLine(answer);
         // end
 
@@ -187,9 +188,9 @@ public class Program
         double answer = 0;
 
         // code here
-        if (x <= -1) return 1;
-        else if (x > 1) return -1;
-        else return -x;
+        if (x <= -1) { answer = 1; }
+        if (x > 1) { answer = -1; }
+        else { answer = -x; }
         Console.WriteLine(answer);
         // end
 
@@ -298,7 +299,7 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y>=0) { answer++; }
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y) { answer++; }
             n -= 1;
         }
         Console.WriteLine(answer);
@@ -317,25 +318,9 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if ((x > 0) && (y > 0))
-            {
-                Console.WriteLine("1");
-                answer1++;
-            }
-            if ((x<0) && (y>0))
-            {
-                Console.WriteLine("2");
-            }
-            if((x < 0) && (y < 0))
-            {
-                Console.WriteLine("3");
-                answer3++;
-            }
-            if ((x>0) && (y<0))
-            {
-                Console.WriteLine("4");
-            }
-            n-= 1;
+            if ((x > 0) && (y > 0)) { answer1++; }
+            if((x < 0) && (y < 0)) { answer3++; }
+            n_ = 1;
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
@@ -360,7 +345,7 @@ public class Program
                 answerLength = Math.Sqrt(x * x + y * y);
             }
         }
-        Console.WriteLine(answer);
+        Console.WriteLine(answer1);
         Console.WriteLine(Math.Round(answerLength, 2));
         // end
 
@@ -391,10 +376,10 @@ public class Program
         int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
         while (n>0)
         {
-            int.TryParse(Console.ReadLine(), out m1);
-            int.TryParse(Console.ReadLine(), out m2);
-            int.TryParse(Console.ReadLine(), out m3);
-            int.TryParse(Console.ReadLine(), out m4);
+            double.TryParse(Console.ReadLine(), out m1);
+            double.TryParse(Console.ReadLine(), out m2);
+            double.TryParse(Console.ReadLine(), out m3);
+            double.TryParse(Console.ReadLine(), out m4);
             if ((m1 == 4 || m1 == 5) && (m2 == 4 || m2 == 5) && (m3 == 4 || m3 == 5) && (m4 == 4 || m4 == 5)) { answer++; }
             n -= 1;
         }
@@ -409,7 +394,7 @@ public class Program
         double avg = 0.0;
 
         // code here;
-        double m1 = 0, m2 = 0, m3 = 0, m4 = 0;
+        int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
         for (int i=1; i<=n; i++)
         {
             double.TryParse(Console.ReadLine(), out m1);
@@ -420,7 +405,7 @@ public class Program
             avg += m1 + m2 + m3 + m4;
         }
         avg /= (n * 4);
-        Console.WriteLine("", answer, avg);
+        Console.WriteLine(answer, avg);
         // end
 
         return (answer, avg);
@@ -530,11 +515,11 @@ public class Program
         double x, y;
         while (true)
         {
-            CHx = Console.ReadLine();
+            CHx = ConsoleReadLine();
             if (CHx != "STOP")
             {
                 x = Convert.ToDouble(CHx);
-                CHy = Console.ReadLine();
+                CHy = ConsoleReadLine();
                 if (CHy != "STOP")
                 {
                     y = Convert.ToDouble(CHy);
@@ -578,11 +563,11 @@ public class Program
         double x, y;
         while (true)
         {
-            CHx = Console.ReadLine();
+            CHx = ConsoleReadLine();
             if (CHx != "STOP")
             {
                 x = Convert.ToDouble(CHx);
-                CHy = Console.ReadLine();
+                CHy = ConsoleReadLine();
                 if (CHy != "STOP")
                 {
                     y = Convert.ToDouble(CHy);
@@ -630,22 +615,22 @@ public class Program
         int m1 = 0, m2 = 0, m3 = 0, m4 = 0;
         while (true)
         {
-            CH1 = Console.ReadLine();
+            CHx = ConsoleReadLine();
             if (CH1 != "STOP")
             {
-                m1 = (int)Convert.ToDouble(CH1);
-                CH2 = Console.ReadLine();
+                m1 = Convert.ToDouble(CH1);
+                CH2 = ConsoleReadLine();
                 if (CH2 != "STOP")
                 {
-                    m2 = (int)Convert.ToDouble(CH2);
-                    CH3 = Console.ReadLine();
+                    m2 = Convert.ToDouble(CH2);
+                    CH3 = ConsoleReadLine();
                     if (CH3 != "STOP")
                     {
-                        m3 = (int)Convert.ToDouble(CH3);
-                        CH4 = Console.ReadLine();
+                        m3 = Convert.ToDouble(CH3);
+                        CH4 = ConsoleReadLine();
                         if (CH4 != "STOP")
                         {
-                            m4 = (int)Convert.ToDouble(CH4);
+                            m4 = Convert.ToDouble(CH4);
                         }
                         else break;
                     }
