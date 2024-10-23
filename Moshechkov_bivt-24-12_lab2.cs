@@ -314,14 +314,14 @@ public class Program
         int answer = 0;
 
         // code here
-        
+
         double x, y;
         for (int i = 0; i < n; i++)
         {
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-           
-            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y>=0)
+
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y >= 0)
                 answer++;
             else continue;
         }
@@ -343,17 +343,17 @@ public class Program
             x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             if (x > 0 && y > 0)
-                {
-                 answer1++;
-                 Console.WriteLine("точка лежит в первом квадранте");
-                }
-            if (x <0 && y > 0)
+            {
+                answer1++;
+                Console.WriteLine("точка лежит в первом квадранте");
+            }
+            if (x < 0 && y > 0)
                 Console.WriteLine("точка лежит во втором квадранте");
             if (x < 0 && y < 0)
-               { 
-                 answer3++;
-                 Console.WriteLine("точка лежит в третьем квадранте");
-               }
+            {
+                answer3++;
+                Console.WriteLine("точка лежит в третьем квадранте");
+            }
             if (x > 0 && y < 0)
                 Console.WriteLine("точка лежит в четвертом квадранте");
         }
@@ -466,26 +466,25 @@ public class Program
         double answer = 0;
 
         // code here;
-        Console.WriteLine("1 for square");
-        Console.WriteLine("2 for round");
-        Console.WriteLine("3 for triangle");
-        string input = Console.ReadLine();
-        bool result = int.TryParse(input, new CultureInfo("en-US"), out type);
-         
-        switch (type)
+
+        if (r < 0) return answer;
+        else
         {
-            case 1:
-                answer = Math.Round(r * r, 2);
-                break;
-            case 2:
-                answer = Math.Round(r * r * Math.PI, 2);
-                break;
-            case 3:
-                answer = Math.Round(r * r * Math.Sqrt(3) / 4, 2);
-                break;
-            default:
-                answer = 0;
-                break;
+            switch (type)
+            {
+                case 0:
+                    answer = Math.Round(r * r, 2);
+                    break;
+                case 1:
+                    answer = Math.Round(r * r * Math.PI, 2);
+                    break;
+                case 2:
+                    answer = Math.Round(r * r * Math.Sqrt(3) / 4, 2);
+                    break;
+                default:
+                    answer = 0;
+                    break;
+            }
         }
 
         Console.WriteLine(answer);
@@ -499,29 +498,28 @@ public class Program
         double answer = 0;
 
         // code here;
-        Console.WriteLine("1 for square");
-        Console.WriteLine("2 for ring");
-        Console.WriteLine("3 for triangle");
-        string input = Console.ReadLine();
-        bool result = int.TryParse(input, new CultureInfo("en-US"), out type);
-        
 
-        switch (type)
-        {
-            case 1:
-                answer = Math.Round(A * B, 2);
-                break;
-            case 2:
-                answer = Math.Round(Math.Abs(A * A - B * B) * Math.PI, 2);
-                break;
-            case 3:
-                answer = Math.Round((A * Math.Sqrt(B * B - (A * A) / 4)) / 2, 2);
-                break;
-            default:
-                answer = 0;
-                break;
+        if (A <=0 || B<=0 ) answer=0;
+        else
+        { 
+            switch (type)
+            {
+                case 0:
+                    answer = Math.Round(A * B, 2);
+                    break;
+                case 1:
+                    answer = Math.Round(Math.Abs(A * A - B * B) * Math.PI, 2);
+                    break;
+                case 2:
+                    
+                    answer = Math.Round((A * Math.Sqrt(B * B - (A * A) / 4)) / 2, 2);
+                    break;
+                default:
+                    answer = 0;
+                    break;
+            }
         }
-         Console.WriteLine(answer);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -715,7 +713,7 @@ public class Program
         while (true)
 
         {
-            Console.WriteLine(" enter marks. enter stop to finish "); 
+            Console.WriteLine(" enter marks. enter stop to finish ");
             string input_m1 = Console.ReadLine();
             if (input_m1 == "stop") break;
             string input_m2 = Console.ReadLine();
