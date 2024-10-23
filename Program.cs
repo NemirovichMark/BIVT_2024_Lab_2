@@ -36,7 +36,7 @@ public class Program
         //program.Task_2_10(10);
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
-        //program.Task_2_13(10, 5, 0);
+        program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -353,12 +353,18 @@ public class Program
             double.TryParse(Console.ReadLine(), out y);
             if ((x > 0) && (y > 0))
             {
+                Console.WriteLine("Точка в первом квадранте");
                 answer1++;
             }
+            if (x<0 && y > 0)
+                Console.WriteLine("Точка вщ втором квадранте");
             if ((x < 0) && (y < 0))
             {
+                Console.WriteLine("Точка в третьем квадранте");
                 answer3++;
             }
+            if (x>0 && y < 0)
+                Console.WriteLine("Точка в четвёртом квадранте");
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
@@ -505,6 +511,7 @@ public class Program
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
+        double p, k = 0;
 
         // code here;
         if (A <= 0 || B <= 0)
@@ -515,11 +522,12 @@ public class Program
         {
             case 0:
                 answer = A * B;
-                Console.WriteLine("площадб прямоугольника", answer);
+                Console.WriteLine("площадь прямоугольника", answer);
                 break;
             case 1:
-                if(A >= B) answer = 0;
-                if(A < B) answer = Math.PI*((B*B) - (A *A));
+                p = Math.PI * A * A;
+                k = Math.PI * B * B;
+                answer = Math.Abs(p - k);
                 Console.WriteLine("Площадь кольца", answer);
                 break;
             case 2:
