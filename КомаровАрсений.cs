@@ -23,7 +23,7 @@ public class Program
         //program.Task_2_1(10);
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
-        //program.Task_2_2(5, 1, 3, 1);
+        //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_3(8);
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(10, 30);
@@ -36,7 +36,7 @@ public class Program
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
-        program.Task_3_2(3, 2, 1);
+        //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
         //program.Task_3_2(1, 3, 1);
         //program.Task_3_3();
@@ -44,7 +44,7 @@ public class Program
         //program.Task_3_5(30);
         //program.Task_3_6();
         //program.Task_3_7();
-        //program.Task_3_8();
+        program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
         //program.Task_3_11();
@@ -311,9 +311,18 @@ public class Program
     {
         double answer = 0;
         if (type < 0 || type > 2 || r <= 0) { return 0; }
-        if (type == 0) { answer = r * r; }
-        else if (type == 1) { answer = double.Pi * r * r; }
-        else if (type == 2) { answer = (r * r) * 0.5 * Math.Sin(double.Pi / 3); }      
+        switch (type)
+        {
+            case (0):
+                answer = r * r;
+                break;
+            case (1):
+                answer = double.Pi * r * r;
+                break;
+            case (2):
+                answer = answer = (r * r) * 0.5 * Math.Sin(double.Pi / 3);
+                break;
+        }
         answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
@@ -323,16 +332,19 @@ public class Program
         double answer = 0;
         double h = 0;
         if (type < 0 || type > 2 || A <= 0 || B <= 0) { return 0; }
-        if (type == 0) { answer = A * B; }
-        else if (type == 1)
+        switch (type)
         {
-            if (A > B) { answer = (double.Pi * A * A) - (double.Pi * B * B); }
-            else if (A < B) { answer = (double.Pi * B * B) - (double.Pi * A * A); }
-        }
-        else if (type == 2)
-        {
-            h = Math.Sqrt(B * B - (0.5 * A) * (0.5 * A));
-            answer = A * h * 0.5;
+            case (0):
+                answer = A * B;
+                break;
+            case (1):
+                if (A > B) { answer = (double.Pi * A * A) - (double.Pi * B * B); }
+                else if (A < B) { answer = (double.Pi * B * B) - (double.Pi * A * A); }
+                break;
+            case (2):
+                h = Math.Sqrt(B * B - (0.5 * A) * (0.5 * A));
+                answer = A * h * 0.5;
+                break;
         }
         answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
@@ -355,14 +367,18 @@ public class Program
     }
     public int Task_3_2(double r, double a, double b)
     {
-        int answer = 0, n = 0;
-        double x = 0, y = 0;
-        int.TryParse(Console.ReadLine(), out n);
-        for (int i = 0; i < n; i++)
+        int answer = 0;
+        string x = string.Empty, y = string.Empty;
+        double x1 = 0, y1 = 0;
+        for (; ; )
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
-            if (((x - a) * (x - a)) + ((y - b) * (y - b)) <= r * r) { answer++; }
+            x = Console.ReadLine();
+            if (x == "Stop") break;
+            y = Console.ReadLine();
+            if (y == "Stop") break;
+            x1 = Convert.ToDouble(x);
+            y1 = Convert.ToDouble(y);
+            if (((x1 - a) * (x1 - a)) + ((y1 - b) * (y1 - b)) <= r * r) { answer++; }
         }
         Console.WriteLine(answer);
         return answer;
@@ -390,13 +406,15 @@ public class Program
     }
     public int Task_3_5(double norm)
     {
-        int answer = 0, n = 0;
-        double res = 0;
-        int.TryParse(Console.ReadLine(), out n);
-        for (int i = 1; i <= n; i++)
+        int answer = 0;
+        string res = string.Empty;
+        double res1 = 0;
+        for (; ; )
         {
-            double.TryParse(Console.ReadLine(), out res);
-            if (res <= norm) { answer++; }
+            res = Console.ReadLine();
+            if (res == "stop") break;
+            res1 = Convert.ToDouble(res);
+            if (res1 <= norm) answer++;
         }
         Console.WriteLine(answer);
         return answer;
@@ -423,20 +441,24 @@ public class Program
     }
     public (int, double) Task_3_8()
     {
-        int answer = 0, n = 0;
+        int answer = 0;
         int answer1 = 0;
         double answerLength = double.MaxValue;
-        double x = 0, y = 0;
-        int.TryParse(Console.ReadLine(), out n);
-        for (int i = 1; i <= n; i++)
+        string x = string.Empty, y = string.Empty;
+        double x1 = 0, y1 = 0;
+        for (; ; )
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
+            x = Console.ReadLine();
+            if (x == "stop") break;
+            y = Console.ReadLine();
+            if (y == "stop") break;
+            x1 = Convert.ToDouble(x);
+            y1 = Convert.ToDouble(y);
             answer++;
-            if (Math.Sqrt(x * x + y * y) < answerLength)
+            if (Math.Sqrt(x1 * x1 + y1 * y1) < answerLength)
             {
                 answer1 = answer;
-                answerLength = Math.Sqrt(x * x + y * y);
+                answerLength = Math.Sqrt(x1 * x1 + y1 * y1);
             }
         }
         Console.WriteLine(answer1);
