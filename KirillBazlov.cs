@@ -31,7 +31,7 @@ public class Program
         //program.Task_2_4(3, 1, 3);
         //program.Task_2_5(6, 25.2);
         //program.Task_2_6(5);
-        //program.Task_2_7(3);
+        program.Task_2_7(3);
         //program.Task_2_8(3);
         //program.Task_2_9(6);
         //program.Task_2_10(10);
@@ -48,7 +48,7 @@ public class Program
         //program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
-        program.Task_3_9();
+        //program.Task_3_9();
         //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
@@ -330,7 +330,9 @@ public class Program
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
 
-            if ((0 <= x && x <= Math.PI) &&  (y <= Math.Sin(x))) answer++;
+            if ((0 <= x && x <= Math.PI) && (0 <= y && y <= Math.Sin(x))) answer++;
+            
+            
         }
 
         Console.WriteLine(answer);
@@ -355,8 +357,17 @@ public class Program
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
 
-            if (x > 0 && y > 0) answer1++;
-            if (x < 0 && y < 0) answer3++;
+            if (x > 0 && y > 0) {
+                answer1++;
+                Console.WriteLine("I");
+            }
+            if (x < 0 && y > 0) Console.WriteLine("II");
+            if (x < 0 && y < 0)
+            {
+                answer3++;
+                Console.WriteLine("III");
+            }
+            if (x > 0 && y < 0) Console.WriteLine("IV");
         }
 
         Console.WriteLine($"{answer1} {answer3}");
