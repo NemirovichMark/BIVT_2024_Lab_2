@@ -3,7 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
+using System.Formats.Asn1;
+using System.Net.WebSockets;
 using System.Runtime.InteropServices;
+using System.Text.Json.Serialization;
 
 public class Program
 {
@@ -24,17 +27,17 @@ public class Program
         //program.Task_2_2(5, 3, 2, 1);
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
-        //program.Task_2_3(6);
+        //program.Task_2_3(10);
         //program.Task_2_4(3, 1, 3);
         //program.Task_2_5(6, 25.2);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
-        //program.Task_2_8(10);
-        //program.Task_2_9(10);
+        //program.Task_2_7(3);
+        //program.Task_2_8(3);
+        //program.Task_2_9(6);
         //program.Task_2_10(10);
-        //program.Task_2_11(10);
-        //program.Task_2_12(10, 0);
-        //program.Task_2_13(10, 5, 0);
+        //program.Task_2_11(6);
+        //program.Task_2_12(0, 2);
+        //program.Task_2_13(-0.75, 1, 3);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -45,7 +48,7 @@ public class Program
         //program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
-        //program.Task_3_9();
+        program.Task_3_9();
         //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
@@ -262,7 +265,6 @@ public class Program
             if (weight < 30) answer += 0.2;
 
         }
-        answer = Math.Round(answer, 3);
         Console.WriteLine(answer);
         // end
 
@@ -321,6 +323,18 @@ public class Program
 
         // code here
 
+        double x = 0, y = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+
+            if ((0 <= x && x <= Math.PI) &&  (y <= Math.Sin(x))) answer++;
+        }
+
+        Console.WriteLine(answer);
+
         // end
 
         // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
@@ -333,6 +347,19 @@ public class Program
         int answer3 = 0;
 
         // code here
+
+        double x, y;
+
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+
+            if (x > 0 && y > 0) answer1++;
+            if (x < 0 && y < 0) answer3++;
+        }
+
+        Console.WriteLine($"{answer1} {answer3}");
 
         // end
 
@@ -347,6 +374,27 @@ public class Program
 
         // code here
 
+        double x, y;
+
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out x);
+            double.TryParse(Console.ReadLine(), out y);
+
+            double length = Math.Pow(x * x + y * y, 0.5);
+
+            if (i == 0) answerLength = length;
+            else if (length < answerLength)
+            {
+                answerLength = length;
+                answer = i + 1; 
+            }
+        }
+
+        answerLength = Math.Round(answerLength, 2);
+
+        Console.WriteLine($"answer = {answer}, length = {answerLength}");
+
         // end
 
         // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
@@ -359,6 +407,17 @@ public class Program
 
         // code here
 
+        double time;
+
+        for (int i = 0; i < n; i++)
+        {
+            double.TryParse(Console.ReadLine(), out time);
+
+            if (time < answer) answer = time;
+        }
+
+        Console.WriteLine(answer);
+
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -370,6 +429,26 @@ public class Program
         int answer = 0;
 
         // code here;
+
+        int grade_count = 4;
+        int grade;  
+        bool is_student_good = true;
+
+
+        for (int i = 1; i <= n * grade_count; i++)
+        {
+            int.TryParse(Console.ReadLine(), out grade);
+
+            if (grade == 2 || grade == 3) is_student_good = false;
+
+            if (i % grade_count == 0)
+            {
+                if (is_student_good) answer++;
+                is_student_good = true;
+            }
+        }
+
+        Console.WriteLine($"answer = {answer}");
 
         // end
 
@@ -384,6 +463,31 @@ public class Program
 
         // code here;
 
+        int grade_count = 4;
+        int grade;
+        bool is_student_good = true;
+
+
+        for (int i = 1; i <= n * grade_count; i++)
+        {
+            int.TryParse(Console.ReadLine(), out grade);
+
+            avg += grade;
+
+            if (grade == 2) is_student_good = false;
+
+
+            if (i % grade_count == 0)
+            {
+                if (!is_student_good) answer++;                
+                is_student_good = true;
+            }
+        }
+
+        avg = avg / (n * grade_count);
+
+        Console.WriteLine($"answer = {answer}, avg = {avg}");
+
         // end
 
         // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
@@ -396,6 +500,17 @@ public class Program
 
         // code here;
 
+        if (r <= 0) return 0;
+
+        switch (type)
+        {
+            case 0: answer = r * r; break;
+            case 1: answer = Math.PI * r * r; break;
+            case 2: answer = 0.5 * r * r * Math.Sin(Math.PI / 3); break;            
+        }
+
+        answer = Math.Round(answer, 2);
+
         // end
 
         return answer;
@@ -406,7 +521,24 @@ public class Program
 
         // code here;
 
+        if (A <= 0 || B <= 0) return 0;
+
+        switch (type)
+        {
+            case 0: answer = A * B; break;
+            case 1: answer = Math.Abs(Math.PI * A * A - Math.PI * B * B); break;
+            case 2:
+                double p = (A + 2 * B) * 0.5;
+                answer = Math.Pow(p * (p - A) * (p - B) * (p - B), 0.5);
+                break;
+            
+        }
+
+        answer = Math.Round(answer, 2);
+
         // end
+
+        Console.WriteLine(answer);
 
         return answer;
     }
@@ -447,6 +579,18 @@ public class Program
 
         // code here
 
+        double weight;
+        bool input = true;
+
+        do
+        {
+            input = double.TryParse(Console.ReadLine(), out weight);
+            if (0 < weight && weight < 30) answer += 0.2;
+
+        } while (input);
+
+        Console.WriteLine(answer);
+
         // end
 
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
@@ -485,6 +629,23 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
+
+        double x = 0, y = 0;
+        bool input;
+
+        do
+        {        
+            input = double.TryParse(Console.ReadLine(), out x);
+
+            if (!input) break;
+
+            input = double.TryParse(Console.ReadLine(), out y);         
+
+            if ((0 <= x && x <= Math.PI) && (y <= Math.Sin(x))) answer++;
+
+        } while (true);
+
+        Console.WriteLine(answer);
 
         // end
 
@@ -526,6 +687,18 @@ public class Program
         int n = 0;
 
         // code here
+
+        double time;
+        bool input;
+
+        do
+        {
+            input = double.TryParse(Console.ReadLine(), out time);
+            if (time < answer && time != 0) answer = time;
+
+        } while (input);
+
+        Console.WriteLine(answer);
 
         // end
 
