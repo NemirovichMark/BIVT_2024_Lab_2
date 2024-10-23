@@ -357,7 +357,7 @@ public class Program
                 answer1++;
             }
             if (x<0 && y > 0)
-                Console.WriteLine("Точка вщ втором квадранте");
+                Console.WriteLine("Точка во втором квадранте");
             if ((x < 0) && (y < 0))
             {
                 Console.WriteLine("Точка в третьем квадранте");
