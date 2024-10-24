@@ -455,7 +455,7 @@ public class Program
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
-        if (type < 0 || type > 2 || A <= 0 || B <= 0 || (type == 1 && B<A))
+        if (type < 0 || type > 2 || A <= 0 || B <= 0)
         {
             return 0;
         }
@@ -761,7 +761,7 @@ public class Program
     {
         double answer = 0;
 
-        if (type < 0 || type > 2 || A <= 0 || B <= 0 || (type == 1 && B < A))
+        if (type < 0 || type > 2 || A <= 0 || B <= 0)
         {
             return 0;
         }
