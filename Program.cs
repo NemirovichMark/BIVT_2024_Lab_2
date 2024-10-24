@@ -1,3 +1,4 @@
+
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ public class Program
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
+        //program.Task_2_6(3);
         //program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
@@ -60,7 +61,7 @@ public class Program
         bool answer = false;
 
         // code here
-   
+
         double r = 2;
         double s = x * x + y * y - r * r;
         if (Math.Abs(s) <= Math.Pow(10, -3))
@@ -82,7 +83,7 @@ public class Program
             answer = false;
         // end
 
-            return answer;
+        return answer;
     }
     public double Task_1_3(double a, double b)
     {
@@ -103,7 +104,7 @@ public class Program
             else
                 answer = b;
         }
-        
+
         // end
 
         return answer;
@@ -116,26 +117,26 @@ public class Program
 
         if (a < b)
         {
-            
+
             if (a > c)
             {
-                answer = a; 
+                answer = a;
             }
             else
             {
-                answer = c; 
+                answer = c;
             }
         }
         else
         {
-            
+
             if (b > c)
             {
-                answer = b;  
+                answer = b;
             }
             else
             {
-                answer = c;  
+                answer = c;
             }
         }
 
@@ -160,7 +161,7 @@ public class Program
         {
             answer = false;
         }
-            
+
         // end
 
         return answer;
@@ -180,7 +181,7 @@ public class Program
         {
             answer = false;
         }
-            
+
         // end
 
         return answer;
@@ -207,7 +208,7 @@ public class Program
         double answer = 0;
 
         // code here
-        
+
         if (Math.Abs(x) >= 1)
         {
             answer = 0;
@@ -216,7 +217,7 @@ public class Program
         {
             answer = x * x - 1;
         }
-       
+
         // end
 
         return answer;
@@ -314,20 +315,20 @@ public class Program
         // code here
         double m = 0;
         double v = 0;
-        for (int i = 1; i <=n; i++)
+        for (int i = 1; i <= n; i++)
         {
             v = double.Parse(Console.ReadLine());
-            if (v<30)
+            if (v < 30)
             {
                 m += 0.2;
             }
-            
+
         }
-       
+
         answer = m;
         Console.WriteLine(answer);
         // end
-       
+
 
         return answer;
     }
@@ -338,7 +339,7 @@ public class Program
         // code here
         double y = 0;
         double x = 0;
-        for (int i = 0; i < n; i ++)
+        for (int i = 0; i < n; i++)
         {
             x = double.Parse((Console.ReadLine()));
             y = double.Parse((Console.ReadLine()));
@@ -359,7 +360,7 @@ public class Program
         // code here
         double sport = 0;
 
-       for (int i = 0; i < n; i ++)
+        for (int i = 0; i < n; i++)
         {
             sport = double.Parse(Console.ReadLine());
             if (sport <= norm)
@@ -367,7 +368,7 @@ public class Program
                 answer++;
             }
         }
-       Console.WriteLine(answer);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -383,7 +384,7 @@ public class Program
         {
             x = double.Parse(Console.ReadLine());
             y = double.Parse((Console.ReadLine()));
-            if (x >= 0 && x <= double.Pi && Math.Sin(x) >= y)
+            if (y >= 0 && x >= 0 && x <= Math.PI && Math.Sin(x) >= y)
             {
                 answer++;
             }
@@ -408,11 +409,19 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1++;
+                //Console.WriteLine($"{i} точка в I квадранте");
             }
-            else if  (x < 0 && y > 0)
+            /* if (x < 0 && y > 0)
+                Console.WriteLine($"{i} точка в II квадранте");*/
+
+            if (x < 0 && y < 0)
             {
+                //Console.WriteLine($"{i} точка в III квадранте");
                 answer3++;
             }
+            /* if ( x > 0 && y < 0)
+                 //Console.WriteLine($"{i} точка в IV квадранте");*/
+
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
@@ -426,24 +435,24 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-        double m = double.MaxValue; 
+        double m = double.MaxValue;
         double x = 0;
         double y = 0;
         int z = 0;
         for (int i = 1; i <= n; i++)
         {
-            x = double.Parse(Console.ReadLine());  
-            y = double.Parse(Console.ReadLine()); 
-            double d = Math.Sqrt(x * x + y * y);   
-            if (d < m)                             
+            x = double.Parse(Console.ReadLine());
+            y = double.Parse(Console.ReadLine());
+            double d = Math.Sqrt(x * x + y * y);
+            if (d < m)
             {
                 m = d;
-                z = i;                            
+                z = i;
             }
         }
         answer = z;
-        answerLength = Math.Round(m, 2);          
-        Console.WriteLine(answer);                 
+        answerLength = Math.Round(m, 2);
+        Console.WriteLine(answer);
         Console.WriteLine(answerLength);
         // end
 
@@ -469,7 +478,7 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-            return answer;
+        return answer;
     }
     public int Task_2_10(int n)
     {
@@ -486,7 +495,7 @@ public class Program
             m2 = double.Parse(Console.ReadLine());
             m3 = double.Parse(Console.ReadLine());
             m4 = double.Parse(Console.ReadLine());
-            if (m1 == 2 || m1 == 3 || m2 == 2 || m2 == 3|| m3 == 2 || m3 == 3 || m4 == 2 || m4 == 3)
+            if (m1 == 2 || m1 == 3 || m2 == 2 || m2 == 3 || m3 == 2 || m3 == 3 || m4 == 2 || m4 == 3)
             {
                 continue;
             }
@@ -494,9 +503,9 @@ public class Program
             {
                 answer++;
             }
-            }
-         Console.WriteLine(answer);
-         // end
+        }
+        Console.WriteLine(answer);
+        // end
 
         return answer;
     }
@@ -510,7 +519,7 @@ public class Program
         int m2 = 0;
         int m3 = 0;
         int m4 = 0;
-        for (int i = 0; i < n; i ++)
+        for (int i = 0; i < n; i++)
         {
             m1 = int.Parse(Console.ReadLine());
             m2 = int.Parse(Console.ReadLine());
@@ -591,7 +600,7 @@ public class Program
         int n = 0;
 
         // code here
-        
+
         // end
 
         // answer should be equal to the task_2_1 answer
@@ -604,8 +613,8 @@ public class Program
         // code here
         double x = 0;
         double y = 0;
-        while (true) 
-        { 
+        while (true)
+        {
             string f = Console.ReadLine();
             if (f == "-")
             {
@@ -632,7 +641,7 @@ public class Program
         int n = 0;
 
         // code here
-      
+
         // end
 
         return answer;
@@ -656,14 +665,14 @@ public class Program
         while (true)
         {
             string f = Console.ReadLine();
-            if (f == "-") 
+            if (f == "-")
             {
                 break;
             }
             else
             {
-                double.TryParse(f, out sport); 
-                if (sport <= norm) 
+                double.TryParse(f, out sport);
+                if (sport <= norm)
                 {
                     answer++;
                 }
@@ -708,10 +717,10 @@ public class Program
         int i = 0;
         while (true)
         {
-            string f = Console.ReadLine(); 
-            if (f == "-")  
+            string f = Console.ReadLine();
+            if (f == "-")
             {
-                if (i == 0)  
+                if (i == 0)
                 {
                     Console.WriteLine();
                 }
@@ -720,20 +729,20 @@ public class Program
                     m = Math.Round(m, 2);
                     answerLength = m;
                     answer = i;
-                    Console.WriteLine(answer);  
-                    Console.WriteLine(answerLength); 
+                    Console.WriteLine(answer);
+                    Console.WriteLine(answerLength);
                 }
                 break;
             }
             else
             {
-                double.TryParse(f, out x); 
-                f = Console.ReadLine();  
-                double.TryParse(f, out y);  
+                double.TryParse(f, out x);
+                f = Console.ReadLine();
+                double.TryParse(f, out y);
 
-                double d = Math.Sqrt(x * x + y * y);  
+                double d = Math.Sqrt(x * x + y * y);
                 i++;
-                if (d < m)  
+                if (d < m)
                 {
                     m = d;
                     z = i;
@@ -777,14 +786,14 @@ public class Program
         double m4 = 0;
         while (true)
         {
-            string f = Console.ReadLine();  
-            if (f == "-")  
+            string f = Console.ReadLine();
+            if (f == "-")
             {
                 if (n > 0)
                 {
-                    avg = avg / (n * 4);  
-                    Console.WriteLine(answer); 
-                    Console.WriteLine(avg); 
+                    avg = avg / (n * 4);
+                    Console.WriteLine(answer);
+                    Console.WriteLine(avg);
                     break;
                 }
             }
@@ -793,7 +802,7 @@ public class Program
             m3 = double.Parse(Console.ReadLine());
             m4 = double.Parse(Console.ReadLine());
 
-            n++; 
+            n++;
 
             if (m1 == 2 || m2 == 2 || m3 == 2 || m4 == 2)
             {
@@ -801,9 +810,9 @@ public class Program
             }
             avg += m4 + m1 + m3 + m2;
         }
-           
-          
-        
+
+
+
         // end
 
         return (answer, avg);
