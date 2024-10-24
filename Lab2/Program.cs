@@ -14,8 +14,8 @@ public class Program
         //program.Task_1_2(0.9, 1.23);
         //program.Task_1_3(0.9, 1.23);
         //program.Task_1_4(0.9, 1.23, -0.1);
-        program.Task_1_5(0.9, 1.23);
-        program.Task_1_6(3.2, 4.5);
+        //program.Task_1_5(0.9, 1.23);
+        //program.Task_1_6(3.2, 4.5);
         //program.Task_1_7(0.9);
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
