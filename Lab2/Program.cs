@@ -48,8 +48,6 @@ public class Program
         //program.Task_3_9();
         //program.Task_3_10();
         //program.Task_3_11();
-        //program.Task_3_12(10, 0);
-        //program.Task_3_13(10, 5, 0);
     }
     #region Level 1
     public bool Task_1_1(double x, double y)
