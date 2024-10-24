@@ -33,7 +33,7 @@ public class Program
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        program.Task_2_12(0.2, 2);
+        //program.Task_2_12(0.2, 2);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
