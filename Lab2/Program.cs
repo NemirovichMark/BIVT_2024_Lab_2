@@ -93,7 +93,7 @@ public class Program
         double answer = 0;
 
         // code here     
-        answer = (a > b ? b : a) > c ? (a > b ? b : a) : c; //Math.Max(Math.Min(a, b), c);
+        answer = (a > b ? b : a) > c ? (a > b ? b : a) : c;
         // end
 
         return answer;
@@ -369,7 +369,7 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
 
-            answer = Math.Min(answer, x);
+            answer = answer < x ? answer : x;
         }
         // end
 
@@ -664,7 +664,7 @@ public class Program
 
         return (answer, answerLength);
     }
-    public double Task_3_9()           //                  Del MIN
+    public double Task_3_9()  
     {
         double answer = double.MaxValue;
         int n = 0;
@@ -673,7 +673,7 @@ public class Program
         double x;
         while(double.TryParse(Console.ReadLine(), out x))
         {
-            answer = Math.Min(answer, x);
+            answer = answer < x ? answer : x;
         }
         // end
 
