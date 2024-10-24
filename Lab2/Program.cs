@@ -285,7 +285,7 @@ public class Program
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
 
-            if (x >= 0 && y <= Math.Sin(x))
+            if (x >= 0 && y <= Math.Sin(x) && y>=0)
             {
                 answer++;
             }
