@@ -28,7 +28,7 @@ public class Program
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(4);
+        program.Task_2_7(4);
         //program.Task_2_8(3);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
@@ -47,7 +47,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        program.Task_3_11();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -295,6 +295,7 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
+            if (y < 0) return 0;
             if (0 <= x && x <= Math.PI && y <= Math.Sin(x))
                 answer++;
         }
@@ -312,12 +313,32 @@ public class Program
         double x, y;
         for (int i = 0; i < n; i++)
         {
-            double.TryParse(Console.ReadLine(), out x);
-            double.TryParse(Console.ReadLine(), out y);
-            if (x > 0 && y > 0)
-                answer1++;
-            else if (x < 0 && y < 0)
-                answer3++;
+            x = double.Parse(Console.ReadLine());
+            y = double.Parse(Console.ReadLine());
+            if (x > 0)
+            {
+                if (y > 0)
+                {
+                    answer1++;
+                    System.Console.WriteLine("Квадрант - 1");
+                }
+                else
+                {
+                    System.Console.WriteLine("Квадрант - 4");
+                }
+            }
+            else
+            {
+                if (y > 0)
+                {
+                    System.Console.WriteLine("Квадрант - 2");
+                }
+                else
+                {
+                    answer3++;
+                    System.Console.WriteLine("Квадрант - 3");
+                }
+            }
         }
         System.Console.WriteLine(answer1);
         System.Console.WriteLine(answer3);
