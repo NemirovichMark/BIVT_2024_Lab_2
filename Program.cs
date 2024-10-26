@@ -34,7 +34,7 @@ public class Program
         //program.Task_2_10(10);
         //program.Task_2_11(10);
         //program.Task_2_12(10, 0);
-        program.Task_2_13();
+        //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
         //program.Task_3_2(1.5, 1.5, 1);
@@ -247,8 +247,7 @@ public class Program
                 answer += 1;
             }
         }
-        Console.Write($"Ответ: ");
-        Console.WriteLine(answer);
+        Console.Write($"Ответ: {answer}");
 
         // end
 
@@ -258,7 +257,7 @@ public class Program
     }
     public double Task_2_3(int n)
     {
-        double answer = 0, k = 0, ves;
+        double answer = 0, k = 0, ves = 0;
 
         // code here
 
@@ -532,69 +531,60 @@ public class Program
     }
     public double Task_2_12(double r, int type)
     {
-        int n = 0, k = 0;
+        
         double answer = 0;
-        string str;
         // code here;
-
-        Console.WriteLine("Введите фигуру, площадь которой нужно посчитать");
-        Console.Write("Выберите квадрат, круг или треугольник (равносторонний): ");
-        str = Console.ReadLine();
-        Console.Write("Введите количество чисел, для которых нужно посчитать: ");
-        int.TryParse(Console.ReadLine(), out n);
-        Console.WriteLine("Введите числа, для которых нужно посчитать: ");
-        while (n > 0)
+        
+        if (r <= 0)
         {
-            n--;
-            Console.Write($"r{k += 1} = ");
-            double.TryParse(Console.ReadLine(), out r);
-            switch (str)
-            {
-                case "квадрат":
-                    answer = r * r; break;
-                case "круг":
-                    answer = Math.PI * r * r; break;
-                case "треугольник":
-                    answer = (r * r * Math.Sqrt(3)) / 4; break;
-            }
-            answer = Math.Round(answer);
-            Console.WriteLine(answer);
+            return 0;
         }
+
+        switch (type)
+        {
+            case 0:
+                answer = r * r; break;
+            case 1:
+                answer = Math.PI * r * r; break;
+            case 2:
+                answer = (r * r * Math.Sqrt(3)) / 4; break;
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
+        
         
         // end
 
         return answer;
     }
-    public double Task_2_13()
+    public double Task_2_13(double A, double B, int type)
     {
-        double answer = 0; // = вася/петя
-        double x = 5;      // = на х процентов меньше васи(500)
-        double A = 4;      // = всего лаб
-        double B = 20;     // = кол-во заданий *А/к
-        //int k = 0;       // = номер лабы
-        //int n = 0;       // = номер задания
-        double S = 0;      // = вычтенные баллы
-        double Sn = 0;     // = погрешности
-        double Spred = 1;  // = погрешность в пред. задании
+        double answer = 0;
 
-        for (double k = 1; k <= A; k++) 
+        // code here;
+
+        if (A <= 0 || B <= 0)
         {
-            for (double n = 1; n <= Math.Ceiling(B*k/A); n++)
-            {
-                if (n == 1)
-                    Sn = 0; Spred = 1;
-                Sn += Spred * k / n;
-                Spred = Sn;
-                if (n == Math.Ceiling(B * k / A))
-                    S += Sn;
-                //Console.WriteLine($"k={k}   n={n}   Sn={Sn}   Spred={Spred}   S={S}");
-            }
+            return 0;
         }
 
-        answer = Math.Round(500/((500 - S) - ((500 - S) * x / 100)), 2);
-        Console.WriteLine($"answer = {answer}");
+        switch (type)
+        {
+            case 0:
+                answer = A * B; break;
+            case 1:
+                answer = Math.Abs((Math.PI * A * A) - (Math.PI * B * B)); break;
+            case 2:
+                double p = (A + B + B) / 2;
+                answer = Math.Sqrt(p * (p - A) * (p - B) * (p - B));
+                if (answer <= 0) 
+                    return 0; 
+                break;
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
 
-
+        // end
 
         return answer;
     }
@@ -630,10 +620,21 @@ public class Program
     }
     public double Task_3_3()
     {
-        double answer = 0;
+        double answer = 0, ves = 0;
         int n = 0;
 
         // code here
+
+        Console.WriteLine("Для конца нажмите Enter");
+        do
+        {
+            Console.Write($"Вес ученика {n += 1}: ");
+            double.TryParse(Console.ReadLine(), out ves);
+            if (ves < 30 && ves > 0)
+                answer += 0.2;
+        } while (ves > 0);
+
+        Console.WriteLine($"Понадобится {answer} литр(-ов/-а) молока ");
 
         // end
 
@@ -671,8 +672,23 @@ public class Program
     public int Task_3_6()
     {
         int answer = 0, n = 0;
+        double x = 0, y = 0;
 
         // code here
+
+        do
+        {
+            Console.WriteLine("Чтобы закончить, введите х=1000 и у=1000");
+            Console.WriteLine($"Координаты точки {n += 1}: ");
+            Console.Write("х = ");
+            double.TryParse(Console.ReadLine(), out x);
+            Console.Write("у = ");
+            double.TryParse(Console.ReadLine(), out y);
+
+            if (x < 3.14 && x >= 0 && y <= Math.Sin(x) && y >= 0)
+                answer += 1;
+        } while (x != 1000 && y != 1000);
+        Console.WriteLine($"В фигуру попало {answer} точек(-ка/-ки)");
 
         // end
 
@@ -710,10 +726,24 @@ public class Program
     }
     public double Task_3_9()
     {
-        double answer = double.MaxValue;
+        double answer = double.MaxValue, a = 0;
         int n = 0;
 
         // code here
+
+        Console.WriteLine("Для конца нажмите Enter");
+        do
+        {
+            Console.Write($"Результат участника {n += 1}: ");
+            double.TryParse(Console.ReadLine(), out a);
+            
+            if (a < answer && a > 0)
+            {
+                answer = a;
+            }
+        } while (a > 0);
+
+        Console.WriteLine($"Лучший результат: {answer}");
 
         // end
 
