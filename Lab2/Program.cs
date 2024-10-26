@@ -579,7 +579,7 @@ public class Program
         double ves , mol = 0, pod = 0;
         do
         {
-            Console.WriteLine("Ââåäèòå âåñ ó÷åíèêà, äëÿ îêîí÷àíèÿ 0");
+            Console.WriteLine("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ ÑƒÑ‡ÐµÐ½Ð¸ÐºÐ°, Ð´Ð»Ñ Ð¾ÐºÐ¾Ð½Ñ‡Ð°Ð½Ð¸Ñ 0");
             ves = double.Parse(Console.ReadLine());
             if (ves == 0)
             {
@@ -623,13 +623,13 @@ public class Program
         double x, y = 0;
         do
         {
-            Console.WriteLine("Ââåäèòå x, äëÿ îêîí÷àíèÿ 1000");
+            Console.WriteLine("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ x, Ð´Ð»Ñ Ð¾ÐºÐ¾Ð½Ñ‡Ð°Ð½Ð¸Ñ 1000");
             x = double.Parse(Console.ReadLine());
             if (x >= 1000)
             {
                 break;
             }
-            Console.WriteLine("Ââåäèòå y, äëÿ îêîí÷àíèÿ 1000");
+            Console.WriteLine("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ y, Ð´Ð»Ñ Ð¾ÐºÐ¾Ð½Ñ‡Ð°Ð½Ð¸Ñ 1000");
             y = double.Parse(Console.ReadLine());
             if ((x >= 0) && (x <= Math.PI) && (y <= Math.Sin(x)))
             {
@@ -671,7 +671,7 @@ public class Program
         double sp = 0;
         do
         {
-            Console.WriteLine("Ââåäèòå ðåçóëüòàò, äëÿ îêîí÷àíèÿ 0");
+            Console.WriteLine("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚, Ð´Ð»Ñ Ð¾ÐºÐ¾Ð½Ñ‡Ð°Ð½Ð¸Ñ 0");
             sp = double.Parse(Console.ReadLine());
             if (sp == 0)
             {
