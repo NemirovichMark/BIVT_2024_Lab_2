@@ -353,11 +353,10 @@ public class Program
         {
             x= double.Parse(Console.ReadLine(),new CultureInfo("en-US"));
             y= double.Parse(Console.ReadLine(),new CultureInfo("en-US"));
-            if ( x >= 0 && x <= Math.PI && Math.Sin(x) >= y)
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y)
             {
                 count++;
             }
-            else continue;
         }
         answer = count;
         Console.WriteLine($"Принадлежит фигуре : {answer}");
