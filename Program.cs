@@ -29,12 +29,12 @@ public class Program
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
+        program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        program.Task_2_12(10, 0);
+        //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -325,7 +325,7 @@ public class Program
 
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if (x>=0 && x<Math.PI && Math.Sin (x)>y)
+            if (x>=0 && x<Math.PI && Math.Sin (x)>y && y>0)
                 k = k + 1;
             i = i + 1;
         }
@@ -349,9 +349,23 @@ public class Program
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
             if (x>0 && y>0)
-                answer1= answer1+1;
+            {
+                Console.WriteLine("1 квадрант");
+                answer1 = answer1 + 1;
+            }
+            if (x < 0 && y > 0)
+            {
+                Console.WriteLine("2 квадрант");
+            }
             if (x < 0 && y < 0)
+            {
+                Console.WriteLine("3 квадрант");
                 answer3 = answer3 + 1;
+            }
+            if (x > 0 && y < 0)
+            {
+                Console.WriteLine("4 квадрант");
+            }
             i = i + 1;
         }
         Console.WriteLine(answer1);
