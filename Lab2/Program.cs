@@ -424,6 +424,8 @@ public class Program
         int answer3 = 0;
 
         // code here
+        int answer2 = 0;
+        int answer4 = 0;
         for (int i = 1; i<=n; i++)
         {
             double x = Convert.ToDouble(Console.ReadLine());
@@ -431,11 +433,24 @@ public class Program
             if (x>0 && y > 0)
             {
                 answer1++;
+                Console.WriteLine("1 quadrant\n");
+            }
+            if (x>0 && y < 0)
+            {
+                answer2++;
+                Console.WriteLine("2 quadrant\n");
             }
             if (x < 0 && y < 0)
             {
                 answer3++;
+                Console.WriteLine("3 quadrant\n");
             }
+            if (x < 0 && y > 0)
+            {
+                answer4++;
+                Console.WriteLine("4 quadrant\n");
+            }
+            
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
