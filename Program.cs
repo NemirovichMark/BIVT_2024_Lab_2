@@ -32,7 +32,7 @@ public class Program
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
+        program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
@@ -423,10 +423,20 @@ public class Program
             if (x >= 0 && y >= 0)
             {
                 answer1++;
+                Console.WriteLine("точка попала в первый квадрант");
             }
             if (x <= 0 && y <= 0)
             {
                 answer3++;
+                Console.WriteLine("точка попала в третий квадрант");
+            }
+            if (x <= 0 && y >= 0)
+            {
+                Console.WriteLine("точка попала во второй квадрант");
+            }
+            if (x >= 0 && y <= 0)
+            {
+                Console.WriteLine("точка попала в четвертый квадрант");
             }
         }
         Console.WriteLine(answer1);
