@@ -336,7 +336,7 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
-            if (x>=0 && x<=Math.PI && Math.Sin(x)>=y) 
+            if (y >= 0 && y <= Math.Abs(Math.Sin(x))) 
                 answer++;
         }
         Console.WriteLine(answer);
@@ -350,25 +350,25 @@ public class Program
         int answer3 = 0;
 
         // code here
-        double x, y, k=0;
+        double x, y;
         for (int i = 1; i <= n; i++)
         {
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
             if (x > 0 && y > 0)
             {
-                k = 1;
                 answer1++;
+                Console.WriteLine("1");
             }
             if (x > 0 && y < 0)
-                k = 2;
+                Console.WriteLine("2");
             if (x < 0 && y < 0)
             {
-                k = 3;
+                Console.WriteLine("3");
                 answer3++;
             }
             else
-                k = 4;
+                Console.WriteLine("4");
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
