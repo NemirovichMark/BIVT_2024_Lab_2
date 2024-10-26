@@ -395,8 +395,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
-
         return answer;
     }
     public (int, double) Task_2_11(int n)
@@ -419,8 +417,6 @@ public class Program
         // end
         avg /= 10;
         Console.WriteLine($"{answer}  {avg}");
-
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
 
         return (answer, avg);
     }
@@ -519,9 +515,6 @@ public class Program
         // end
         Console.WriteLine(answer);
 
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_3 answer
-
         return answer;
     }
     public int Task_3_4(double r1, double r2)
@@ -561,9 +554,6 @@ public class Program
         // end
         Console.WriteLine(answer);
 
-        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
-        // answer should be equal to the task_2_6 answer
-
         return answer;
     }
     public (int, int) Task_3_7()
@@ -599,9 +589,6 @@ public class Program
             answer = answer < x ? answer : x;
         }
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_9 answer
 
         return answer;
     }
