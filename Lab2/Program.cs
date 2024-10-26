@@ -30,8 +30,8 @@ public class Program
         //program.Task_2_3(10);
        // program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
-        //program.Task_2_6(5);
-        //program.Task_2_7(5);
+       // program.Task_2_6(5);
+        program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
        // program.Task_2_10(10);
@@ -46,7 +46,7 @@ public class Program
        // program.Task_3_4(1, 2);
         //program.Task_3_5(30);
         //program.Task_3_6();
-        program.Task_3_7();
+       // program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
@@ -349,11 +349,11 @@ public class Program
         // code here
         double x, y;
         int count = 0;
-        for (int i=0; i<n; i++)
+        for (int i=1; i<=n; i++)
         {
             x= double.Parse(Console.ReadLine(),new CultureInfo("en-US"));
             y= double.Parse(Console.ReadLine(),new CultureInfo("en-US"));
-            if (Math.Sin(x) >= y && x >= 0 && x <= Math.PI)
+            if ( x >= 0 && x <= Math.PI && Math.Sin(x) >= y)
             {
                 count++;
             }
@@ -372,7 +372,8 @@ public class Program
 
         // code here
         double x, y;
-       
+        int k2 = 0;
+        int k4 = 0;
         for (int i=0; i<n; i++)
         {
             x = double.Parse(Console.ReadLine(),new CultureInfo("en-US"));
@@ -385,10 +386,19 @@ public class Program
             {
                 answer3++;
             }
-            else continue;
+            if (x> 0 && y < 0)
+            {
+                k4++;
+            }
+            if (x < 0 && y > 0)
+            {
+                k2++;
+            }
         }
         Console.WriteLine($"В первом квадранте : {answer1}");
         Console.WriteLine($"В третьем квадранте : {answer3}");
+        Console.WriteLine($"В четвертом квадранте : {k4}");
+        Console.WriteLine($"Во втором квадранте : {k2}");
 
         // end
 
