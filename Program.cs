@@ -47,7 +47,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        //program.Task_3_11();
+        program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -321,10 +321,25 @@ public class Program
         {
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
-            if (x>0 && y>0)
+            if (x>0 && y > 0)
+            {
                 answer1 += 1;
-            else if (x<0 && y<0)
+                Console.WriteLine("1 четверть");
+            }
+            if (x < 0 && y > 0)
+            {
+                Console.WriteLine("2 четверть");
+            }
+            if (x > 0 && y < 0)
+            {
+                
+                Console.WriteLine("3 четверть");
+            }
+            if (x < 0 && y < 0)
+            {
                 answer3 += 1;
+                Console.WriteLine("4 четверть");
+            }
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
@@ -639,6 +654,9 @@ public class Program
             m2 = double.Parse(Console.ReadLine());
             m3 = double.Parse(Console.ReadLine());
             m4 = double.Parse(Console.ReadLine());
+            if (m1 < 2 || m2 < 2 || m3 < 2 || m4 < 2)
+                break;
+            
             if (m1 == 2 || m2 == 2 || m3 == 2 || m4 == 2)
                 answer += 1;
             avg += m1 + m2 + m3 + m4;
