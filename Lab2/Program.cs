@@ -51,7 +51,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        program.Task_3_11();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -667,26 +667,7 @@ public class Program
         double avg = 0.0;
 
         // code here;
-        double ball = 0;
-        int counter = 0;
-        int scounter = 0;
-        for (int i = 1; ; i++)
-        {
-            bool check = int.TryParse(Console.ReadLine(), out int a);
-            if (counter == 4) {counter = 0; scounter = 0; n++;}
-            if (check)
-            {
-                ball += a;
-                counter++;
-                if (a <= 2) scounter++;
-                if (counter == 4 && scounter != 0) answer++;
-            }
-            else break;
-
-        }
-        avg = ball / n / 4.0;
-        System.Console.WriteLine(answer);
-        System.Console.WriteLine(avg);
+        
         // end
 
         return (answer, avg);
