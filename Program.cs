@@ -381,10 +381,20 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1 += 1;
+                Console.WriteLine("ÐŸÐµÑ€Ð²Ñ‹Ð¹ ÐºÐ²Ð°Ð´Ñ€Ð°Ð½Ñ‚");
             }
-            if (x<0 && y<0)
+            if (x < 0 && y < 0)
             {
                 answer3 += 1;
+                Console.WriteLine("Ð¢Ñ€ÐµÑ‚Ð¸Ð¹ ÐºÐ²Ð°Ð´Ñ€Ð°Ð½Ñ‚");
+            }
+            if (x < 0 && y > 0)
+            {
+                Console.WriteLine("Ð’Ñ‚Ð¾Ñ€Ð¾Ð¹ ÐºÐ²Ð°Ð´Ñ€Ð°Ð½Ñ‚");
+            }
+            if (x > 0 && y < 0)
+            {
+                Console.WriteLine("Ð§ÐµÑ‚Ð²ÐµÑ€Ñ‚Ñ‹Ð¹ ÐºÐ²Ð°Ð´Ñ€Ð°Ð½Ñ‚");
             }
         }
         // end
@@ -481,17 +491,17 @@ public class Program
         string s = Console.ReadLine();
         switch (s)
         {
-            case "Ïëîùàäü êâàäðàòà":
+            case "ÃÃ«Ã®Ã¹Ã Ã¤Ã¼ ÃªÃ¢Ã Ã¤Ã°Ã Ã²Ã ":
                 answer = r * r;
                 break;
-            case "Ïëîùàäü êðóãà":
+            case "ÃÃ«Ã®Ã¹Ã Ã¤Ã¼ ÃªÃ°Ã³Ã£Ã ":
                 answer = Math.PI * (r * r);
                 break;
-            case "Ïëîùàäü ðàâíîñòîðîííåãî òðåóãîëüíèêà":
+            case "ÃÃ«Ã®Ã¹Ã Ã¤Ã¼ Ã°Ã Ã¢Ã­Ã®Ã±Ã²Ã®Ã°Ã®Ã­Ã­Ã¥Ã£Ã® Ã²Ã°Ã¥Ã³Ã£Ã®Ã«Ã¼Ã­Ã¨ÃªÃ ":
                 answer = (Math.Sqrt(3) * r) / 4;
                 break;
             default:
-                Console.WriteLine("Íåâåðíûé ââîä");
+                Console.WriteLine("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã¢Ã¢Ã®Ã¤");
                 break;
         }
         // end
@@ -506,17 +516,17 @@ public class Program
         string s = Console.ReadLine();
         switch (s)
         {
-            case "Ïëîùàäü êâàäðàòà":
+            case "ÃÃ«Ã®Ã¹Ã Ã¤Ã¼ ÃªÃ¢Ã Ã¤Ã°Ã Ã²Ã ":
                 answer = A * B;
                 break;
-            case "Ïëîùàäü êðóãà":
+            case "ÃÃ«Ã®Ã¹Ã Ã¤Ã¼ ÃªÃ°Ã³Ã£Ã ":
                 answer = Math.PI * (A - B);
                 break;
-            case "Ïëîùàäü ðàâíîñòîðîííåãî òðåóãîëüíèêà":
+            case "ÃÃ«Ã®Ã¹Ã Ã¤Ã¼ Ã°Ã Ã¢Ã­Ã®Ã±Ã²Ã®Ã°Ã®Ã­Ã­Ã¥Ã£Ã® Ã²Ã°Ã¥Ã³Ã£Ã®Ã«Ã¼Ã­Ã¨ÃªÃ ":
                 answer = 0.5 * A * (Math.Sqrt(A*A+B*B));
                 break;
             default:
-                Console.WriteLine("Íåâåðíûé ââîä");
+                Console.WriteLine("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã¢Ã¢Ã®Ã¤");
                 break;
         }
         // end
@@ -540,9 +550,9 @@ public class Program
             double s1 = Convert.ToDouble(s);
             sr += s1;
             n++;
-            Console.WriteLine("Íóæíî ëè ïðîäîëæàòü?(Äà èëè íåò)");
+            Console.WriteLine("ÃÃ³Ã¦Ã­Ã® Ã«Ã¨ Ã¯Ã°Ã®Ã¤Ã®Ã«Ã¦Ã Ã²Ã¼?(Ã„Ã  Ã¨Ã«Ã¨ Ã­Ã¥Ã²)");
             string s2 = Console.ReadLine();
-            if (s2 == "Íåò")
+            if (s2 == "ÃÃ¥Ã²")
             {
                 stop = true;
             }
@@ -589,9 +599,9 @@ public class Program
             {
                 answer += 1;
             }
-            Console.WriteLine("Íóæíî ëè ïðîäîëæàòü?(Äà èëè íåò)");
+            Console.WriteLine("ÃÃ³Ã¦Ã­Ã® Ã«Ã¨ Ã¯Ã°Ã®Ã¤Ã®Ã«Ã¦Ã Ã²Ã¼?(Ã„Ã  Ã¨Ã«Ã¨ Ã­Ã¥Ã²)");
             string s2 = Console.ReadLine();
-            if (s2 == "Íåò")
+            if (s2 == "ÃÃ¥Ã²")
             {
                 stop = true;
             }
@@ -638,9 +648,9 @@ public class Program
             {
                 answer3 += 1;
             }
-            Console.WriteLine("Íóæíî ëè ïðîäîëæàòü?(Äà èëè íåò)");
+            Console.WriteLine("ÃÃ³Ã¦Ã­Ã® Ã«Ã¨ Ã¯Ã°Ã®Ã¤Ã®Ã«Ã¦Ã Ã²Ã¼?(Ã„Ã  Ã¨Ã«Ã¨ Ã­Ã¥Ã²)");
             string s2 = Console.ReadLine();
-            if (s2 == "Íåò")
+            if (s2 == "ÃÃ¥Ã²")
             {
                 stop = true;
             }
@@ -687,9 +697,9 @@ public class Program
             {
                 answer += 1;
             }
-            Console.WriteLine("Íóæíî ëè ïðîäîëæàòü?(Äà èëè íåò)");
+            Console.WriteLine("ÃÃ³Ã¦Ã­Ã® Ã«Ã¨ Ã¯Ã°Ã®Ã¤Ã®Ã«Ã¦Ã Ã²Ã¼?(Ã„Ã  Ã¨Ã«Ã¨ Ã­Ã¥Ã²)");
             string s2 = Console.ReadLine();
-            if (s2 == "Íåò")
+            if (s2 == "ÃÃ¥Ã²")
             {
                 stop = true;
             }
