@@ -2,7 +2,11 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Data;
 using System.Diagnostics.Metrics;
+using System.Drawing;
+using System.Globalization;
 using System.Runtime.InteropServices;
 
 public class Program
@@ -25,7 +29,7 @@ public class Program
         //program.Task_2_2(5, 1.5, 1.5, 1);
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
+        //program.Task_2_4(4, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
@@ -57,7 +61,16 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double r = 2;
+        double b = Math.Abs(x * x + y * y - r * r);
+        if (b <= 0.001) 
+        {
+            answer = true;
+        }
+        else 
+        {
+            Console.WriteLine(answer);
+        }
         // end
 
         return answer;
@@ -67,7 +80,10 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (y >= 0 && y + Math.Abs(x) <= 1)
+        {
+            answer = true;
+        }
         // end
 
         return answer;
@@ -77,7 +93,17 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (a > 0)
+        {
+            if (a > b) answer = a;
+            else answer = b;
+        }
+        else
+        {
+            if (a < b) answer = a;
+            else answer = b;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -87,7 +113,10 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (a < b) answer = a;
+        else answer = b;
+        if (answer < c) answer = c;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -97,7 +126,14 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (Math.Sqrt(s) * Math.Sqrt(2) <= 2 * Math.Sqrt(r / Math.PI))
+        {
+            answer = true;
+        }
+        else
+        {
+            Console.WriteLine("false");
+        }
         // end
 
         return answer;
@@ -107,7 +143,14 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (Math.Sqrt(s) >= 2 * Math.Sqrt(r / Math.PI))
+        {
+            answer = true;
+        }
+        else
+        {
+            Console.WriteLine("false");
+        }
         // end
 
         return answer;
@@ -117,7 +160,15 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) > 1)
+        {
+            answer = 1;
+        }
+        else
+        {
+            answer = Math.Abs(x);
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -127,7 +178,15 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) >= 1)
+        {
+            answer = 0;
+        }
+        else
+        {
+            answer = x * x - 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -137,7 +196,13 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) 
+            answer = 0;
+        else if (x > -1 && x <= 0)
+            answer = 1 + x;
+        else
+            answer = 1;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -147,7 +212,19 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1)
+        {
+            answer = 1;
+        }
+        else if (x > -1 && x <= 1)
+        {
+            answer = x * -1;
+        }
+        else
+        {
+            answer = -1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -160,7 +237,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double sum = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            sum += x1;
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(sum / n);
         // end
 
         return answer;
@@ -170,7 +254,13 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            if (Math.Pow(a - x1, 2) + Math.Pow(b - x2, 2) <= Math.Pow(r, 2)) answer += 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -180,7 +270,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            if (x1 < 30) answer += 0.2;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -190,7 +285,13 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            if (((x1 * x1 + x2 * x2) <= (r2 * r2)) && !((x1 * x1 + x2 * x2) < (r1 * r1))) answer += 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -200,7 +301,12 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            if (x1 <= norm) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -210,7 +316,13 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            if ((x1 >= 0) && (x2 >= 0) && (x1 <= Math.PI) && (x2 <= Math.Sin(x1))) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -221,7 +333,26 @@ public class Program
         int answer3 = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            if (x1 == 0 || x2 == 0) System.Console.WriteLine("no");
+            if (x1 > 0 && x2 > 0)
+            {
+                System.Console.WriteLine(1);
+                answer1++;
+            }
+            if (x1 < 0 && x2 > 0) System.Console.WriteLine(2);
+            if (x1 < 0 && x2 < 0)
+            {
+                System.Console.WriteLine(3);
+                answer3++;
+            }
+            else System.Console.WriteLine(4);
+        }
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         return (answer1, answer3);
@@ -232,7 +363,19 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            if (Math.Sqrt(x1*x1 + x2*x2) < answerLength)
+            {
+                answerLength = Math.Sqrt(x1*x1 + x2*x2);
+                answer = i;
+            }
+            answerLength = Math.Round(answerLength, 2);
+        }
+        Console.WriteLine(answer);
+        Console.WriteLine(answerLength);
         // end
 
         return (answer, answerLength);
@@ -242,7 +385,12 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-
+        for (int i = 1; i <= n; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            if (x1 < answer) answer = x1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -252,7 +400,21 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        int count1 = 0;
+        int count2 = 0;
+        for (int i = 1; i <= n * 4; i++)
+        {
+            double x1 = Convert.ToDouble((Console.ReadLine()));
+            if (count1 == 4)
+            {
+                count1 = 0; 
+                count2 = 0;
+            }
+            count1++;
+            if (x1 == 2 || x1 == 3) count2++;
+            if (count1 == 4 && count2 == 0) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -263,7 +425,24 @@ public class Program
         double avg = 0.0;
 
         // code here;
-
+        double k = 0;
+        int count1 = 0, count2 = 0;
+        for (int i = 1; i <= n*4; i++)
+        {
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            if (count1 == 4)
+            {
+                count1 = 0;
+                count2 = 0;
+            }
+            k += x1;
+            count1++;
+            if (x1 <= 2) count2++;
+            if (count1 == 4 && count2 != 0) answer++;
+        }
+        avg = k / n / 4.0;
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
         // end
 
         return (answer, avg);
@@ -273,7 +452,20 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (r <= 0)
+        {
+            answer = 0;
+            return answer;
+        }
+        switch (type)
+        {
+            case 0: answer = r*r; break;
+            case 1: answer = Math.PI * (r * r); break;
+            case 2: answer = Math.Sqrt(3)/4*(r * r); break;
+            default: answer = 0; break;
+        }
+        answer = Math.Round(answer,2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -283,7 +475,21 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (A <= 0 || B <= 0)
+        {
+            answer = 0;
+        }
+        else switch (type)
+        {
+            case 0: answer = A*B; break;
+            case 1:
+                if (A >= B) answer = Math.PI * (A * A) - Math.PI * (B * B);
+                else answer = Math.PI * (B * B) - Math.PI * (A * A); break;
+            case 2: answer = A/4*Math.Sqrt(4*(B*B)-A*A); break;
+            default: answer = 0; break; 
+        }
+        answer = Math.Round(answer, 2);
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -319,7 +525,18 @@ public class Program
         int n = 0;
 
         // code here
-
+        for (int i = 1; ; i++)
+        {
+            bool check = double.TryParse(Console.ReadLine(), out double x1);
+            if (check)
+            {
+                if (x1 < 30) 
+                    answer += 0.2;
+            }
+            else 
+                break;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -349,7 +566,19 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        for (int i = 1; ; i++)
+        {
+            bool check = double.TryParse(Console.ReadLine(), out double x1);
+            if (!check) 
+                break;
+            bool check2 = double.TryParse(Console.ReadLine(), out double x2);
+            if (check2)
+            {
+                if ((x1 >= 0) && (x2 >= 0) && (x1 <= Math.PI) && (x2 <= Math.Sin(x1))) 
+                    answer++;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -381,7 +610,17 @@ public class Program
         int n = 0;
 
         // code here
-
+        for (int i = 1; ; i++)
+        {
+            bool check = double.TryParse(Console.ReadLine(), out double x1);
+            if (check)
+            {
+                if (x1 < answer) 
+                    answer = x1;
+            }
+            else break;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
