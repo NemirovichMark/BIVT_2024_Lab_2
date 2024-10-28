@@ -371,33 +371,31 @@ public class Program
 
         // code here
         double x, y;
-        int k2 = 0;
-        int k4 = 0;
         for (int i=0; i<n; i++)
         {
             x = double.Parse(Console.ReadLine(),new CultureInfo("en-US"));
             y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
-            if (x>0 && y>0)
+            if (x > 0 && y > 0)
             {
+                Console.WriteLine("В 1 квадранте");
                 answer1++;
             }
             if (x < 0 && y < 0)
             {
                 answer3++;
+                Console.WriteLine("В 2 квадранте");
             }
-            if (x> 0 && y < 0)
+            if (x > 0 && y < 0)
             {
-                k4++;
+                Console.WriteLine("В 4 квадранте");
             }
             if (x < 0 && y > 0)
             {
-                k2++;
+                Console.WriteLine("Во 2 квадранте");
             }
         }
         Console.WriteLine($"В первом квадранте : {answer1}");
         Console.WriteLine($"В третьем квадранте : {answer3}");
-        Console.WriteLine($"В четвертом квадранте : {k4}");
-        Console.WriteLine($"Во втором квадранте : {k2}");
 
         // end
 
