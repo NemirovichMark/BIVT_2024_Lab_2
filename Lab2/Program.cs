@@ -20,13 +20,13 @@ public class Program
         //program.Task_1_8(0.9);
         //program.Task_1_9(0.9);
         //program.Task_1_10(0.9);
-        //program.Task_2_1(10);
-        //program.Task_2_2(5, 3, 2, 1);
-        //program.Task_2_2(5, 1.5, 1.5, 1);
-        //program.Task_2_2(5, 1, 3, 1);
+        // Console.WriteLine(program.Task_2_1(6));
+        // Console.WriteLine(program.Task_2_2(5, 3, 2, 1));
+        // program.Task_2_2(5, 1.5, 1.5, 1);
+        // program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
-        //program.Task_2_4(5, 1, 2);
-        //program.Task_2_5(10, 30);
+        Console.WriteLine(program.Task_2_4(5, 1, 2));
+        // Console.WriteLine(program.Task_2_5(10, 30));
         //program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(5);
@@ -55,9 +55,10 @@ public class Program
     public bool Task_1_1(double x, double y)
     {
         bool answer = false;
+        double radius = 2;
 
         // code here
-
+        answer = (Math.Abs(Math.Pow(x, 2) + Math.Pow(y, 2) - Math.Pow(radius, 2)) < Math.Pow(10, -3)) ? true : false;
         // end
 
         return answer;
@@ -65,9 +66,8 @@ public class Program
     public bool Task_1_2(double x, double y)
     {
         bool answer = false;
-
         // code here
-
+        answer = (y >= 0 && (y + Math.Abs(x) <= 1)) ? true : false;
         // end
 
         return answer;
@@ -77,7 +77,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (a > 0) ? (a > b) ? a: b : (a < b) ? a : b; 
         // end
 
         return answer;
@@ -87,7 +87,8 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double MinAB = (a > b) ? b: a;
+        answer = (MinAB > c) ? MinAB : c;
         // end
 
         return answer;
@@ -97,6 +98,7 @@ public class Program
         bool answer = false;
 
         // code here
+        answer = (2 * Math.Sqrt(r / Math.PI) >= Math.Sqrt(s) * Math.Sqrt(2)) ? true : false;
 
         // end
 
@@ -107,7 +109,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        answer = (2 * Math.Sqrt(r / Math.PI) < Math.Sqrt(s)) ? true : false;
         // end
 
         return answer;
@@ -117,7 +119,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (Math.Abs(x) >= 1) ? 1: Math.Abs(x);
         // end
 
         return answer;
@@ -127,7 +129,7 @@ public class Program
         double answer = 0;
 
         // code here
-
+        answer = (Math.Abs(x) >= 1) ? 0: Math.Pow(x, 2) - 1;
         // end
 
         return answer;
@@ -137,7 +139,13 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) {
+            answer = 0;
+        } else if (x > 0) {
+            answer = 1;
+        } else {
+            answer = 1 + x;
+        }
         // end
 
         return answer;
@@ -147,7 +155,13 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) {
+            answer = 1;
+        } else if (x > 1) {
+            answer = -1;
+        } else {
+            answer = -x;
+        }
         // end
 
         return answer;
@@ -160,17 +174,23 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++) {
+            answer += Convert.ToDouble(Console.ReadLine());
+        }
         // end
 
-        return answer;
+        return answer / n;
     }
     public int Task_2_2(int n, double r, double a, double b)
     {
         int answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++) {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            answer += (Math.Abs(Math.Pow(x, 2) + Math.Pow(y, 2) - Math.Pow(r, 2)) < Math.Pow(10, -3)) ? 1 : 0;
+        }
         // end
 
         return answer;
@@ -180,7 +200,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++) {
+            answer += (Convert.ToDouble(Console.ReadLine()) < 30) ? 200: 0;
+        }
         // end
 
         return answer;
@@ -190,7 +212,13 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = 1; i <= n; i++) {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            bool firstCondition = (Math.Abs(Math.Pow(x, 2) + Math.Pow(y, 2) - Math.Pow(r2, 2)) <= Math.Pow(10, -3));
+            bool secondCondition = (Math.Abs(Math.Pow(x, 2) + Math.Pow(y, 2) - Math.Pow(r1, 2)) >= Math.Pow(10, -3));
+            answer += firstCondition && secondCondition ? 1 : 0;
+        }
         // end
 
         return answer;
