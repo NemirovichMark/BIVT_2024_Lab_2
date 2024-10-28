@@ -218,6 +218,7 @@ public class Program
             bool firstCondition = (Math.Abs(Math.Pow(x, 2) + Math.Pow(y, 2) - Math.Pow(r2, 2)) <= Math.Pow(10, -3));
             bool secondCondition = (Math.Abs(Math.Pow(x, 2) + Math.Pow(y, 2) - Math.Pow(r1, 2)) >= Math.Pow(10, -3));
             answer += firstCondition && secondCondition ? 1 : 0;
+            
         }
         // end
 
