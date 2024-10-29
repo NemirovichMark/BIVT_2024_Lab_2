@@ -46,7 +46,7 @@ public class Program
         //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
-        program.Task_3_10();
+        //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
@@ -394,6 +394,8 @@ public class Program
         int answer3 = 0;
 
         // code here
+        int answer2 = 0;
+        int answer4 = 0;
         for (int i = 1; i <= n; i++)
         {
             double x = double.Parse(Console.ReadLine());
@@ -406,9 +408,20 @@ public class Program
             {
                 answer3 += 1;
             }
+            else if (x > 0 && y < 0)
+            {
+                answer2 += 1;
+            }
+            else if (x < 0 && y > 0)
+            {
+                answer4 += 1;
+            }
         }
         System.Console.WriteLine($" 1 квадрант {answer1}");
-        System.Console.WriteLine($" 2 квадрант {answer3}");
+        System.Console.WriteLine($" 3 квадрант {answer3}");
+        System.Console.WriteLine($" 2 квадрант {answer2}");
+        System.Console.WriteLine($" 4 квадрант {answer4}");
+
         // end
 
         return (answer1, answer3);
