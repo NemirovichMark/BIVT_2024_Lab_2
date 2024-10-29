@@ -325,7 +325,7 @@ public class Program
         {
             double.TryParse(Console.ReadLine(), out x);
 
-            if (x >= norm)
+            if (x <= norm)
             {
                 answer++;
             }
@@ -345,7 +345,7 @@ public class Program
             double.TryParse(Console.ReadLine(), out x);
             double.TryParse(Console.ReadLine(), out y);
 
-            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y))
+            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y) && (y >= 0))
             {
                 answer++;
             }
@@ -377,7 +377,8 @@ public class Program
             }
         }
         // end
-
+        Console.WriteLine("лежит в 1-ом квадранте: {0} ", answer1);
+        Console.WriteLine("лежит в 3-tм квадранте: {0} ", answer3);
         return (answer1, answer3);
     }
     public (int, double) Task_2_8(int n)
@@ -428,22 +429,23 @@ public class Program
         int answer = 0;
 
         // code here;
-        double x = 0, t = 0, kol = 0;
-        while (t < n * 4)
+        double x = 0, t = 1, prov = 0;
+        while (t <= n * 4)
         {
-
             double.TryParse(Console.ReadLine(), out x);
-            kol += x;
+            if (x < 4)
+            {
+                prov++;
+            }
             if (t % 4 == 0)
             {
-                if (kol >= 16)
+                if (prov == 0)
                 {
                     answer++;
-                    kol = 0;
                 }
                 else
                 {
-                    kol = 0;
+                    prov = 0;
                 }
             }
             t++;
