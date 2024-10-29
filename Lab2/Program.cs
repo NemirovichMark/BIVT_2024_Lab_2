@@ -458,7 +458,7 @@ public class Program
     public double Task_3_1()
     {
         double answer = 0;
-        int n = 0;
+        int i = 0;
 
         // code here
         for (; ; i++)
