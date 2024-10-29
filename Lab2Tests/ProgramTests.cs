@@ -232,7 +232,7 @@ namespace Tests
             double[] answerFail = new double[] { 0, 0, 0, 0 };
             testFail[0] = main.Task_2_12(-0.75, 0);
             testFail[1] = main.Task_2_12(0, 2);
-            testFail[2] = main.Task_2_12(1.2, 3);
+            testFail[2] = main.Task_2_12(1.2, 4);
             testFail[3] = main.Task_2_12(1.2, -4);
             for (int i = 0; i < testFail.Length; i++)
             {
