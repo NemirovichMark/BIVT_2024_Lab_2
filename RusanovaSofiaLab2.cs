@@ -391,7 +391,7 @@ public class Program
             x = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите y");
             y = double.Parse(Console.ReadLine());
-            if ((x >= 0) && (x <= Math.PI) && (y <= Math.Sin(x)))
+            if ((y >= 0) && (x >= 0) && (x <= Math.PI) && (y <= Math.Sin(x)))
             {
                 answer++;
             }
@@ -420,15 +420,26 @@ public class Program
             if ((x > 0) && (y > 0))
             {
                 answer1++;
+                Console.WriteLine("Точка во 1-ом квадранте");
+            }
+            if ((x < 0) && (y > 0))
+            {
+                Console.WriteLine("Точка во 2-ом квадранте");
             }
             if ((x < 0) && (y < 0))
             {
+                Console.WriteLine("Точка во 3-ем квадранте");
                 answer3++;
+            }
+            if ((x > 0) && (y < 0))
+            {
+                Console.WriteLine("Точка во 4-ом квадранте");
             }
         }
         Console.WriteLine("Результаты: ");
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
+
         // end
 
         return (answer1, answer3);
