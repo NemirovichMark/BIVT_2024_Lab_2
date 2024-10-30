@@ -382,20 +382,20 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1 += 1;
-                Console.WriteLine("Первый квадрант");
+                Console.WriteLine("РџРµСЂРІС‹Р№ РєРІР°РґСЂР°РЅС‚");
             }
             if (x < 0 && y < 0)
             {
                 answer3 += 1;
-                Console.WriteLine("Третий квадрант");
+                Console.WriteLine("РўСЂРµС‚РёР№ РєРІР°РґСЂР°РЅС‚");
             }
             if (x < 0 && y > 0)
             {
-                Console.WriteLine("Второй квадрант");
+                Console.WriteLine("Р’С‚РѕСЂРѕР№ РєРІР°РґСЂР°РЅС‚");
             }
             if (x > 0 && y < 0)
             {
-                Console.WriteLine("Четвертый квадрант");
+                Console.WriteLine("Р§РµС‚РІРµСЂС‚С‹Р№ РєРІР°РґСЂР°РЅС‚");
             }
         }
         // end
@@ -490,7 +490,7 @@ public class Program
 
         // code here
         if (r <= 0) return answer;
-        Console.WriteLine("Выберте 0, 1 или 2");
+        Console.WriteLine("Р’РІРµРґРёС‚Рµ 0, 1 РёР»Рё 2");
         switch (type)
         {
             case 0:
@@ -506,7 +506,7 @@ public class Program
                 answer = Math.Round(answer, 2);          
                 break;
             default:
-                Console.WriteLine("Неверный ввод");                
+                Console.WriteLine("РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ");                
                 break;
         }
         // end
@@ -524,7 +524,6 @@ public class Program
         {
             case 0:
                 answer = A * B;
-                
                 answer = Math.Round(answer, 2);
                 break;
             case 1:
@@ -546,7 +545,7 @@ public class Program
                 answer = Math.Round(answer, 2);
                 break;
             default:
-                Console.WriteLine("Неверный ввод");
+                Console.WriteLine("ГЌГҐГўГҐГ°Г­Г»Г© ГўГўГ®Г¤");
                 break;
         }
  
@@ -571,9 +570,9 @@ public class Program
             double s1 = Convert.ToDouble(s);
             sr += s1;
             n++;
-            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
+            Console.WriteLine("РњРЅРµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ?(Р”Р° РёР»Рё РќРµС‚)");
             string s2 = Console.ReadLine();
-            if (s2 == "Нет")
+            if (s2 == "РќРµС‚")
             {
                 stop = true;
             }
@@ -620,9 +619,9 @@ public class Program
             {
                 answer += 1;
             }
-            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
+            Console.WriteLine("РњРЅРµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ?(Р”Р° РёР»Рё РќРµС‚)");
             string s2 = Console.ReadLine();
-            if (s2 == "Нет")
+            if (s2 == "ГЌГҐГІ")
             {
                 stop = true;
             }
@@ -666,25 +665,25 @@ public class Program
                 if (x > 0 && y > 0)
                 {
                     answer1 += 1;
-                    Console.WriteLine("Первый квадрант");
+                    Console.WriteLine("РџРµСЂРІС‹Р№ РєРІР°РґСЂР°РЅС‚");
                 }
                 if (x < 0 && y < 0)
                 {
                     answer3 += 1;
-                    Console.WriteLine("Третий квадрант");
+                    Console.WriteLine("РўСЂРµС‚РёР№ РєРІР°РґСЂР°РЅС‚");
                 }
                 if (x < 0 && y > 0)
                 {
-                    Console.WriteLine("Второй квадрант");
+                    Console.WriteLine("Р’С‚РѕСЂРѕР№ РєРІР°РґСЂР°РЅС‚");
                 }
                 if (x > 0 && y < 0)
                 {
-                    Console.WriteLine("Четвертый квадрант");
+                    Console.WriteLine("Р§РµС‚РІРµСЂС‚С‹Р№ РєРІР°РґСЂР°РЅС‚");
                 }
             }
-            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
+            Console.WriteLine("РњРЅРµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ?(Р”Р° РёР»Рё РќРµС‚)");;
             string s2 = Console.ReadLine();
-            if (s2 == "Нет")
+            if (s2 == "ГЌГҐГІ")
             {
                 stop = true;
             }
@@ -731,9 +730,9 @@ public class Program
             {
                 answer += 1;
             }
-            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
+            Console.WriteLine("РњРЅРµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ?(Р”Р° РёР»Рё РќРµС‚)");
             string s2 = Console.ReadLine();
-            if (s2 == "Нет")
+            if (s2 == "ГЌГҐГІ")
             {
                 stop = true;
             }
