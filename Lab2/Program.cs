@@ -547,26 +547,24 @@ public class Program
         double answer = 0;
 
         // code here;
-        if (A > 0 && B> 0)
-        {
-            switch (type)
-            {
-                case 0:
-                    answer = A * B; break;
-                case 1:
-                    answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
-                    break;
-                case 2:
-                    answer = Math.Abs(B / 4 * Math.Sqrt(4 * A * A - B * B));
-                    break;
-                default:
-                    answer = 0;
-                    break;
-            }
+        if (A <= 0 || B <= 0)
+            return 0;
 
+        switch (type)
+        {
+            case 0:
+                answer = A * B;
+                break;
+            case 1:
+                answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
+                break;
+            case 2:
+                answer = Math.Sqrt(B * B - A * A / 4) * A / 2;
+                break;
+            default: return 0;
         }
+        // end
         answer = Math.Round(answer, 2);
-        Console.WriteLine(answer);
         return answer;
     }
     #endregion
