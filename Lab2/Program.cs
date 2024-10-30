@@ -48,7 +48,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        program.Task_3_11();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -185,7 +185,7 @@ public class Program
             answer = Math.Abs(x);
         }
         Console.WriteLine(answer);
-        return answer;
+        
         // end
 
         return answer;
@@ -538,6 +538,7 @@ public class Program
             }
         }
         // end
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -553,10 +554,10 @@ public class Program
                 case 0:
                     answer = A * B; break;
                 case 1:
-                    answer = Math.PI * A * A - Math.PI * B * B;
+                    answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
                     break;
                 case 2:
-                    answer = B / 4 * Math.Sqrt(4 * A * A - B * B);
+                    answer = Math.Abs(B / 4 * Math.Sqrt(4 * A * A - B * B));
                     break;
                 default:
                     answer = 0;
@@ -564,7 +565,7 @@ public class Program
             }
 
         }
-        // end
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
