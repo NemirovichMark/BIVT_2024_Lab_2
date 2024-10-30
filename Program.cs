@@ -620,12 +620,19 @@ public class Program
             {
                 if (x > 0 && y > 0)
                 {
+                    Console.WriteLine("I quadrant");
                     answer1++;
                 }
                 else
                 {
+                    Console.WriteLine("III quadrant");
                     answer3++;
                 }
+            }
+            else
+            {
+                if (x > 0 && y < 0) Console.WriteLine("IV quadrant");
+                else Console.WriteLine("II quadrant");
             }
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
