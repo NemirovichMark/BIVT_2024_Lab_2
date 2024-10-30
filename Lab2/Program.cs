@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -243,8 +243,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
-
         return answer;
     }
     public int Task_2_2(int n, double r, double a, double b)
@@ -265,8 +263,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
-
         return answer;
     }
     public double Task_2_3(int n)
@@ -282,8 +278,6 @@ public class Program
         }
         Console.WriteLine(answer);
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
     }
@@ -304,8 +298,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
-
         return answer;
     }
     public int Task_2_5(int n, double norm)
@@ -322,8 +314,6 @@ public class Program
         }
         Console.WriteLine(answer);
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
     }
@@ -344,8 +334,6 @@ public class Program
         }
         Console.WriteLine(answer);
         // end
-
-        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
 
         return answer;
     }
@@ -382,8 +370,6 @@ public class Program
         Console.WriteLine($"количесво точек в 3 квадрате {answer3}");
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
-
         return (answer1, answer3);
     }
     public (int, double) Task_2_8(int n)
@@ -411,8 +397,6 @@ public class Program
         Console.WriteLine(Math.Round(answerLength,2));
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
-
         return (answer, answerLength);
     }
     public double Task_2_9(int n)
@@ -432,8 +416,6 @@ public class Program
         answer = t;
         Console.WriteLine(answer);
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
 
         return answer;
     }
@@ -456,8 +438,6 @@ public class Program
         }
         Console.WriteLine(answer);
         // end
-
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
 
         return answer;
     }
@@ -484,8 +464,6 @@ public class Program
         Console.WriteLine(answer);
         Console.WriteLine(avg);
         // end
-
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
 
         return (answer, avg);
     }
@@ -578,9 +556,7 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 168, 147, 174, 154, 180, 149, 166, 160, 175, 161
         // answer should be equal to the task_2_1 answer
-
         return answer;
     }
     public int Task_3_2(double r, double a, double b)
@@ -590,9 +566,6 @@ public class Program
         // code here
 
         // end
-
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -2.5 -0.5
-        // answer should be equal to the task_2_2 answer
 
         return answer;
     }
@@ -604,9 +577,6 @@ public class Program
         // code here
 
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_3 answer
 
         return answer;
     }
@@ -633,9 +603,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 1.2 0.7, 2 2, 4.5 0.1, -1 1.5, -0.5 -0.5
-        // answer should be equal to the task_2_4 answer
-
         return answer;
     }
     public int Task_3_5(double norm)
@@ -646,9 +613,6 @@ public class Program
 
         // end
 
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_5 answer
-
         return answer;
     }
     public int Task_3_6()
@@ -658,9 +622,6 @@ public class Program
         // code here
 
         // end
-
-        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
-        // answer should be equal to the task_2_6 answer
 
         return answer;
     }
@@ -692,9 +653,6 @@ public class Program
         Console.WriteLine(answer3);
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -1.5
-        // answer should be equal to the task_2_7 answer
-
         return (answer1, answer3);
     }
     public (int, double) Task_3_8()
@@ -706,9 +664,6 @@ public class Program
 
         // end
 
-        // for test input in console: -1.2 0.7, 2 -2, 0.5 0.9, 1 1.5, -0.5 -0.5
-        // answer should be equal to the task_2_8 answer
-
         return (answer, answerLength);
     }
     public double Task_3_9()
@@ -719,9 +674,6 @@ public class Program
         // code here
 
         // end
-
-        // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-        // answer should be equal to the task_2_9 answer
 
         return answer;
     }
@@ -750,9 +702,6 @@ public class Program
         Console.WriteLine(answer);
         // end
 
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
-        // answer should be equal to the task_2_10 answer
-
         return answer;
     }
     public (int, double) Task_3_11()
@@ -764,32 +713,7 @@ public class Program
 
         // end
 
-        // for test input in console: 5, 3, 3, 4, 5, 2, 4, 5, 5, 4, 5, 4, 2, 5, 3, 5, 4, 5, 5, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 2, 5, 2, 2, 4, 2, 5, 4, 5, 4
-        // answer should be equal to the task_2_11 answer
-
         return (answer, avg);
-    }
-    public double Task_3_12(double r, int type)
-    {
-        double answer = 0;
-
-        // code here;
-
-        // end
-        // answer should be equal to the task_2_12 answer
-
-        return answer;
-    }
-    public double Task_3_13(double A, double B, int type)
-    {
-        double answer = 0;
-
-        // code here;
-
-        // end
-        // answer should be equal to the task_2_13 answer
-
-        return answer;
     }
     #endregion
 }
