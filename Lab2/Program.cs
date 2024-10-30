@@ -293,23 +293,29 @@ public class Program
 
         // code here
         int k = 0;
+        double a, b;
         for (int i = 0; i < n; i++)
         {
-            double x = double.Parse(Console.ReadLine());
-            double y = double.Parse(Console.ReadLine());
-            if (x > 0 && y > 0)
+            a = double.Parse(Console.ReadLine());
+            b = double.Parse(Console.ReadLine());
+            if ((a > 0) && (b > 0))
             {
-                k = 1;
+                Console.WriteLine(1);
                 answer1++;
             }
-      
-            if (x < 0 && y < 0)
+            else if ((a < 0) && (b > 0))
             {
-                k = 3;
+                Console.WriteLine(2);
+            }
+            else if ((a < 0) && (b < 0))
+            {
+                Console.WriteLine(3);
                 answer3++;
             }
-           
-       
+            else if ((a > 0) && (b < 0))
+            {
+                Console.WriteLine(4);
+            }
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
