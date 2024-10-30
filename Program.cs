@@ -2,6 +2,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -359,7 +360,7 @@ public class Program
         {
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
-            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y))
+            if ((x >= 0) && (y >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y))
             {
                 answer += 1;
             }
@@ -381,20 +382,20 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1 += 1;
-                Console.WriteLine("РџРµСЂРІС‹Р№ РєРІР°РґСЂР°РЅС‚");
+                Console.WriteLine("Первый квадрант");
             }
             if (x < 0 && y < 0)
             {
                 answer3 += 1;
-                Console.WriteLine("РўСЂРµС‚РёР№ РєРІР°РґСЂР°РЅС‚");
+                Console.WriteLine("Третий квадрант");
             }
             if (x < 0 && y > 0)
             {
-                Console.WriteLine("Р’С‚РѕСЂРѕР№ РєРІР°РґСЂР°РЅС‚");
+                Console.WriteLine("Второй квадрант");
             }
             if (x > 0 && y < 0)
             {
-                Console.WriteLine("Р§РµС‚РІРµСЂС‚С‹Р№ РєРІР°РґСЂР°РЅС‚");
+                Console.WriteLine("Четвертый квадрант");
             }
         }
         // end
@@ -487,21 +488,25 @@ public class Program
     {
         double answer = 0;
 
-        // code here;
-        string s = Console.ReadLine();
-        switch (s)
+        // code here
+        if (r <= 0) return answer;
+        Console.WriteLine("Выберте 0, 1 или 2");
+        switch (type)
         {
-            case "ГЏГ«Г®Г№Г Г¤Гј ГЄГўГ Г¤Г°Г ГІГ ":
+            case 0:
                 answer = r * r;
+                answer = Math.Round(answer, 2);                
                 break;
-            case "ГЏГ«Г®Г№Г Г¤Гј ГЄГ°ГіГЈГ ":
+            case 1:
                 answer = Math.PI * (r * r);
+                answer = Math.Round(answer, 2);               
                 break;
-            case "ГЏГ«Г®Г№Г Г¤Гј Г°Г ГўГ­Г®Г±ГІГ®Г°Г®Г­Г­ГҐГЈГ® ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ ":
-                answer = (Math.Sqrt(3) * r) / 4;
+            case 2:
+                answer = (Math.Sqrt(3) * (r*r)) / 4;
+                answer = Math.Round(answer, 2);          
                 break;
             default:
-                Console.WriteLine("ГЌГҐГўГҐГ°Г­Г»Г© ГўГўГ®Г¤");
+                Console.WriteLine("Неверный ввод");                
                 break;
         }
         // end
@@ -513,22 +518,38 @@ public class Program
         double answer = 0;
 
         // code here;
-        string s = Console.ReadLine();
-        switch (s)
+        if (A <= 0) return answer;
+        if (B <= 0) return answer;       
+        switch (type)
         {
-            case "ГЏГ«Г®Г№Г Г¤Гј ГЄГўГ Г¤Г°Г ГІГ ":
+            case 0:
                 answer = A * B;
+                
+                answer = Math.Round(answer, 2);
                 break;
-            case "ГЏГ«Г®Г№Г Г¤Гј ГЄГ°ГіГЈГ ":
-                answer = Math.PI * (A - B);
-                break;
-            case "ГЏГ«Г®Г№Г Г¤Гј Г°Г ГўГ­Г®Г±ГІГ®Г°Г®Г­Г­ГҐГЈГ® ГІГ°ГҐГіГЈГ®Г«ГјГ­ГЁГЄГ ":
-                answer = 0.5 * A * (Math.Sqrt(A*A+B*B));
+            case 1:
+
+                if (A >= B)
+                {
+                    answer = Math.PI * ((A * A) - (B * B));
+                    answer = Math.Round(answer, 2);
+                    break;
+                }
+                else
+                {
+                    answer = Math.PI * ((B * B) - (A * A));
+                    answer = Math.Round(answer, 2);
+                    break;
+                }                    
+            case 2:
+                answer = (A/4 * Math.Sqrt((4*B*B)-(A*A)));                
+                answer = Math.Round(answer, 2);
                 break;
             default:
-                Console.WriteLine("ГЌГҐГўГҐГ°Г­Г»Г© ГўГўГ®Г¤");
+                Console.WriteLine("Неверный ввод");
                 break;
         }
+ 
         // end
 
         return answer;
@@ -550,9 +571,9 @@ public class Program
             double s1 = Convert.ToDouble(s);
             sr += s1;
             n++;
-            Console.WriteLine("ГЌГіГ¦Г­Г® Г«ГЁ ГЇГ°Г®Г¤Г®Г«Г¦Г ГІГј?(Г„Г  ГЁГ«ГЁ Г­ГҐГІ)");
+            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
             string s2 = Console.ReadLine();
-            if (s2 == "ГЌГҐГІ")
+            if (s2 == "Нет")
             {
                 stop = true;
             }
@@ -599,9 +620,9 @@ public class Program
             {
                 answer += 1;
             }
-            Console.WriteLine("ГЌГіГ¦Г­Г® Г«ГЁ ГЇГ°Г®Г¤Г®Г«Г¦Г ГІГј?(Г„Г  ГЁГ«ГЁ Г­ГҐГІ)");
+            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
             string s2 = Console.ReadLine();
-            if (s2 == "ГЌГҐГІ")
+            if (s2 == "Нет")
             {
                 stop = true;
             }
@@ -638,19 +659,32 @@ public class Program
         bool stop = false;
         while (stop == false)
         {
-            double x = Convert.ToDouble(Console.ReadLine());
-            double y = Convert.ToDouble(Console.ReadLine());
-            if (x > 0 && y > 0)
+            for (int i = 1; i <= n; i++)
             {
-                answer1 += 1;
+                double x = Convert.ToDouble(Console.ReadLine());
+                double y = Convert.ToDouble(Console.ReadLine());
+                if (x > 0 && y > 0)
+                {
+                    answer1 += 1;
+                    Console.WriteLine("Первый квадрант");
+                }
+                if (x < 0 && y < 0)
+                {
+                    answer3 += 1;
+                    Console.WriteLine("Третий квадрант");
+                }
+                if (x < 0 && y > 0)
+                {
+                    Console.WriteLine("Второй квадрант");
+                }
+                if (x > 0 && y < 0)
+                {
+                    Console.WriteLine("Четвертый квадрант");
+                }
             }
-            if (x < 0 && y < 0)
-            {
-                answer3 += 1;
-            }
-            Console.WriteLine("ГЌГіГ¦Г­Г® Г«ГЁ ГЇГ°Г®Г¤Г®Г«Г¦Г ГІГј?(Г„Г  ГЁГ«ГЁ Г­ГҐГІ)");
+            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
             string s2 = Console.ReadLine();
-            if (s2 == "ГЌГҐГІ")
+            if (s2 == "Нет")
             {
                 stop = true;
             }
@@ -697,9 +731,9 @@ public class Program
             {
                 answer += 1;
             }
-            Console.WriteLine("ГЌГіГ¦Г­Г® Г«ГЁ ГЇГ°Г®Г¤Г®Г«Г¦Г ГІГј?(Г„Г  ГЁГ«ГЁ Г­ГҐГІ)");
+            Console.WriteLine("Нужно ли продолжать?(Да или нет)");
             string s2 = Console.ReadLine();
-            if (s2 == "ГЌГҐГІ")
+            if (s2 == "Нет")
             {
                 stop = true;
             }
