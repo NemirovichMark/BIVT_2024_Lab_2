@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +28,7 @@ public class Program
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
+        program.Task_2_7(5);
         //program.Task_2_8(10);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
@@ -440,12 +440,23 @@ public class Program
             if (x > 0 && y > 0) //Первый квадрат
             {
                 k1++;
+                Console.WriteLine($"Точка с координатами ({x}, {y}) попала в первый квадрат");
+            }
+            else if (x < 0 && y > 0) //Второй квадрат
+            {
+                Console.WriteLine($"Точка с координатами ({x}, {y}) попала во второй квадрат");
             }
             else if (x < 0 && y < 0) //Третий квадрат
             {
                 k3++;
+                Console.WriteLine($"Точка с координатами ({x}, {y}) попала в третий квадрат");
+            }
+            else if (x > 0 && y < 0) //Четвёртый квадрат
+            {
+                Console.WriteLine($"Точка с координатами ({x}, {y}) попала в четвёртый квадрат");
             }
             else continue;
+
         }
         answer1 = k1;
         answer3 = k3;
