@@ -57,7 +57,10 @@ public class Program
         bool answer = false;
 
         // code here
-
+        double a = 0;
+        a = x * x + y * y - 4;
+        if (Math.Abs(a) <= Math.Pow(10, -3)) answer = true;
+        else answer = false;
         // end
 
         return answer;
@@ -67,7 +70,8 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if ((y >= 0) && ((y + Math.Abs(x)) <= 1)) answer = true;
+        else answer = false;
         // end
 
         return answer;
@@ -77,7 +81,25 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double max = 0, min = 0;
+        if (a > b)
+        {
+            min = b;
+            max = a;
+        }
+        else
+        {
+            min = a;
+            max = b;
+        }
+        if (a > 0)
+        {
+            answer = max;
+        }
+        else
+        {
+            answer = min;
+        }
         // end
 
         return answer;
@@ -87,7 +109,11 @@ public class Program
         double answer = 0;
 
         // code here
-
+        double n=0;
+        if (a > b) n = b;
+        else n = a;
+        if (n > c) answer = n;
+        else answer = c;
         // end
 
         return answer;
@@ -97,7 +123,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (2 * s <= 4 * r / Math.PI) answer = true;
         // end
 
         return answer;
@@ -107,7 +133,7 @@ public class Program
         bool answer = false;
 
         // code here
-
+        if (s >= 4 * r / Math.PI) answer = true;
         // end
 
         return answer;
@@ -117,7 +143,8 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) > 1) answer = 1;
+        else answer = Math.Abs(x);
         // end
 
         return answer;
@@ -127,7 +154,8 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (Math.Abs(x) >= 1) answer = 0;
+        else answer = x * x - 1;
         // end
 
         return answer;
@@ -137,7 +165,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 0;
+        if ((-1 < x) && (x <= 0)) answer = 1 + x;
+        if (x > 0) answer = 1;
         // end
 
         return answer;
@@ -147,7 +177,9 @@ public class Program
         double answer = 0;
 
         // code here
-
+        if (x <= -1) answer = 1;
+        if ((-1 < x) && (x <= 1)) answer = -x;
+        if (x > 1) answer = -1;
         // end
 
         return answer;
@@ -160,7 +192,14 @@ public class Program
         double answer = 0;
 
         // code here
-
+        int i = n;
+        while (i>0)
+        {
+            answer += Convert.ToDouble(Console.ReadLine());
+            i--;
+        }
+        answer /= n;
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -170,7 +209,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        { 
+            double x= Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            double p = Math.Sqrt(Math.Pow(x - a, 2) + Math.Pow(y - b, 2));
+            if (p <= r) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -180,7 +226,12 @@ public class Program
         double answer = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double w = Convert.ToDouble(Console.ReadLine());
+            if (w < 30) answer += 0.2;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -190,7 +241,14 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            double p = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+            if ((p <= r2) && (p>=r1)) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -200,7 +258,17 @@ public class Program
         int answer = 0;
 
         // code here
-
+        int i = n;
+        while (i>0)
+        {
+            double result = Convert.ToDouble(Console.ReadLine());
+            if (result <= norm)
+            {
+                answer++;
+            } 
+            i -= 1;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -210,7 +278,13 @@ public class Program
         int answer = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            if (0<=x && x<=Math.PI && 0<=y && y<=Math.Sin(x)) answer++;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -221,7 +295,32 @@ public class Program
         int answer3 = 0;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            if (x > 0 && y > 0)
+            {
+                answer1++;
+                Console.WriteLine("1 qvadrat");
+            }
+            else if (x > 0 && y < 0)
+            {
+                Console.WriteLine("4 qvadrat");
+            }
+            else if (x < 0 && y < 0)
+            {
+                answer3++;
+                Console.WriteLine("3 qvadrat");
+            }
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine("2 qvadrat");
+            } 
+        
+        }
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         return (answer1, answer3);
@@ -232,7 +331,18 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = Convert.ToDouble(Console.ReadLine());
+            double a = Math.Sqrt(x * x + y * y);
+            if (a < answerLength)
+            {
+                answer = i;
+                answerLength = a;
+            }
+        }
+        Console.WriteLine(answer);
         // end
 
         return (answer, answerLength);
@@ -242,7 +352,12 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-
+        for (int i = n; i > 0; i--)
+        {
+            double a = Convert.ToDouble(Console.ReadLine());
+            if (a< answer) answer=a;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -252,7 +367,18 @@ public class Program
         int answer = 0;
 
         // code here;
-
+        for (int i = n; i > 0; i--)
+        {
+            double k1 = Convert.ToDouble(Console.ReadLine());
+            double k2 = Convert.ToDouble(Console.ReadLine());
+            double k3 = Convert.ToDouble(Console.ReadLine());
+            double k4 = Convert.ToDouble(Console.ReadLine());
+            if (k1 != 2 && k1 != 3 && k2 != 2 && k2 != 3 && k3 != 2 && k3 != 3 && k4 != 2 && k4 != 3)
+            {
+                answer++;
+            }    
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -263,7 +389,23 @@ public class Program
         double avg = 0.0;
 
         // code here;
-
+        double sum1 = 0, sum2 = 0;
+        for (int i = n; i > 0; i--)
+        {
+            double v1 = Convert.ToDouble(Console.ReadLine());
+            double v2 = Convert.ToDouble(Console.ReadLine());
+            double v3 = Convert.ToDouble(Console.ReadLine());
+            double v4 = Convert.ToDouble(Console.ReadLine());
+            sum2++;
+            if (v1 == 2 || v2 == 2 || v3 == 2 || v4 == 2)
+            {
+                answer++;
+            }
+            sum1 += v1 + v2 + v3 + v4;
+        }
+        avg = sum1 / (sum2 * 4);
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
         // end
 
         return (answer, avg);
@@ -273,7 +415,18 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (r > 0)
+        { 
+            switch (type)
+            {
+                case 0: answer = r * r; break;
+                case 1: answer = Math.PI * r * r; break;
+                case 2: answer = r * r * Math.Sqrt(3) / 4; break;
+                default:
+                    answer = 0; break;
+            }
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -283,7 +436,18 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (A>0 && B>0)
+        {
+            switch (type)
+            {
+                case 0: answer = A*B; break;
+                case 1: answer = Math.Abs(Math.PI * A * A - Math.PI * B * B); break;
+                case 2: answer = Math.Sqrt(B * B - A * A / 4) * A / 2; break;
+                default:
+                    answer = 0; break;
+            }
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -294,10 +458,20 @@ public class Program
     public double Task_3_1()
     {
         double answer = 0;
-        int n = 0;
+        int i = 0;
 
         // code here
-
+        for (; ; i++)
+        {
+            string input = Console.ReadLine();
+            if (input != "out")
+            {
+                answer += Convert.ToDouble(input);
+            }
+            else break;
+        }
+        answer /= i;
+        Console.WriteLine(answer);
         // end
 
         // answer should be equal to the task_2_1 answer
@@ -329,7 +503,20 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-
+        for (; ; )
+        {
+            string input1 = Console.ReadLine();
+            string input2 = Console.ReadLine();
+            if (input1 != "out" && input2 != "out")
+            {
+                double x = Convert.ToDouble(input1);
+                double y = Convert.ToDouble(input2);
+                double p = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+                if ((p <= r2) && (p >= r1)) answer++;
+            }
+            else break;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
@@ -359,7 +546,37 @@ public class Program
         int answer1 = 0, answer3 = 0, n = 0;
 
         // code here
-
+        for (; ; )
+        {
+            string input1 = Console.ReadLine();
+            string input2 = Console.ReadLine();
+            if (input1 != "out" && input2 != "out")
+            {
+                double x = Convert.ToDouble(input1);
+                double y = Convert.ToDouble(input2);
+                if (x > 0 && y > 0)
+                {
+                    answer1++;
+                    Console.WriteLine("1 qvadrat");
+                }
+                else if (x > 0 && y < 0)
+                {
+                    Console.WriteLine("4 qvadrat");
+                }
+                else if (x < 0 && y < 0)
+                {
+                    answer3++;
+                    Console.WriteLine("3 qvadrat");
+                }
+                else if (x < 0 && y > 0)
+                {
+                    Console.WriteLine("2 qvadrat");
+                }
+            }
+            else break;
+        }
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         return (answer1, answer3);
@@ -391,7 +608,26 @@ public class Program
         int answer = 0, n = 0;
 
         // code here;
-
+        for (; ; )
+        {
+            string input1 = Console.ReadLine();
+            string input2 = Console.ReadLine();
+            string input3 = Console.ReadLine();
+            string input4 = Console.ReadLine();
+            if (input1 != "out" && input2 != "out" && input3 != "out" && input4 != "out")
+            {
+                double k1 = Convert.ToDouble(input1);
+                double k2 = Convert.ToDouble(input2);
+                double k3 = Convert.ToDouble(input3);
+                double k4 = Convert.ToDouble(input4);
+                if (k1 != 2 && k1 != 3 && k2 != 2 && k2 != 3 && k3 != 2 && k3 != 3 && k4 != 2 && k4 != 3)
+                {
+                    answer++;
+                }
+            }
+            else break;
+        }
+        Console.WriteLine(answer);
         // end
 
         return answer;
