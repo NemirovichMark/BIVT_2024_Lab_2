@@ -31,7 +31,7 @@ public class Program
         //program.Task_2_4(5, 1, 2);
         //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
-        //program.Task_2_7(5);
+        program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
@@ -48,7 +48,7 @@ public class Program
         //program.Task_3_6();
         //program.Task_3_7();
         //program.Task_3_8();
-        program.Task_3_9();
+        //program.Task_3_9();
         //program.Task_3_10();
         //program.Task_3_11();
         //program.Task_3_12(10, 0);
@@ -286,7 +286,7 @@ public class Program
         while (counter < n)
         {
             Double.TryParse(Console.ReadLine(), out double x);
-            if (x>=norm)
+            if (x<=norm)
             {
                 answer++;
             }
@@ -325,17 +325,27 @@ public class Program
         {
             Double.TryParse(Console.ReadLine(), out double x);
             Double.TryParse(Console.ReadLine(), out double y);
-            if (x>0 && 0 < y)
+            if (x>0 && y>0)
             {
                 answer1++;
+                Console.WriteLine(1);
             }
-            if (x<0 && 0 > y)
+            else if (x<0 && y<0)
             {
                 answer3++;
+                Console.WriteLine(3);
+            }
+            else if (x>0 && y<0)
+            {
+                Console.WriteLine(4);
+            }
+            else if (x<0 && y>0 )
+            {
+                Console.WriteLine(2);
             }
             counter++;
         }
-        // end
+        
         //Console.WriteLine(answer1);
         //Console.WriteLine(answer3);
         return (answer1, answer3);
