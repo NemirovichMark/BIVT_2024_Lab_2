@@ -573,6 +573,7 @@ public class Program
             break;
             
         }
+        answer = Math.Round(answer, 2);
         
         
         // end
@@ -595,7 +596,7 @@ public class Program
             break;
 
             case 1:
-            answer =Math.PI*A*A-Math.PI*B*B;
+            answer =Math.Abs(Math.PI * A * A - Math.PI * B * B);
             break;
 
             case 2:
@@ -607,7 +608,7 @@ public class Program
             break;
             
         }
-        
+        answer = Math.Round(answer, 2);
         // end
         Console.WriteLine(answer);
         return answer;
