@@ -326,7 +326,7 @@ public class Program
             n--;
             double x = double.Parse(Console.ReadLine());
             double y = double.Parse(Console.ReadLine());
-            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y))
+            if ((x >= 0) && (x <= Math.PI) && (y >= 0) && (Math.Sin(x) >= y))
             {
                 answer++;
             }
@@ -352,12 +352,19 @@ public class Program
             {
                 if (x > 0 && y > 0)
                 {
+                    Console.WriteLine("I quadrant");
                     answer1++;
                 }
                 else
                 {
+                    Console.WriteLine("III quadrant");
                     answer3++;
                 }
+            }
+            else
+            {
+                if (x > 0 && y < 0) Console.WriteLine("IV quadrant");
+                else Console.WriteLine("II quadrant");
             }
         }
         Console.WriteLine(answer1);
@@ -613,12 +620,19 @@ public class Program
             {
                 if (x > 0 && y > 0)
                 {
+                    Console.WriteLine("I quadrant");
                     answer1++;
                 }
                 else
                 {
+                    Console.WriteLine("III quadrant");
                     answer3++;
                 }
+            }
+            else
+            {
+                if (x > 0 && y < 0) Console.WriteLine("IV quadrant");
+                else Console.WriteLine("II quadrant");
             }
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
