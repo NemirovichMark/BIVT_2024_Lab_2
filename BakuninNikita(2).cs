@@ -386,9 +386,23 @@ public class Program
             double x = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             double y = double.Parse(Console.ReadLine(), new CultureInfo("en-US"));
             if (x > 0 && y > 0)
+            {
                 cnt1++;
-            if (x < 0 && y < 0)
+                Console.WriteLine("Точка находится в 1 квандранте");
+            }
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine("Точка находится в 2 квандранте");
+            }
+            else if (x < 0 && y < 0)
+            {
                 cnt2++;
+                Console.WriteLine("Точка находится в 3 квандранте");
+            }
+            else
+            {
+                Console.WriteLine("Точка находится в 4 квандранте");
+            }
         }
         Console.WriteLine(cnt1);
         Console.WriteLine(cnt2);
@@ -532,33 +546,27 @@ public class Program
     public double Task_2_13(double A, double B, int type)
     {
 
-        Console.WriteLine("Введите фигуру площадь которой хотите найти (Квадрат - 1; Круг - 2;Равносторонний треугольник - 3): ");
-        type = Convert.ToInt32(Console.ReadLine());
-        double a, b;
-        Console.Write("Введите значение A: ");
-        a = double.Parse(Console.ReadLine());
-        Console.Write("Введите значение B: ");
-        b = double.Parse(Console.ReadLine());
         double answer = 0;
-        switch (type)
+        double p = (A + B + B) / 2;
+        if (A > 0 && B > 0)
         {
-            case 1:
-                answer = a * b;
-                break;
-            case 2:
-                answer = Math.PI * (b * b - a * a);
-                break;
-            case 3:
-                answer = Math.Sqrt(a * b * (a + b)) / 4;
-                break;
-            default:
-                Console.WriteLine("Выбирите ЦИФРУ от 1-3: ");
-                break;
+
+            switch (type)
+            {
+                case 0:
+                    answer = A * B;
+                    break;
+                case 1:
+                    answer = Math.PI * (B * B - A * A);
+                    break;
+                case 2:
+                    answer = Math.Sqrt(p * (p - A) * (p - B) * (p - B));
+                    break;
+
+            }
         }
-
-        Console.WriteLine($"Результат: {answer}");
-
-
+        answer = Math.Round(answer, 2);
+        answer = Math.Abs(answer);
 
         return answer;
     }
