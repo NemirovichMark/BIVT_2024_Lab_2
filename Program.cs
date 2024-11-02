@@ -552,7 +552,7 @@ public class Program
         // code here;
         if (r<=0)
         {
-            answer=0;
+            return 0;
         }
         switch (type)
         {
@@ -587,7 +587,7 @@ public class Program
         // code here;
         if (A<=0 || B<=0)
         {
-            answer=0;
+            return 0;
         }
         switch (type)
         {
