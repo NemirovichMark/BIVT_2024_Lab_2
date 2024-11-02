@@ -259,31 +259,31 @@ public class Program
         for (double i = 0; i < n; i++)
         {
             double.TryParse(Console.ReadLine(), out double result);
-            if (normal > result) answer += 1;
+            if (normal >= result) answer += 1;
         }
         // for test input in console: 27.5, 32.5, 30, 22.3, 26.8, 36.6, 30, 29.9, 20.1, 28.5
-
+        Console.WriteLine(answer);
         return answer;
     }
     public int Task_2_6(int n)
     {
         int answer = 0;
-
+  
         // code here
         for (int i = 0; i < n; i++)
         {
             double.TryParse(Console.ReadLine(), out double x);
             double.TryParse(Console.ReadLine(), out double y);
-            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y))
+            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y) && (y >= 0))
             {
                   answer += 1;
             }
         }
-            // end
+        // end
 
-            // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
-
-       return answer;
+        // for test input in console: 1.2 0.7, 2 0.2, 0.5 0.9, -1 1.5, 0.5 0.1
+        Console.WriteLine(answer);
+        return answer;
     }
     public (int, int) Task_2_7(int n)
     {
@@ -298,10 +298,20 @@ public class Program
             if ((x > 0) && (y > 0))
             {
                 answer1 += 1;
+                Console.WriteLine("3");
             }
             if ((x < 0) && (y < 0))
             {
                 answer3 += 1;
+                Console.WriteLine("1");
+            }
+            if ((x > 0) && (y < 0))
+            {
+                Console.WriteLine("2");
+            }
+            if ((x < 0) && (y > 0))
+            {
+                Console.WriteLine("4");
             }
         }
         // end
@@ -338,12 +348,12 @@ public class Program
     public double Task_2_9(int n)
     {
         double answer = double.MaxValue;
-
+        n = 6;
         // code here
         for (int i = 0; i < n; i++)
         {
             double.TryParse(Console.ReadLine(), out double R);
-            if (answer > R)answer = R;
+            if (answer >= R) answer = R;
 
                  
         }
@@ -537,7 +547,7 @@ public class Program
             double.TryParse(s1, out double x);
             double.TryParse(Console.ReadLine(), out double y);
 
-            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y))
+            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y) && (y >= 0))
             {
                 answer += 1;
             }
@@ -587,7 +597,7 @@ public class Program
             s1 = Console.ReadLine();
             if (s1 == "") break;
             double.TryParse(s1, out double R);
-            if (answer > R) answer = R;
+            if (answer >= R) answer = R;
 
 
         }
