@@ -370,15 +370,25 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1++;
+                Console.WriteLine("лежит в 1-ом квадранте");
             }
             else if (x < 0 && y < 0)
             {
                 answer3++;
+                Console.WriteLine("лежит в 3-ем квадранте");
+            }
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine("лежит во 2-ом квадранте");
+            }
+            else if (x > 0 && y < 0)
+            {
+                Console.WriteLine("лежит в 4-ом квадранте");
             }
         }
         // end
         Console.WriteLine("лежит в 1-ом квадранте: {0} ", answer1);
-        Console.WriteLine("лежит в 3-tм квадранте: {0} ", answer3);
+        Console.WriteLine("лежит в 3-ем квадранте: {0} ", answer3);
         return (answer1, answer3);
     }
     public (int, double) Task_2_8(int n)
