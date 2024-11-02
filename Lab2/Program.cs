@@ -90,9 +90,9 @@ Console.WriteLine("1.2 Ответ: " + answer);
         }
         if (a<=0){
             if (a<=b) answer = a;
+            else answer=b;
         }
-        else answer=b;
-Console.WriteLine("1.3 Ответ: " + answer);
+        Console.WriteLine("1.3 Ответ: " + answer);
         // end
 
         return answer;
@@ -269,7 +269,7 @@ Console.WriteLine("2.2 Ответ: " + answer);
         for (int i=1;i<=n;i++){
             Console.WriteLine("Скорость " + i + " спортсмена");
             sp=Convert.ToDouble(Console.ReadLine());
-            if (sp>=norm) answer++;
+            if (sp<=norm) answer++;
         }
         Console.WriteLine("2.5 Ответ: " + answer);
         // end
@@ -288,7 +288,7 @@ Console.WriteLine("2.2 Ответ: " + answer);
             x=Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("y " + i);
             y=Convert.ToDouble(Console.ReadLine());
-            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y)) answer++;
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y>=0) answer++;
         }       
         Console.WriteLine("2.6 Ответ: " + answer);
          // end
@@ -308,8 +308,16 @@ Console.WriteLine("2.2 Ответ: " + answer);
             x=Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("y " + i);
             y=Convert.ToDouble(Console.ReadLine());
-            if (x>0 && y>0) answer1++;
-            if (x<0 && y<0) answer3++;
+            if (x>0 && y>0){
+                Console.WriteLine("1 квадрат");
+                answer1++;
+            }
+            else if (x<0 && y>0) Console.WriteLine("2 квадрат");
+            if (x<0 && y<0){
+                Console.WriteLine("3 квадрат");
+                answer3++;
+                }
+            else Console.WriteLine("4 квадрат");
         }
         Console.WriteLine("2.7 Ответ1: " + answer1);
         Console.WriteLine("2.7 Ответ3: " + answer3);
@@ -448,9 +456,9 @@ Console.WriteLine("2.2 Ответ: " + answer);
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
-
+  
         // code here;
-        if ((A < 0) || (B < 0)) return 0;
+        if ((A <= 0) || (B <= 0)) return 0;
         switch (type){
             case 0:
                 answer = A * B;
@@ -562,7 +570,7 @@ Console.WriteLine("2.2 Ответ: " + answer);
                 x = Convert.ToInt32(checkx);
                 y = Convert.ToInt32(checky);
             }
-            if ((x >= 0) && (x <= Math.PI) && (Math.Sin(x) >= y)) answer++;
+            if (x >= 0 && x <= Math.PI && Math.Sin(x) >= y && y>=0) answer++;
         }
         Console.WriteLine("3.6 Ответ: " + answer);
         // end
