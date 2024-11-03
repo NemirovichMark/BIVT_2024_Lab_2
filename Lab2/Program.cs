@@ -359,8 +359,8 @@ public class Program
                 avg += result;
 
                 if (result == 2){
-
-                } ;
+                    isFailed = true;
+                }; 
             }
             if (isFailed == true){
                 answer++;
