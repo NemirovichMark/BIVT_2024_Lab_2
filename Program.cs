@@ -596,11 +596,11 @@ public class Program
             break;
 
             case 1:
-            answer =Math.Abs(Math.PI * A * A - Math.PI * B * B);
+            answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
             break;
 
             case 2:
-            answer = (B/4)*Math.Sqrt(4*A*A-B*B);
+            answer = Math.Sqrt(B*B - A*A / 4)* A/2;
             break;
 
             default:
