@@ -464,11 +464,9 @@ Console.WriteLine("2.2 Ответ: " + answer);
                 answer = A * B;
                 break;
             case 1:
-                if (A <= B) return 0;
-                answer = Math.PI * A * A - Math.PI * B * B;
+                answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
                 break;
             case 2:
-                if (A >= 2 * B) return 0;
                 answer = (A * Math.Sqrt(4 * B * B - A * A)) / 4;
                 break;
             default:
