@@ -269,10 +269,16 @@ public class Program
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
             if (x > 0 && y > 0){
+                Console.WriteLine("Точка попала в первый квадрант");
                 answer1++;
             }
             else if (x < 0 && y < 0){
+                Console.WriteLine("Точка попала в третий квадрант");
                 answer3++;
+            } else if (x > 0 && y < 0){
+                Console.WriteLine("Точка попала в четвертый квадрант");
+            } else if (x < 0 && y > 0){
+                Console.WriteLine("Точка попала во второй квадрант");
             }
         }
         // end
