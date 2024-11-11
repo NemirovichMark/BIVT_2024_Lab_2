@@ -847,22 +847,6 @@ public class Program
         int answer = 0, n = 0;
 
         // code here;
-        double a, t;
-        double T = 0;
-        int i = 1;
-        do
-        {
-            System.Console.WriteLine("время прохождения дистанции");
-            a = double.Parse(Console.ReadLine());
-            if (a==0)
-                break;
-            if (i==1)
-                T=a;
-                i++;
-            if (a<T)
-                T=a; 
-        } while (a!=0);
-        System.Console.WriteLine($"лучшее время дистанции: {T}");
         
 
         // end
