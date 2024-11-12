@@ -370,17 +370,25 @@ public class Program
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
             if (x > 0 && y > 0)
-            {
-                answer1++;
-                Console.WriteLine("1 квадрант\n");
-
-            }
-            else if (x < 0 && y < 0)
-            {
-                answer3++;
-                Console.WriteLine("3 квадрант\n");
-
-            }
+{
+    answer1++;
+    Console.WriteLine("1 квадрант\n");
+}
+else if (x < 0 && y < 0)
+{
+    answer3++;
+    Console.WriteLine("3 квадрант\n");
+}
+else if (x > 0 && y < 0)
+{
+    answer3++;
+    Console.WriteLine("4 квадрант\n");
+}
+else if (x < 0 && y > 0)
+{
+    answer3++;
+    Console.WriteLine("2 квадрант\n");
+}
         }
         Console.WriteLine($"В квадранте 1: {answer1}\nВ квадранте 3: {answer3}");
         // end
@@ -688,17 +696,27 @@ public class Program
 
             double x = Convert.ToDouble(Console.ReadLine());
             double y = Convert.ToDouble(Console.ReadLine());
-
             if (x > 0 && y > 0)
             {
                 answer1++;
                 Console.WriteLine("1 квадрант\n");
             }
-            else if ( x < 0 && y < 0 )
+            else if (x < 0 && y < 0)
             {
                 answer3++;
                 Console.WriteLine("3 квадрант\n");
             }
+            else if (x > 0 && y < 0)
+            {
+                answer3++;
+                Console.WriteLine("4 квадрант\n");
+            }
+            else if (x < 0 && y > 0)
+            {
+                answer3++;
+                Console.WriteLine("2 квадрант\n");
+            }
+
         }
         Console.WriteLine($"В квадранте 1: {answer1}\nВ квадранте 3: {answer3}");
 
