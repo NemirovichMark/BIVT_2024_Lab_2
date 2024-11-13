@@ -49,7 +49,7 @@ public class Program
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
-        program.Task_3_11();
+        //program.Task_3_11();
         //program.Task_3_12(10, 0);
         //program.Task_3_13(10, 5, 0);
     }
@@ -404,7 +404,7 @@ public class Program
             int.TryParse(Console.ReadLine(), out grade3);
             int.TryParse(Console.ReadLine(), out grade4);
             sum = grade1 + grade2 + grade3 + grade4;
-            if (sum < 16) answer++;
+            if (grade1 == 2 || grade2 == 2 || grade3 == 2 || grade4 == 2) answer++;
             totalsum += sum;
         }
         avg = totalsum / (n * 4);
@@ -653,7 +653,7 @@ public class Program
             int.TryParse(Console.ReadLine(), out grade4);
             if (grade1 == 0) break;
             sum = grade1 + grade2 + grade3 + grade4;
-            if (sum < 16) answer++;
+            if (grade1 == 2 || grade2 == 2 || grade3 == 2 || grade4 == 2) answer++;
             totalsum += sum;
         }
         avg = totalsum / (i * 4);
