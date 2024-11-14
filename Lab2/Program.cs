@@ -346,7 +346,11 @@ public class Program
         {
             x = double.Parse(Console.ReadLine());
             y = double.Parse(Console.ReadLine());
-            if (x >= 0 && y >= 0 && y <= Math.Sin(x))
+            if (x < 0 || x > Math.PI)
+            {
+                continue;
+            }
+            else if (x >= 0 && y >= 0 && y <= Math.Sin(x))
             {
                 answer++;
             }
@@ -372,12 +376,21 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1++;
+                Console.WriteLine("1");
             }
             else if (x < 0 && y < 0)
             {
                 answer3++;
+                Console.WriteLine("3");
             }
-
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine("2");
+            }
+            else
+            {
+                Console.WriteLine("4");
+            }
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
@@ -489,17 +502,20 @@ public class Program
     public double Task_2_12(double r, int type)
     {
         double answer = 0;
-
+        if (r<0 || type<0 || type >2)
+        {
+            return 0;
+        }
         // code here;
         switch (type)
         {
-            case 1:
+            case 0:
                 answer = r*r;
                 break;
-            case 2:
+            case 1:
                 answer = r*r*Math.PI;
                 break;
-            case 3:
+            case 2:
                 answer = r*r*Math.Sqrt(3)/4;
                 break;
         }
@@ -510,17 +526,20 @@ public class Program
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
-
+        if (A <= 0 || B <= 0 || type < 0 || type > 2)
+        {
+            return 0;
+        }
         // code here;
         switch (type)
         {
-            case 1:
+            case 0:
                 answer = A * B;
                 break;
-            case 2:
+            case 1:
                 answer = Math.Abs(A * A * Math.PI - B * B * Math.PI);
                 break;
-            case 3:
+            case 2:
                 double p = (A + B + B)/2.0;
                 answer = Math.Sqrt(p * (p-A) * (p-B) * (p-B));
                 break;
