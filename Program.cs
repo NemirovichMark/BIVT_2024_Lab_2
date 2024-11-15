@@ -26,13 +26,13 @@ public class Program
         //program.Task_2_2(5, 1, 3, 1);
         //program.Task_2_3(10);
         //program.Task_2_4(5, 1, 2);
-        program.Task_2_5(10, 30);
+        //program.Task_2_5(10, 30);
         //program.Task_2_6(5);
         //program.Task_2_7(5);
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        //program.Task_2_11(10);
+        program.Task_2_11(10);
         //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
@@ -312,11 +312,24 @@ public class Program
     public int Task_2_4(int n, double r1, double r2)
     {
         int answer = 0;
-
+        double x;
+        double y;
+        double t;
+        for (int i = 0;i < n; i++)
+        {
+            x = Convert.ToDouble(Console.ReadLine());
+            y = Convert.ToDouble(Console.ReadLine());
+            t = x * x + y * y;
+            if ((t >= r1*r1) && (t <= r2 * r2))
+            {
+                answer++;
+            }
+            
+        }
         // code here
 
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public int Task_2_5(int n, double norm)
@@ -326,7 +339,7 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             x = Convert.ToDouble(Console.ReadLine());
-            if ( x > norm)
+            if (x > norm)
             {
                 answer += 1;
             }
@@ -341,38 +354,79 @@ public class Program
     public int Task_2_6(int n)
     {
         int answer = 0;
-
+        double p = Math.PI;
+        double x;
+        double y;
+        for (int i = 0; i < n; i++)
+        {
+            x = Convert.ToDouble(Console.ReadLine());
+            y = Convert.ToDouble(Console.ReadLine());
+            if ((x >= 0) && (x <= p) && (y >= 0) && (y <= Math.Sin(x)))
+            {
+                answer++;
+            }
+        }
         // code here
 
         // end
-
-        return answer;
+        Console.WriteLine(answer);
+            return answer;
     }
     public (int, int) Task_2_7(int n)
     {
         int answer1 = 0;
         int answer3 = 0;
+        double x;
+        double y;
+        for (int i = 0; i < n; i++)
+        {
+            x = Convert.ToDouble(Console.ReadLine());
+            y = Convert.ToDouble(Console.ReadLine());
+            if ((x >= 0) && (y >= 0))
+            {
+                answer1++;
+            }
+            if ((x <= 0) && (y <= 0))
+            {
+                answer3++;
+            }
 
-        // code here
+        }
 
-        // end
+            // code here
 
-        return (answer1, answer3);
+            // end
+
+            return (answer1, answer3);
     }
     public (int, double) Task_2_8(int n)
     {
         int answer = 0;
-        double answerLength = double.MaxValue;
+        double answerLength = 0;
+        double x;
+        double y;
+        double r;
+        for (int i = 0; i < n; i++)
+        {
+            x = Convert.ToDouble(Console.ReadLine());
+            y = Convert.ToDouble(Console.ReadLine());
+            r = Math.Pow(x * x + y * y, 0.5);
+            if (answerLength < r)
+            {
+                answer = i + 1;
+                answerLength = r;
+            }
+        }
 
-        // code here
+            // code here
 
-        // end
+            // end
 
-        return (answer, answerLength);
+            return (answer, answerLength);
     }
     public double Task_2_9(int n)
     {
-        double answer = 10000;
+        double answer = 100000;
         double x;
         for (int i = 0; i < n; i++)
         {
@@ -386,7 +440,7 @@ public class Program
 
         // end
         Console.WriteLine(answer);
-            return answer;
+        return answer;
     }
     public int Task_2_10(int n)
     {
@@ -401,7 +455,7 @@ public class Program
 
                 x = Convert.ToDouble((Console.ReadLine()));
                 if ((x == 2) || (x == 3))
-                    {
+                {
                     k++;
                 }
                 if (k == 0)
@@ -415,17 +469,40 @@ public class Program
 
         // end
         Console.WriteLine(answer);
-            return answer;
+        return answer;
     }
     public (int, double) Task_2_11(int n)
     {
         int answer = 0;
         double avg = 0.0;
+        double x;
+        int k;
+        for (int i = 0; i < n; i++)
+        {
+            k = 0;
+            for (int t = 0; t < 4; t++)
+            {
 
+
+                x = Convert.ToDouble((Console.ReadLine()));
+                avg += x;
+                if (x == 2)
+                {
+                    k++;
+                }
+            }
+            if (k > 0)
+            {
+                answer++;
+            }
+
+        }
+        avg = avg / n / 4;
         // code here;
 
         // end
-
+        Console.WriteLine(answer);
+        Console.WriteLine(avg);
         return (answer, avg);
     }
     public double Task_2_12(double r, int type)
