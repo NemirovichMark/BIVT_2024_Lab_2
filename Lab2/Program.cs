@@ -52,7 +52,6 @@ public class Program
         //program.Task_3_13(10, 5, 0);
     }
 
- //TO DO: 2_8
 
     #region Level 1
     public bool Task_1_1(double x, double y)
