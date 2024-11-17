@@ -32,8 +32,8 @@ public class Program
         //program.Task_2_8(5);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
-        program.Task_2_11(10);
-        //program.Task_2_12(10, 0);
+        //program.Task_2_11(10);
+        program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -508,21 +508,43 @@ public class Program
     public double Task_2_12(double r, int type)
     {
         double answer = 0;
-
+        switch (type)
+        {
+            case 0:
+                answer = r * r;
+                break;
+            case 1:
+                answer = r * r * Math.PI;
+                break;
+            case 2:
+                answer = r * r * Math.Pow(3, 0.5) * 0.25;
+                break;
+        }
         // code here;
 
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public double Task_2_13(double A, double B, int type)
     {
         double answer = 0;
-
+        switch (type)
+        {
+            case 0:
+                answer = A * B;
+                break;
+            case 1:
+                answer = Math.Abs(B * B * Math.PI - A * A * Math.PI);
+                break;
+            case 2:
+                answer =A * Math.Pow((B * B) - (A * A / 4), 0.5) * 0.5;
+                break;
+        }
         // code here;
 
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     #endregion
