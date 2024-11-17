@@ -462,6 +462,8 @@ public class Program
                 case 1:
                     if (B > A)
                         answer = Math.Round(Math.PI * (B * B - A * A), 2);
+                    else
+                        answer = Math.Round(Math.PI * (A * A - B * B), 2);
                     break;
                 case 2:
                     answer = Math.Round(0.5 * Math.Sqrt(B * B - 0.25 * A * A) * A, 2);
