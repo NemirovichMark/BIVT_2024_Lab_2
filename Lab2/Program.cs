@@ -28,8 +28,8 @@ public class Program
         //program.Task_2_4(5, 1, 3);
         //program.Task_2_5(6, 25.2);
         //program.Task_2_6(3);
-        //program.Task_2_7(3);
-        program.Task_2_8(3);
+        program.Task_2_7(3);
+        //program.Task_2_8(3);
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
@@ -52,6 +52,7 @@ public class Program
         //program.Task_3_13(10, 5, 0);
     }
 
+ //TO DO: 2_8
 
     #region Level 1
     public bool Task_1_1(double x, double y)
@@ -370,8 +371,10 @@ public class Program
             double x = double.Parse((Console.ReadLine()));
             double y = double.Parse((Console.ReadLine()));
 
-            if (x > 0 && y > 0) { answer1++; }
-            if (x < 0 && y < 0) { answer3++; }
+            if (x > 0 && y > 0) { answer1++; Console.WriteLine("quad:1"); }
+            if (x < 0 && y > 0) { Console.WriteLine("quad:2"); }
+            if (x < 0 && y < 0) { answer3++; Console.WriteLine("quad:3"); }
+            if (x > 0 && y < 0) { Console.WriteLine("quad:4"); }
 
             n--;
         }
@@ -498,19 +501,21 @@ public class Program
 
         if (r > 0)
         {
-            if (type == 0)
+            switch(type)
             {
-                answer = r * r;
+                case 0:
+                    answer = r * r;
+                    break;
+                case 1:
+                    answer = Math.PI * r * r;
+                    break;
+                case 2:
+                    answer = (Math.Sqrt(3) * r * r) / 4;
+                    break;
+                default:
+                    answer = 0; break;
+
             }
-            else if (type == 1)
-            {
-                answer = Math.PI * r * r;
-            }
-            else if (type == 2)
-            {
-                answer = (Math.Sqrt(3) * r * r) / 4;
-            }
-            else { answer = 0; }
         }
         else { answer = 0; }
 
@@ -528,20 +533,20 @@ public class Program
 
         if (A > 0 && B > 0 )
         {
-            if (type == 0)
+            switch (type)
             {
-                answer = A * B;
+                case 0:
+                    answer = A * B; break;
+                case 1:
+                    answer = Math.Abs(Math.PI * B * B - Math.PI * A * A);
+                    break;
+                case 2:
+                    double p = (A + B + B) / 2;
+                    answer = Math.Sqrt(p * (p - A) * (p - B) * (p - B));
+                    break;
+                default:
+                    answer = 0; break;
             }
-            else if (type == 1)
-            {
-                answer = Math.Abs(Math.PI * B * B - Math.PI * A * A);
-            }
-            else if (type == 2)
-            {
-                double p = (A + B + B) / 2;
-                answer = Math.Sqrt(p * (p - A) * (p - B) * (p - B));
-            }
-            else { answer = 0; }
         }
         else { answer = 0; }
 
