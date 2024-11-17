@@ -304,16 +304,38 @@ public class Program
         int answer3 = 0;
 
         // code here
-        while (n > 0)
+        double x, y;
+        for (int i = 0; i < n; i++)
         {
-            double x = double.Parse(Console.ReadLine());
-            double y = double.Parse(Console.ReadLine());
-
-            if (x > 0 && y > 0) answer1++;
-            if (x < 0 && y < 0) answer3++;
-            n--;
+            x = double.Parse(Console.ReadLine());
+            y = double.Parse(Console.ReadLine());
+            if (x > 0)
+            {
+                if (y > 0)
+                {
+                    answer1++;
+                    Console.WriteLine(" вадрант 1");
+                }
+                else
+                {
+                    Console.WriteLine(" вадрант 4");
+                }
+            }
+            else
+            {
+                if (y > 0)
+                {
+                    Console.WriteLine(" вадрант 2");
+                }
+                else
+                {
+                    answer3++;
+                    Console.WriteLine(" вадрант 3");
+                }
+            }
         }
-        Console.WriteLine($"{answer1} {answer3}");
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
         // end
 
         return (answer1, answer3);
