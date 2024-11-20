@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 
 public class Program
 {
@@ -34,7 +33,7 @@ public class Program
         //program.Task_2_9(10);
         //program.Task_2_10(10);
         //program.Task_2_11(10);
-        //program.Task_2_12(1.5, 0);
+        //program.Task_2_12(10, 0);
         //program.Task_2_13(10, 5, 0);
         //program.Task_3_1();
         //program.Task_3_2(3, 2, 1);
@@ -197,13 +196,7 @@ public class Program
         int answer = 0;
 
         // code here
-        for(int i = n;i>0;i--)
-        {
-            double x = double.Parse(Console.ReadLine());
-            double y = double.Parse(Console.ReadLine());
-            if (Math.Sqrt(Math.Pow(x-a,2)+Math.Pow(y-b,2))<=r) answer++;
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -211,15 +204,9 @@ public class Program
     public double Task_2_3(int n)
     {
         double answer = 0;
+
         // code here
-        double k = 0;
-        for(int i = 1;i<n;i++)
-        {
-            double x = double.Parse(Console.ReadLine());
-            if (x < 30) k += 0.2;
-        }
-        answer = Math.Round(k, 2);
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -229,16 +216,7 @@ public class Program
         int answer = 0;
 
         // code here
-        for( int i = 1;i<n;i++)
-        {
-            double x, y;
-            string x1 = Console.ReadLine();
-            string y1 = Console.ReadLine();
-            double.TryParse(x1, out x);
-            double.TryParse(y1, out y);
-            if (Math.Sqrt(Math.Pow(x,2)+Math.Pow(y,2))>=r1 && Math.Sqrt(Math.Pow(x,2)+Math.Pow(y,2))<=r2) answer++;
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -248,14 +226,7 @@ public class Program
         int answer = 0;
 
         // code here
-        for(int i=1;i<n;i++)
-        {
-            double x;
-            string x1 = Console.ReadLine();
-            double.TryParse(x1 , out x);
-            if(x>=norm) answer++;
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -265,16 +236,7 @@ public class Program
         int answer = 0;
 
         // code here
-        for(int i=1;i<n;i++)
-        {
-            double x, y;
-            string x1 = Console.ReadLine();
-            string y1 = Console.ReadLine();
-            double.TryParse(x1 , out x);
-            double.TryParse (y1 , out y);
-            if(x>=0 && x<=Math.PI && y>=0 && y<=Math.Sin(x)) answer++;
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -285,26 +247,7 @@ public class Program
         int answer3 = 0;
 
         // code here
-        for (int i=1;i<n;i++)
-        {
-            double x = double.Parse(Console.ReadLine());
-            double y = double.Parse(Console.ReadLine());
-            if (x == 0 || y == 0) Console.WriteLine($"на оси");
-            else if (x > 0 && y > 0)
-            {
-                Console.WriteLine($"первый квадрант");
-                answer1++;
-            }
-            else if (x > 0 && y < 0) Console.WriteLine($"четвертый квадрант");
-            else if (x > 0 && y < 0) Console.WriteLine($"второй квадрант");
-            else if (x < 0 && y < 0)
-            {
-                Console.WriteLine($"третий квадрант");
-                answer3++;
-            }
-        }
-        Console.WriteLine(answer1);
-        Console.WriteLine(answer3);
+
         // end
 
         return (answer1, answer3);
@@ -315,22 +258,7 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-        for (int i=1;i<n;i++)
-        {
-            double x, y;
-            string x1 = Console.ReadLine();
-            string y1 = Console.ReadLine();
-            double.TryParse(x1, out x);
-            double.TryParse(y1, out y);
-            double m = Math.Sqrt(x * x + y * y);
-            if(m<answerLength)
-            {
-                answer = i;
-                answerLength = m;
-            }
-        }
-        Console.WriteLine(answer);
-        Console.WriteLine(answerLength);
+
         // end
 
         return (answer, answerLength);
@@ -340,13 +268,7 @@ public class Program
         double answer = double.MaxValue;
 
         // code here
-        if (n <= 0) return 0;
-        for(int i=1;i<n;i++)
-        {
-            double x = double.Parse(Console.ReadLine());
-            if (x < answer) answer = x;
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -356,17 +278,7 @@ public class Program
         int answer = 0;
 
         // code here;
-        for (int i = 1; i < n; i++)
-        {
-            bool a = true;
-            for (int j = 1; j < 4; j++)
-            {
-                int x = int.Parse(Console.ReadLine());
-                if ((x == 2) || (x == 3)) a = false;
-            }
-            if (a == true) answer++;
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -377,24 +289,8 @@ public class Program
         double avg = 0.0;
 
         // code here;
-        double m = 0;
-        if (n <= 0) return (0, 0);
-        for(int i = 1;i < n; i++)
-        {
-            bool b = true;
-            for(int j = 1;j<5; j++)
-            {
-                int a = int.Parse(Console.ReadLine());
-                if (a<=0) return(0, 0);
-                m += a;
-                if(a == 2 || a == 3) b  = false;
-            }
-            if (b != true) answer++;
-        }
-        avg = m /(n*4);
+
         // end
-        Console.WriteLine(answer);
-        Console.WriteLine(avg);
 
         return (answer, avg);
     }
@@ -403,20 +299,7 @@ public class Program
         double answer = 0;
 
         // code here;
-        Console.WriteLine($"\nТип фигуры:\n0.Квадрат\n1. Круг\n2. Равносторонний треугольник");
-        if (r <= 0) return 0;
-        switch (type)
-        {
-            case 0:
-                answer = r*r; break;
-            case 1:
-                answer = Math.PI*Math.Pow(r, 2); break;
-            case 2:
-                answer = Math.Pow(r, 2) * Math.Sqrt(3) / 4; break;
-            default: return 0;
-        }
-        answer = Math.Round(answer,2);
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -426,19 +309,7 @@ public class Program
         double answer = 0;
 
         // code here;
-        Console.WriteLine("\nТип фигуры:\n0. Прямоугольник\n1. Кольцо\n2. Равнобедренный треугольник");
-        if (A <= 0 || B<=0) return 0;
-        switch (type)
-        {
-            case 0:
-                answer = A*B; break;
-            case 1:
-                answer = Math.Abs(Math.PI *Math.Pow(A, 2) - Math.PI*Math.Pow(B,2)); break;
-            case 2:
-                answer = Math.Sqrt(Math.Pow(B, 2) - Math.Pow(A, 2) / 4) * A / 2; break;
-            default: return 0;
-        }
-        answer = Math.Round(answer,2);
+
         // end
 
         return answer;
@@ -463,18 +334,7 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-        for (int i = 0;; i++)
-        {
-            double x, y;
-            string x1 = Console.ReadLine();
-            if (x1 == "all") break;
-            string y1 = Console.ReadLine();
-            double.TryParse(x1,out x);
-            double.TryParse(y1, out y);
-            if (Math.Sqrt(Math.Pow(x - a, 2) + Math.Pow(y - b, 2)) <= r) answer++;
-            
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -505,15 +365,7 @@ public class Program
         int answer = 0, n = 0;
 
         // code here
-        for (int i = 1;; i++)
-        {
-            double x;
-            string x1 = Console.ReadLine();
-            if (x1 == "all") break;
-            double.TryParse(x1, out x);
-            if (x >= norm) answer++;
-        }
-        Console.WriteLine(answer);
+
         // end
 
         return answer;
@@ -544,23 +396,7 @@ public class Program
         double answerLength = double.MaxValue;
 
         // code here
-        for (int i = 1;; i++)
-        {
-            double x, y;
-            string x1 = Console.ReadLine();
-            if (x1 == "all") break;
-            string y1 = Console.ReadLine();
-            double.TryParse(x1, out x);
-            double.TryParse(y1, out y);
-            double m = Math.Sqrt(x * x + y * y);
-            if (m < answerLength)
-            {
-                answer = i;
-                answerLength = m;
-            }
-        }
-        Console.WriteLine(answer);
-        Console.WriteLine(answerLength);
+
         // end
 
         return (answer, answerLength);
@@ -592,28 +428,7 @@ public class Program
         double avg = 0.0;
 
         // code here;
-        int k = 0;
-        double m = 0;
-        for (int i = 1;; i++)
-        {
-            Console.WriteLine($"номер студента");
-            string x = Console.ReadLine();
-            if (x == "all") break;
-            k++;
-            bool b = true;
-            Console.WriteLine($"баллы студента");
-            for (int j = 1; j < 5; j++)
-            {
-                int a = int.Parse(Console.ReadLine());
-                if (a <= 0) return (0, 0);
-                m += a;
-                if (a == 2 || a == 3) b = false;
-            }
-            if (b != true) answer++;
-        }
-        avg = m /(k*4);
-        Console.WriteLine(answer);
-        Console.WriteLine(avg);
+
         // end
 
         return (answer, avg);
