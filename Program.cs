@@ -1,4 +1,4 @@
-using Microsoft.VisualBasic;
+    using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -348,18 +348,34 @@ public class Program
 
         // code here
         for (int i = 0; i < n; i++)
-        {
-            double x = double.Parse(Console.ReadLine());
-            double y = double.Parse(Console.ReadLine());
-            if (x > 0 && y > 0)
-            {
-                answer1 += 1;
-            }
-            else if (x < 0 && y < 0)
-            {
-                answer3 += 1;
-            }
-        }
+{
+    double x = double.Parse(Console.ReadLine());
+    double y = double.Parse(Console.ReadLine());
+    if (x > 0 && y > 0)
+    {
+        Console.WriteLine($"({x}, {y}) - принадлежат 1 четверти");
+        answer1 += 1;
+    }
+    else if (x < 0 && y > 0)
+    {
+        Console.WriteLine($"({x}, {y}) - принадлежат 2 четверти");
+    }
+    else if (x < 0 && y < 0)
+    {
+        Console.WriteLine($"({x}, {y}) - принадлежат 3 четверти");
+        answer3 += 1;
+    }
+    else if (x > 0 && y < 0);
+    {
+        Console.WriteLine($"({x}, {y}) - принадлежат 4 четверти");
+    }
+    else
+    {
+        Console.WriteLine($"({x}, {y}) - принадлежат оси координат");
+    }
+}
+Console.WriteLine($"точек в 1 четверти: {answer1}");
+Console.WriteLine($"точек в 3 четверти: {answer3}");
         // end
 
         return (answer1, answer3);
