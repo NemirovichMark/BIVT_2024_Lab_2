@@ -339,7 +339,7 @@ public class Program
         for (int i = 0; i < n; i++)
         {
             x = Convert.ToDouble(Console.ReadLine());
-            if (x > norm)
+            if (x < norm)
             {
                 answer += 1;
             }
@@ -385,10 +385,12 @@ public class Program
             if ((x >= 0) && (y >= 0))
             {
                 answer1++;
+                Console.WriteLine(i+1);
             }
             if ((x <= 0) && (y <= 0))
             {
                 answer3++;
+                Console.WriteLine(i + 1);
             }
 
         }
@@ -523,6 +525,7 @@ public class Program
         // code here;
 
         // end
+        answer = Math.Round(answer,2);    
         Console.WriteLine(answer);
         return answer;
     }
@@ -544,6 +547,7 @@ public class Program
         // code here;
 
         // end
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -575,12 +579,26 @@ public class Program
     public double Task_3_3()
     {
         double answer = 0;
-        int n = 0;
-
+        double x;
+        string s;
+        for (int i = 0; ; i++)
+        {
+            s = (Console.ReadLine());
+            if (s == "stop")
+            {
+                break;
+            }
+            x = Convert.ToDouble(s);
+            
+            if (x < 30)
+            {
+                answer += 0.2;
+            }
+        }
         // code here
 
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public int Task_3_4(double r1, double r2)
@@ -605,12 +623,34 @@ public class Program
     }
     public int Task_3_6()
     {
-        int answer = 0, n = 0;
-
+        int answer = 0;
+        double p = Math.PI;
+        double x;
+        double y;
+        string s;
+        for (int i = 0; ; i++)
+        {
+            s = Console.ReadLine();
+            if (s == "stop")
+            {
+                break;
+            }
+            x = Convert.ToDouble(s);
+            s = Console.ReadLine();
+            if (s == "stop")
+            {
+                break;
+            }
+            y = Convert.ToDouble(s);
+            if ((x >= 0) && (x <= p) && (y >= 0) && (y <= Math.Sin(x)))
+            {
+                answer++;
+            }
+        }
         // code here
 
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public (int, int) Task_3_7()
@@ -636,13 +676,26 @@ public class Program
     }
     public double Task_3_9()
     {
-        double answer = double.MaxValue;
-        int n = 0;
-
+        double answer = 100000;
+        double x;
+        string s;
+        for (int i = 0; ; i++)
+        {
+            s = Console.ReadLine();
+            if (s == "stop")
+            {
+                break;
+            }
+            x = Convert.ToDouble(s);
+            if (x < answer)
+            {
+                answer = x;
+            }
+        }
         // code here
 
         // end
-
+        Console.WriteLine(answer);
         return answer;
     }
     public int Task_3_10()
