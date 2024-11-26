@@ -315,16 +315,16 @@ public class Program
         double x;
         double y;
         double t;
-        for (int i = 0;i < n; i++)
+        for (int i = 0; i < n; i++)
         {
             x = Convert.ToDouble(Console.ReadLine());
             y = Convert.ToDouble(Console.ReadLine());
             t = x * x + y * y;
-            if ((t >= r1*r1) && (t <= r2 * r2))
+            if ((t >= r1 * r1) && (t <= r2 * r2))
             {
                 answer++;
             }
-            
+
         }
         // code here
 
@@ -370,7 +370,7 @@ public class Program
 
         // end
         Console.WriteLine(answer);
-            return answer;
+        return answer;
     }
     public (int, int) Task_2_7(int n)
     {
@@ -385,21 +385,23 @@ public class Program
             if ((x >= 0) && (y >= 0))
             {
                 answer1++;
-                Console.WriteLine(i+1);
+                Console.WriteLine(1);
             }
             if ((x <= 0) && (y <= 0))
             {
                 answer3++;
-                Console.WriteLine(i + 1);
+                Console.WriteLine(3);
             }
+
 
         }
 
-            // code here
+        // code here
 
-            // end
-
-            return (answer1, answer3);
+        // end
+        Console.WriteLine(answer1);
+        Console.WriteLine(answer3);
+        return (answer1, answer3);
     }
     public (int, double) Task_2_8(int n)
     {
@@ -420,11 +422,11 @@ public class Program
             }
         }
 
-            // code here
+        // code here
 
-            // end
+        // end
 
-            return (answer, answerLength);
+        return (answer, answerLength);
     }
     public double Task_2_9(int n)
     {
@@ -525,7 +527,7 @@ public class Program
         // code here;
 
         // end
-        answer = Math.Round(answer,2);    
+        answer = Math.Round(answer, 2);
         Console.WriteLine(answer);
         return answer;
     }
@@ -541,7 +543,7 @@ public class Program
                 answer = Math.Abs(B * B * Math.PI - A * A * Math.PI);
                 break;
             case 2:
-                answer =A * Math.Pow((B * B) - (A * A / 4), 0.5) * 0.5;
+                answer = A * Math.Pow((B * B) - (A * A / 4), 0.5) * 0.5;
                 break;
         }
         // code here;
@@ -589,7 +591,7 @@ public class Program
                 break;
             }
             x = Convert.ToDouble(s);
-            
+
             if (x < 30)
             {
                 answer += 0.2;
@@ -718,6 +720,3 @@ public class Program
         // end
 
         return (answer, avg);
-    }
-    #endregion
-}
