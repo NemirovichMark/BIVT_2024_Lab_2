@@ -44,7 +44,7 @@ public class Program
         //program.Task_3_4(1, 2);
         //program.Task_3_5(30);
         //program.Task_3_6();
-        program.Task_3_7();
+        //program.Task_3_7();
         //program.Task_3_8();
         //program.Task_3_9();
         //program.Task_3_10();
@@ -342,7 +342,9 @@ public class Program
     public (int, int) Task_2_7(int n)
     {
         int answer1 = 0;
+        int answer2 = 0;
         int answer3 = 0;
+        int answer4 = 0;
         double x;
         double y;
         // code here
@@ -353,10 +355,22 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1 += 1;
+                Console.WriteLine(1);
             }
             if (x < 0 && y < 0)
             {
                 answer3 += 1;
+                Console.WriteLine(3);
+            }
+            if (x < 0 && y > 0)
+            {
+                answer2 += 1;
+                Console.WriteLine(2);
+            }
+            if (x > 0 && y < 0)
+            {
+                answer4 += 1;
+                Console.WriteLine(4);
             }
         }
             // end
@@ -463,7 +477,20 @@ public class Program
         double answer = 0;
 
         // code here;
-
+        if (r < 0) return 0;
+        switch (type)
+        {
+            case 0: 
+                answer = r * r; 
+                break;
+            case 1: 
+                answer = r * r * Math.PI; 
+                break;
+            case 2: 
+                answer = r * r * Math.Sqrt(3) / 4; 
+                break;
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -473,7 +500,22 @@ public class Program
         double answer = 0;
 
         // code here;
+        if (A < 0 || B < 0 || (B + B) < A)
+            return 0;
 
+        switch (type)
+        {
+            case 0: 
+                answer = A * B; 
+                break;
+            case 1: 
+                answer = Math.Abs(A * A * Math.PI - B * B * Math.PI); 
+                break;
+            case 2: 
+                answer = 0.5 * A * Math.Sqrt(B * B - 0.25 * A * A); 
+                break;
+        }
+        answer = Math.Round(answer, 2);
         // end
 
         return answer;
@@ -637,6 +679,8 @@ public class Program
         int n = 0;
         int answer1 = 0;
         int answer3 = 0;
+        int answer2 = 0;
+        int answer4 = 0;
         double x;
         double y;
         // code here
@@ -653,10 +697,22 @@ public class Program
                 if (x > 0 && y > 0)
                 {
                     answer1 += 1;
+                    Console.WriteLine(1);
                 }
                 if (x < 0 && y < 0)
                 {
                     answer3 += 1;
+                    Console.WriteLine(3);
+                }
+                if (x < 0 && y > 0)
+                {
+                    answer2 += 1;
+                    Console.WriteLine(2);
+                }
+                if (x > 0 && y < 0)
+                {
+                    answer4 += 1;
+                    Console.WriteLine(4);
                 }
             }
         }
