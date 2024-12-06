@@ -377,10 +377,20 @@ public class Program
             if (x > 0 && y > 0)
             {
                 f1++;
+                Console.WriteLine($"{i} точка находится в I квадранте");
+            }
+            if (x < 0 && y > 0)
+            {
+                Console.WriteLine($"{i} точка находится в II квадранте");
             }
             if (x < 0 && y < 0)
             {
                 f3++;
+                Console.WriteLine($"{i} точка находится в III квадранте");
+            }
+            if (x > 0 && y < 0)
+            {
+                Console.WriteLine($"{i} точка находится в IV квадранте");
             }
             i++;
         }
@@ -616,7 +626,8 @@ public class Program
     }
     public int Task_3_5(double norm)
     {
-        int answer = 0, n = 0;
+        int answer = 0;
+        double n = 0;
 
         // code here
         while (true)
