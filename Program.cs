@@ -391,17 +391,27 @@ public class Program
             if (x > 0 && y > 0)
             {
                 answer1++;
+                Console.WriteLine("1 квадрант");
             }
             if (x < 0 && y < 0)
             {
                 answer3++;
+                Console.WriteLine("3 квадрант");
             }
-
+            if (x < 0 && y > 0)
+            {
+                Console.WriteLine("2 квадрант");
+            }
+            if (x > 0 && y < 0)
+            {
+                Console.WriteLine("4 квадрант");
+            }
+        
         }
         Console.WriteLine(answer1);
         Console.WriteLine(answer3);
         // end
-
+        
         return (answer1, answer3);
     }
     public (int, double) Task_2_8(int n)
