@@ -314,10 +314,18 @@ public class Program
         {
             double x = double.Parse(Console.ReadLine());
             double y = double.Parse(Console.ReadLine());
-            if (x > 0 && y > 0)
+            if (x >= 0 && y >= 0){
                 answer1 += 1;
-            else if (x < 0 && y < 0)
+                Console.WriteLine('1');
+            }
+            else if (x < 0 && y >= 0)
+                Console.WriteLine('2');
+            else if (x < 0 && y < 0){
                 answer1 += 3;
+                Console.WriteLine('3');
+            }
+            else
+                Console.WriteLine('4');
         }
         // end
 
