@@ -385,7 +385,7 @@ public class Program
             x = double.Parse(Console.ReadLine());
             Console.WriteLine("Координаты y");
             y = double.Parse(Console.ReadLine());
-            if ( y <= Math.Sin(x) && x >= 0 && x <= Math.PI )
+            if ( y >= 0 && y <= Math.Sin(x) && x >= 0 && x <= Math.PI )
             {
                 answer++;
             }
@@ -569,30 +569,50 @@ public class Program
         double answer = 0;
 
         // code here;
+
         if (r <= 0)
         {
-            answer = 0;
+            return 0;
         }
-        else
+
+        switch (type)
         {
-            if (type == 0)      // площадь квадрата стороной r
-            {
+            case 0:     // площадь квадрата стороной r
                 answer = r * r;
-            }
-            else if (type == 1)      // площадь круга радиусом r
-            {
+                break;
+            case 1:     // площадь круга радиусом r
                 answer = Math.PI * r * r;
-            }
-            else if (type == 2)      // площадь равностороннего треугольника стороной r
-            {
+                break;
+            case 2:     // площадь равностороннего треугольника стороной r
                 answer = (Math.Sqrt(3) / 4) * r * r;
-            }
-            else
-            {
-                answer = 0;
-            }
+                break;
         }
         answer = Math.Round(answer, 2);
+
+        //if (r <= 0)
+        //{
+        //    answer = 0;
+        //}
+        //else
+        //{
+        //    if (type == 0)      // площадь квадрата стороной r
+        //    {
+        //        answer = r * r;
+        //    }
+        //    else if (type == 1)      // площадь круга радиусом r
+        //    {
+        //        answer = Math.PI * r * r;
+        //    }
+        //    else if (type == 2)      // площадь равностороннего треугольника стороной r
+        //    {
+        //        answer = (Math.Sqrt(3) / 4) * r * r;
+        //    }
+        //    else
+        //    {
+        //        answer = 0;
+        //    }
+        //}
+
         // end
 
         return answer;
@@ -601,31 +621,51 @@ public class Program
     {
         double answer = 0;
 
-        // code here;
+        // code here
+
         if (A <= 0 || B <= 0)
         {
-            answer = 0;
+            return 0;
         }
-        else
+
+        switch (type)
         {
-            if (type == 0)          // площадь прямоугольника со сторонами A и B
-            {
+            case 0:     // площадь прямоугольника со сторонами A и B
                 answer = A * B;
-            }
-            else if (type == 1)     // площадь кольца, заключенного между двумя окружностями с радиусами А и В
-            {
+                break;
+            case 1:     // площадь кольца, заключенного между двумя окружностями с радиусами А и В
                 answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
-            }
-            else if (type == 2)     // площадь равнобедренного треугольника со сторонами А, B, В
-            {
+                break;
+            case 2:     // площадь равнобедренного треугольника со сторонами А, B, В
                 double h = Math.Sqrt(B * B - (A / 2) * (A / 2));
                 answer = (0.5) * A * h;
-            }
-            else
-            {
-                answer = 0;
-            }
+                break;
         }
+
+        //if (A <= 0 || B <= 0)
+        //{
+        //    answer = 0;
+        //}
+        //else
+        //{
+        //    if (type == 0)          // площадь прямоугольника со сторонами A и B
+        //    {
+        //        answer = A * B;
+        //    }
+        //    else if (type == 1)     // площадь кольца, заключенного между двумя окружностями с радиусами А и В
+        //    {
+        //        answer = Math.Abs(Math.PI * A * A - Math.PI * B * B);
+        //    }
+        //    else if (type == 2)     // площадь равнобедренного треугольника со сторонами А, B, В
+        //    {
+        //        double h = Math.Sqrt(B * B - (A / 2) * (A / 2));
+        //        answer = (0.5) * A * h;
+        //    }
+        //    else
+        //    {
+        //        answer = 0;
+        //    }
+        //}
         answer = Math.Round(answer, 2);
         Console.WriteLine($"ответ {answer},                 А: {A},  В: {B}      тип:{type} ");
         // end
